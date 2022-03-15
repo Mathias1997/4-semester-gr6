@@ -147,7 +147,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NClick>
-            <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" sap2010:Annotation.AnnotationText="Dialog asks for search name" DisplayName="Input Dialog 'Human input'" sap:VirtualizedContainerService.HintSize="334,269" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Name" Title="Filter by Name">
+            <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" sap2010:Annotation.AnnotationText="Dialog asks for search name" DisplayName="Input Dialog 'Human input'" sap:VirtualizedContainerService.HintSize="334,269" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Search name" Title="Filter by search name">
               <ui:InputDialog.Result>
                 <OutArgument x:TypeArguments="x:String">
                   <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">strInName</mca:CSharpReference>
