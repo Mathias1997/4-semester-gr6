@@ -1,7 +1,7 @@
 {
   "name": "NAV",
   "description": "Udvikling af RPA til NAV",
-  "main": "FinAllDataByName.xaml",
+  "main": "FindAllDataForPersonByName.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.11.4]",
     "UiPath.Mail.Activities": "[1.12.3]",
@@ -45,8 +45,8 @@
   "expressionLanguage": "CSharp",
   "entryPoints": [
     {
-      "filePath": "FinAllDataByName.xaml",
-      "uniqueId": "bb5caa65-620b-4b90-a98c-b1e701d9306f",
+      "filePath": "FindAllDataForPersonByName.xaml",
+      "uniqueId": "27b90046-cb55-4477-a443-2fd2025255a0",
       "input": [],
       "output": []
     }
