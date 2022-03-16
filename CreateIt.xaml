@@ -1,0 +1,244 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="FiltilSend" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="464.8,2853.6" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="FiltilSend" sap:VirtualizedContainerService.HintSize="475.2,2788.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Default="C:\NyMappe" Name="strFilePath" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="433.6,374.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Default="HemmeligData" Name="strFileName" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:CreateDirectory ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Opretter en mappe på stien angivet via variablen strFilePath" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="333.6,124.8" sap2010:WorkflowViewState.IdRef="CreateDirectory_1">
+        <ui:CreateDirectory.Path>
+          <InArgument x:TypeArguments="x:String">
+            <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">strFilePath</mca:CSharpValue>
+          </InArgument>
+        </ui:CreateDirectory.Path>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:CreateDirectory>
+      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" sap2010:Annotation.AnnotationText="Besked til bruger" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,116.8" sap2010:WorkflowViewState.IdRef="MessageBox_2">
+        <ui:MessageBox.Text>
+          <InArgument x:TypeArguments="x:Object">
+            <mca:CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9">"Mappe oprettet"</mca:CSharpValue>
+          </InArgument>
+        </ui:MessageBox.Text>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:MessageBox>
+    </Sequence>
+    <uix:NApplicationCard sap2010:Annotation.AnnotationText="Åbner&#xA; programmet Excel" AttachMode="ByInstance" DisplayName="Åbn Excel" sap:VirtualizedContainerService.HintSize="433.6,2281.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="b3ad8985-088c-4355-b612-80dd4723b1e8" Version="V1">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence sap2010:Annotation.AnnotationText="" DisplayName="Do" sap:VirtualizedContainerService.HintSize="375.2,1946.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Default="HemmeligData" Name="strFileName" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick sap2010:Annotation.AnnotationText="Vælg Tom projektmappe" ClickType="Single" DisplayName="Click 'Tom projektmappe'" sap:VirtualizedContainerService.HintSize="333.6,188.8" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b3ad8985-088c-4355-b612-80dd4723b1e8" Version="V1">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="234, 178, 225, 190" FriendlyName="'Tom projektmappe'" FullSelectorArgument="&lt;uia cls='NetUIElement' name='Startside' /&gt;&lt;uia cls='NetUISlabContainer' name='Ny' /&gt;&lt;uia cls='NetUIListView' /&gt;&lt;uia cls='NetUIListViewItem' name='Tom projektmappe' /&gt;" FuzzySelectorArgument="&lt;uia cls='NetUIElement' name='Startside' /&gt;&lt;uia cls='NetUISlabContainer' name='Ny' /&gt;&lt;uia cls='NetUIListView' /&gt;&lt;uia cls='NetUIListViewItem' name='Tom projektmappe' role='Listeelement' automationid='' check:fulltext='Tom projektmappe' /&gt;" Guid="ee839fa4-b319-4618-ac02-c7506557b203" ImageBase64="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" InformativeScreenshot="633b4603f3cd7a895d282a9abdf61b43.png" ScopeSelectorArgument="&lt;wnd app='excel.exe' cls='XLMAIN' title='Excel' /&gt;" SearchSteps="Selector, FuzzySelector, Image" />
+              </uix:NClick.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NClick>
+            <uix:NClick sap2010:Annotation.AnnotationText="klikker på fanebladet Filer" ClickType="Single" DisplayName="Click 'Fanen Filer'" sap:VirtualizedContainerService.HintSize="333.6,188.8" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b3ad8985-088c-4355-b612-80dd4723b1e8" Version="V1">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="9, 52, 68, 38" FriendlyName="'Fanen Filer'" FullSelectorArgument="&lt;uia cls='MsoCommandBar' helpText='Værktøjslinjen Ribbon' /&gt;&lt;uia automationid='FileTabButton' cls='NetUIRibbonTab' name='Fanen Filer' /&gt;" FuzzySelectorArgument="&lt;uia cls='MsoCommandBar' helpText='Værktøjslinjen Ribbon' /&gt;&lt;uia automationid='FileTabButton' cls='NetUIRibbonTab' name='Fanen Filer' role='Knap' check:fulltext='Fanen Filer' /&gt;" Guid="39d7de76-3a96-4df5-b230-f9ec80efafbf" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEgAAAAqCAYAAAAQ0R0WAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAG7SURBVGhD7dUxS8NAAMVxv4rfRYqbiJOIjgqOWlxE3BQ3RRCxi4iT4iKdRFzUVf0C9jtUqWv0xXclpnmVQq4c+gp/6CW5g/yaXCfCJ/v6zB81s8n1hitEHgOpyPMN9NHrZe9vXVeIPAZSkcdAKvIYSEUeA6nIYyAVeQykIo+BVOQxkIo8BlKRx0Aq8hhIRZ7xAh0e7GerK8v98UZzLa94TSqRp16g1slxNt2YGigg7O3uGAggd7c3P3p8uK+8/t8CVZ2rykClyiBVQHji8BpinbnZmXzN4vkw5+ryIj8/yg8ySuRJCwg4mI918L3dvh5AwvVLiwv5ftbpvPaP1x15xrNJ42Zx/jegcONhjM7PTnOkMMb1WDMmDiLPeDbpcDPDgHBNETOEMY6/PD8NzIkZedJ5xQKEKsCV14gVedIBwhOCuXilgFFOPYWxIk9amzT2IKwRxlWV58SKPGkB4a8b87FOeHJwrLhxl+fEijxpASH8teNJwjpoe2szPzZsTozIUy/QX4o8BlKRx0Aq8hhIRR4DqchjIBV5DKQij4FU5DGQijwGUpHHQCryGEhFHgOpyGMgFXkMVF03+wRlHxL/sWN1IAAAAABJRU5ErkJggg==" InformativeScreenshot="6087bedf379ee6373cade3677d763437.png" ScopeSelectorArgument="&lt;wnd app='excel.exe' cls='XLMAIN' title='Mappe1 - Excel' /&gt;" SearchSteps="Selector, FuzzySelector, Image" />
+              </uix:NClick.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NClick>
+            <uix:NClick ClickType="Single" DisplayName="Click 'Gem som'" sap:VirtualizedContainerService.HintSize="333.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b3ad8985-088c-4355-b612-80dd4723b1e8" Version="V1">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="9, 381, 175, 50" FriendlyName="'Gem som'" FullSelectorArgument="&lt;uia automationid='NavBarMenu' cls='NetUIKeyboardTabElement' name='Filer' /&gt;&lt;uia cls='NetUIRibbonTab' name='Gem som' /&gt;" FuzzySelectorArgument="&lt;uia automationid='NavBarMenu' cls='NetUIKeyboardTabElement' name='Filer' /&gt;&lt;uia cls='NetUIRibbonTab' name='Gem som' role='Listeelement' automationid='' check:fulltext='Gem som' /&gt;" Guid="43a196cc-1486-4f76-8c33-2ae71b2328b6" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAALMAAAA2CAYAAACMaaiYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAIbSURBVHhe7dgxTutAFIVhtsJm2AMla4COTVDR0LEEOip6Ggo6CkQFEg1ClmgDBzjoMnGMRNz4zH+lTzKZwZOn98fKezue1cfsnx6tdg/3gEUZhuHTd8rEjOUiZsQgZsQgZsQgZsQgZsQgZsQgZsQgZsQgZsQgZsQgZsQgZsQgZsQgZsQgZsQgZsQgZsQgZsQgZsQgZsToNuaLmyv9UX/N3dPD6F4sQ5cxP748f8Y79nr7Gpaju5iv729Xr2/D6BqWrbuYNSeX56NrLYVf5+Ds+GdNT3Gt+ymv0X21p069X0v769T7t2e3X4HmOD9NVzE7nrG1luKpXzv8Hds/OyJ/MBxffeprz6bv4Y7OATtEXet3NHW/7lvvte35ibqKuQ1S2iegX9fUJ6UoFN1D120ojtProutNX2mmPlgaR2re7/e07fmJeDKPrPl6bGrM+iDUe2hqhH/FpDVNDXDqPWp8/znOT9NVzH561b9wqxFNBWVzxeT3pNH11Nka35+Y13UVsygCaV+vEU1Fb3PH5PttOru+v7q/7tH89/wE3cUsmjbosVjqz9L+A2ybmLSv7tU+7de1ztF4zev1PGJe12XM4ljrOKZNe+r6HDHXaf/XQfeu055FzOu6jRl5iBkxiBkxiBkxiBkxiBkxiBkxiBkxiBkxiBkxiBkxiBkxiBkxiBkxiBkxiBkxiBkxiBkxiBkxiBkxiBkxvmIeVu9gAhog1xtxpQAAAABJRU5ErkJggg==" InformativeScreenshot="2b4a3b74b25f6144003ccf127ba3782d.png" ScopeSelectorArgument="&lt;wnd app='excel.exe' cls='XLMAIN' title='Mappe1 - Excel' /&gt;" SearchSteps="Selector, FuzzySelector, Image" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick sap2010:Annotation.AnnotationText="Vælger Gennemse" ClickType="Double" DisplayName="Click 'Gennemse'" sap:VirtualizedContainerService.HintSize="333.6,188.8" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b3ad8985-088c-4355-b612-80dd4723b1e8" Version="V1">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="235, 550, 385, 55" FriendlyName="'Gennemse'" FullSelectorArgument="&lt;uia cls='NetUIElement' name='Gem som' /&gt;&lt;uia cls='NetUISlabContainer' name='Gemmer funktioner' /&gt;&lt;uia cls='NetUIElement' /&gt;&lt;uia cls='NetUISimpleButton' name='Gennemse' /&gt;" FuzzySelectorArgument="&lt;uia cls='NetUIElement' name='Gem som' /&gt;&lt;uia cls='NetUISlabContainer' name='Gemmer funktioner' /&gt;&lt;uia cls='NetUIElement' /&gt;&lt;uia cls='NetUISimpleButton' name='Gennemse' role='Knap' automationid='' check:fulltext='Gennemse' /&gt;" Guid="0ab6b944-ff57-413a-95d8-e292baf15281" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAYUAAAA7CAYAAACUlJb5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAARfSURBVHhe7d29ThxXGAbgXA13YClyTRMhV3SJXbkzLiiDC27AXSzRW7EUFy4sxUJxhxQXWKLiCqB0TUez0bvROT6ezMLszm5YL0/xiN1vvvmxi+/lzCzww9XV1QSA++vy8rK+FgoA95xQAKASCgBUQgGASigAUAkFACqhAEAlFACohAIAlVAAoBIKAFRCAYBKKABQCQUAKqEAQLVwKHz69PfkzZvfF3J2dtZ7TADu1sKhkOH+6NHO5MWLg7ns7T2b7Oz8JBgA1tCoUMiQv76+nturV78JBoA1dCehEAmGhw9/HKXvugBY3J2FQnz+fLqQ9+/fCwWAFbjTUFhUgkEoACyfUACgEgpzePfu3eTp06eTra2tand3d/L69evefoDvjVAY4OLiYjr8Hzx4MHn58uU0HE5OTqZhkPeHh4e9+wF8b1YWCnkYnO2r8Pz53jQUDg5+/UZ+oK7vWscogRDn5+e9PQCbYiWh8OXLl+kPtuVjp2/f/rFyCYnHj3/uvc6xjo6OpisEgQDcBysJhQzqJ09+6d22bCWAPnz4s/c6x9re3p7eIurbNsvp6elkf3+/PnfI69TK9gRN6m1fuTXVHmdoX8xzzqx68jr/trzPaijHzLHLvqm1x8/73CYrPdn3+Pj4m57brgFYf0sPhTKkP3786z/bViEBtKpVQgZhhlt3+N0kQzCDMw+k89wh+2YIZ4iWQVsGdOrl+USp5Ws51tC+ec6ZnmwvPdkvwz6yb86Tvu5zkvRG9ivXMe81AOtv6aGwSauEDLcMyHztq7fKtgzFDMK2v4RL+ZRSGdDd42bfDNLyfmjfPOdsv3PP69Syf6lFWRG0tfS1IdA15BqA9bfUUNikVUKUodkdyhl2qUUGaHrKtllDMEOzfPddBnS3p1sf2jfmnKllW1vr600IJSiykmjrxZBrANbfUkNhk1YJRYbdTc8U+gb0LOU78lkDulsf2pfXs9x2ztSyra319SYISwAmHLr7pD5LuQZg/S0tFDZtlVBkEN50X7xvQKdWVhKtcuumb+j21Yf2jTln2betzeqN/D9kRVCeRZT6kGsA1t/SQmETVwmRj6KWAdgXDN0Bmtss+dRN29M1a+h260P7xpwztWxra7N6W1k9tSuAIdcArL+lhMKmrhKK3EdPMGTFkGFYPr2T4ZlaO0BTz/sMyPKdcvZvB+isodutD+0bc87Usq2t9fVm6OeYOXbO110pDLkGYP0tJRQ2dZXQyoqh3ErK8IsMytQyANveDMhsa/vawTtrQHfrQ/ti0XOm1vZFX2+GfYIg9fwfpKe7crrtGoD1NzoUNn2VAHCfjA6F+7BKALgvRoVCfueQVQLA5hgVCvlNpVYJAJtjKaGQ20irtsrfhArAvxYOhfztggTD/2kVfy8BgK8WDgUANo9QAKASCgBUQgGASigAUAkFACqhAEAlFACohAIAlVAAoBIKAFRCAYBKKABQCQUAKqEAQCUUAKiEAgDV11C4mvwD70LLq0B5j90AAAAASUVORK5CYII=" InformativeScreenshot="a309eb7431ba79ce379e261416e06e9a.png" ScopeSelectorArgument="&lt;wnd app='excel.exe' cls='XLMAIN' title='Mappe1 - Excel' /&gt;" SearchSteps="Selector, FuzzySelector, Image" />
+              </uix:NClick.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NClick>
+            <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="Indtaster stien til hvor filen skal gemmes" ClickBeforeMode="Single" DisplayName="Indtast sti" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="333.6,249.6" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="b3ad8985-088c-4355-b612-80dd4723b1e8" Version="V1">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="169, 411, 752, 22" ElementType="InputBox" FriendlyName="'Mappe1'" FullSelectorArgument="&lt;wnd aaname='Stifinderrude' cls='DirectUIHWND' /&gt;&lt;wnd aaname='Filnavn:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Stifinderrude' cls='DirectUIHWND' /&gt;&lt;wnd aaname='Filnavn:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;" Guid="56ece351-5ad9-45b2-85a1-f4510bcd8f1c" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAvQAAAAaCAYAAADYDcjNAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAJNSURBVHhe7dxNTvJAHMBhzsWBOIPH4BiewCWHMCTvgoQdMSGu2MhupNOWTj+gVaOh8z5P8o98DE2XP8bRxevbRwAAAOZpUf0EAABm6GbQL57+ZT0AAJADQQ8AADMm6AEAYMYEPQAAzJigBwCAGbsb9Ktt8egc1uvhKF48HcJLsWR7GHjvUWYf1scQXp7brwMAQA4mBH0Iu82+FcP1LDfnsDueHzbo6/svCHoAAHI0GvQx2MMprJIYLqfc+X7YoH8+Vfdd/hZB0AMAkKPxoN8cBo+sxGA+vofVphP06/ewq64RXdYsk8+V19zH3f2rb6wppvX+zaNBgh4AgHxNCPoqrO9FdxL0y80pCetyFz99v/hcoTnG8701vXu67shXz68j6AEAyNekoC+jONkBj7vwZTx3g7431U5+Hd4x1rvr4/Wa64+v6dxPnOE/fhX0AADkbGLQtx+nET8U9PG1VCfom533etqBProm7sYPE/QAAPxPJgd9sytf7IQ38d0O+jKee0dhfiXoh47XDI2gBwAgX9ODvj7Ssm0Heivok6M45Weq98eO3HQCfXRN54jO/RH0AADk6wtBf5nqqEv6Wj/ok9COzy+6QX/RBHYZ3Ok1p69JvzxcvnBsk98MXEfQAwCQr68FfYzjgR34ZDc9Pq8VIT945Kb8V5hXnd34KWvqdan2vdYj6AEAyNfdoP+N6X9J6M+UNT8dAADIgaAHAIAZE/QAADBjfx70jzIAAJCDm0EPAAA8PkEPAAAzJugBAGDGFq9vH9VDAABgXkL4BGQA1ZazVC+RAAAAAElFTkSuQmCC" InformativeScreenshot="bc7283771e8672dec2ca7e274646979a.png" ScopeSelectorArgument="&lt;wnd app='excel.exe' cls='#32770' title='Gem som' /&gt;" SearchSteps="Selector, FuzzySelector, Image" />
+              </uix:NTypeInto.Target>
+              <uix:NTypeInto.Text>
+                <InArgument x:TypeArguments="x:String">
+                  <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">strFilePath+"[k(enter)]"</mca:CSharpValue>
+                </InArgument>
+              </uix:NTypeInto.Text>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="Indtaster navnet filen skal gemmes med" ClickBeforeMode="Single" DisplayName="Indtast filnavn" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="333.6,249.6" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="b3ad8985-088c-4355-b612-80dd4723b1e8" Version="V1">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="169, 411, 752, 22" ElementType="InputBox" FriendlyName="'Mappe1'" FullSelectorArgument="&lt;wnd aaname='Stifinderrude' cls='DirectUIHWND' /&gt;&lt;wnd aaname='Filnavn:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Stifinderrude' cls='DirectUIHWND' /&gt;&lt;wnd aaname='Filnavn:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;" Guid="56ece351-5ad9-45b2-85a1-f4510bcd8f1c" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAvQAAAAaCAYAAADYDcjNAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAJNSURBVHhe7dxNTvJAHMBhzsWBOIPH4BiewCWHMCTvgoQdMSGu2MhupNOWTj+gVaOh8z5P8o98DE2XP8bRxevbRwAAAOZpUf0EAABm6GbQL57+ZT0AAJADQQ8AADMm6AEAYMYEPQAAzJigBwCAGbsb9Ktt8egc1uvhKF48HcJLsWR7GHjvUWYf1scQXp7brwMAQA4mBH0Iu82+FcP1LDfnsDueHzbo6/svCHoAAHI0GvQx2MMprJIYLqfc+X7YoH8+Vfdd/hZB0AMAkKPxoN8cBo+sxGA+vofVphP06/ewq64RXdYsk8+V19zH3f2rb6wppvX+zaNBgh4AgHxNCPoqrO9FdxL0y80pCetyFz99v/hcoTnG8701vXu67shXz68j6AEAyNekoC+jONkBj7vwZTx3g7431U5+Hd4x1rvr4/Wa64+v6dxPnOE/fhX0AADkbGLQtx+nET8U9PG1VCfom533etqBProm7sYPE/QAAPxPJgd9sytf7IQ38d0O+jKee0dhfiXoh47XDI2gBwAgX9ODvj7Ssm0Heivok6M45Weq98eO3HQCfXRN54jO/RH0AADk6wtBf5nqqEv6Wj/ok9COzy+6QX/RBHYZ3Ok1p69JvzxcvnBsk98MXEfQAwCQr68FfYzjgR34ZDc9Pq8VIT945Kb8V5hXnd34KWvqdan2vdYj6AEAyNfdoP+N6X9J6M+UNT8dAADIgaAHAIAZE/QAADBjfx70jzIAAJCDm0EPAAA8PkEPAAAzJugBAGDGFq9vH9VDAABgXkL4BGQA1ZazVC+RAAAAAElFTkSuQmCC" InformativeScreenshot="bc7283771e8672dec2ca7e274646979a.png" ScopeSelectorArgument="&lt;wnd app='excel.exe' cls='#32770' title='Gem som' /&gt;" SearchSteps="Selector, FuzzySelector, Image" />
+              </uix:NTypeInto.Target>
+              <uix:NTypeInto.Text>
+                <InArgument x:TypeArguments="x:String">
+                  <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">strFileName</mca:CSharpValue>
+                </InArgument>
+              </uix:NTypeInto.Text>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NTypeInto>
+            <uix:NClick sap2010:Annotation.AnnotationText="Klik på knappen Gem&#xA;" ClickType="Single" DisplayName="Click 'Gem'" sap:VirtualizedContainerService.HintSize="333.6,201.6" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b3ad8985-088c-4355-b612-80dd4723b1e8" Version="V1">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="696, 576, 110, 33" ElementType="Button" FriendlyName="'unchecked'" FullSelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Gem' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Gem' check:text='unchecked' /&gt;" Guid="ffbe7634-360f-4f67-b9c8-ad3b2e67cd99" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHIAAAAlCAYAAACeVr0yAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAIGSURBVHhe7dsxT8JAFMDx+wZ8niZ8A75GN91cHBTdpXFj0w/RSRlU/AIaYroYBiZEMWl0UZZn39GWe72jcTHcPd/wH6C9kvDLu4akqDzPQQo/gWSSQDLJgpzM3qE7fIbOaQbq8EnyrN7FVBs13QgknoCA/dEclp/fsFqtJI9Ck8H4FTonmYVJIHuXU0juF86LSP50fD3Xu6ZpRyBxdGUS/e/t40tPJbEjLwpI10LJv9CK2JEXAhlMAskkgWSSQDJJIJkUPmQag1KKFqfucxkXMGQGSYRwMaTk/RTiKIGMvMe/YCGzJAL1D8G2FShkMXXFFhqnrmN2Gr3eeiNIss2xNFYQJWk53ev0dbMEonpNc+r9K0xIfV/83ZdrTW5jLUKauDV6vabcwj2/77KBpFNXHcPJpRNYwVTTrCEJkmPa8fM838b5TaTeEstj+rwKl2ZCRklmXMOBL5B/lMZqTpp5zITcAl4mkDvO3hLLTMg28DKB3Hnre5n1BZuQRRqcTGVxj4w3awTSk9ZQtObPkuY5JpxASl4VJKQ5XW251nJNJpJJAskkgWSSQDKpFRKfMpfnWv0Pn2tthcSnl/ujF+diyZ/O7hb6PyCmHYGczJZ6KgfjhVZ3XUTaXWhydDXXRmhl2hFIDE/oDR9B7d+C2ruRPKpzMIbu+YOFiFmQUpgJJJMEkkU5/ADeYWuZsYOsZgAAAABJRU5ErkJggg==" InformativeScreenshot="51682396742c1c0e954b072f30951efc.png" ScopeSelectorArgument="&lt;wnd app='excel.exe' cls='#32770' title='Gem som' /&gt;" SearchSteps="Selector, FuzzySelector, Image" />
+              </uix:NClick.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NClick>
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" sap2010:Annotation.AnnotationText="Besked til bruger om at fil er gemt" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,116.8" sap2010:WorkflowViewState.IdRef="MessageBox_1">
+              <ui:MessageBox.Text>
+                <InArgument x:TypeArguments="x:Object">
+                  <mca:CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">"Fil gemt"</mca:CSharpValue>
+                </InArgument>
+              </ui:MessageBox.Text>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:MessageBox>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-9, 34, 1938, 995" FilePath="C:\\Program Files\\Microsoft Office\\root\\Office16\\excel.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAQdSURBVFhH7dhLTFRXHMdxMLWRODN35sIw4EIeLmyqUWEERECeUgSKgBhta7tpqbysCsqz5SnPjQsFDbHWYknVmKDR+GxtGklXXViWbZOWRcVVbeLC5a//c+5rZrgzXOlxFqQn+SYMBP6fnHvuWRCxUlYktSrMWV6RSVO1N5Muf4rl5J3tW16Pe2+o85dcUWaDrWY63GI0+w2FEHpJZoOtZjbYajTbphBCL6fZYKuZDbYazZYVQuj1PzBYNHuFABO//Bghu6iU9HUtkqYEA+PHqmbiR6sQP1qJuJG9SsMV8LCG3uXFDpYrnSqD+1Qp3AOsPYjpZ5Ugpu8dRFOekQoFOkVQYUAOU3GE8sctAetXYNG9xdRuyD27IR3PgrMjF87P83m+u/mqcaD5rqmwwTI/XAzH+cD6GKyYw+SeIri6iyAdy4LUugvOrjxBQD9YqMfJYCUqTNk1X5iruxCuLwrgaMqE1JINZ6cgoGd4MeyjawMY+3Ga+gZ5k40KToV13juH0R+m0Hl3QsUpMCeLQI6GDEjNIoGB54zKn2yCtmb//EXfsQ+v9KrfBTrujBNMxRHE2cXKg71eMDDYOfv2yQOVAlRcOsEf5/zzZ/zz7B9PVJiGy4NEIKkzVzzQ/5ypZ412LHm0Gv+8fKGDGmfG+Nds5YzX6jAGYTCJ3lypfRfsdemCgQEw3xeAnTNtadiJn64rML5rBozXliMeyGFBr41CzC38zmFszT9fQMJAuf44dRzBHK3UyWzYDwsGmsOMt5OhtMV2cX1/mR9MYrDWbI5znMiCXLMNsTWpiHs/HXGHMpSjsMwUoA4zdk27NkYeXdJh2iOe/vkuwbRdM2COlp08uWarWKAZjP0w5+wnHMTW8Hdfof3WGfUTUHr+iAFTcfbmTNiPZ0LeJxjIYRrO59qYe/obx8z/vYD1vaV8x9jXbM399auxa82EI5j92A6eeGAAjL0A7beN3aq/NqSfs7qrg+p3gaH7F/Rd47ijGbB/li4eyD8EXBvscQ4/vMjzP2dZHDZ07wLaZk77wWxHqKY0yNVbBAN977MO4z7Trg2zc2bAKA5TcLbG7eKBwe4zx0kDFnjOAneNwWwNVL0XrioC7hcJDHKf6TCTc7YI1uDF2vpUrK1LgVy2STCwLWcm8JwFe5w6TMd5adcYjDqcAtvBzYgu3UxArw78L3GgheV0pCUgdImQMpPhKtgId8VWeA5sR9wHYQTKhW8hZEVU8duIKafzty8VnvfSTAe+ajTbGtC9dxuCVqlWnUJvrxeeg4QTsHssmm0NyIYuGe2ah507QTgWzbYGNPvlcESzVwZQMvvlcESzLQGj6F57ZPYHXmc083ua7VAIoddqKplKp3aEKTZrA/UmteRi/+FfQ7mpeGrda47NiKWiIiIiIv8FG3Tl5OYvmvIAAAAASUVORK5CYII=" InformativeScreenshot="60e92c6f58651238874586d8681d97a1.png" Selector="&lt;wnd app='excel.exe' cls='XLMAIN' title='Excel'/&gt;" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
