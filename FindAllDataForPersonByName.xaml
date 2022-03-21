@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="FinAllDataByName" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="1207,2993" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="FinAllDataByName" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="1207,2397" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -43,6 +43,7 @@
       <x:String>UiPath.Shared.ObjectLibrary</x:String>
       <x:String>UiPath.CV.Activities</x:String>
       <x:String>UiPath.CV.Activities.Interfaces</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -91,7 +92,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="FinAllDataByName" sap:VirtualizedContainerService.HintSize="530,2928" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="FinAllDataByName" sap:VirtualizedContainerService.HintSize="476,2332" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="CRONUS Danmark A/S/Departments/Human Resources/Employees" Name="strNavPath" />
       <Variable x:TypeArguments="x:Boolean" Name="boolEleExist" />
@@ -101,13 +102,13 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard sap2010:Annotation.AnnotationText="Open Application Dynamics NAV" AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application:  Microsoft Dynamics NAV" sap:VirtualizedContainerService.HintSize="488,2836" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="b30e7a6a-00ad-4834-a3a2-e3737805e506" Version="V1">
+    <uix:NApplicationCard sap2010:Annotation.AnnotationText="Open Application Dynamics NAV" AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application:  Microsoft Dynamics NAV" sap:VirtualizedContainerService.HintSize="434,2240" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="b30e7a6a-00ad-4834-a3a2-e3737805e506" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="454,2516" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,1920" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="strInName" />
             </Sequence.Variables>
@@ -116,7 +117,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:SetToClipboard sap2010:Annotation.AnnotationText="Save NAV Path to clipboard" DisplayName="Set NAV Path To Clipboard" sap:VirtualizedContainerService.HintSize="412,90" sap2010:WorkflowViewState.IdRef="SetToClipboard_2">
+            <ui:SetToClipboard sap2010:Annotation.AnnotationText="Save NAV Path to clipboard" DisplayName="Set NAV Path To Clipboard" sap:VirtualizedContainerService.HintSize="334,90" sap2010:WorkflowViewState.IdRef="SetToClipboard_2">
               <ui:SetToClipboard.Text>
                 <InArgument x:TypeArguments="x:String">
                   <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_2">strNavPath</mca:CSharpValue>
@@ -128,14 +129,14 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:SetToClipboard>
-            <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" sap2010:Annotation.AnnotationText="Set path in NAV to dep.HR.Employees" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="412,209" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_3" ScopeIdentifier="b30e7a6a-00ad-4834-a3a2-e3737805e506" Shortcuts="[d(hk)][d(ctrl)][k(f12)][u(ctrl)][u(hk)][d(hk)][d(ctrl)]v[u(ctrl)][u(hk)][d(hk)][k(enter)][u(hk)]" Version="V1">
+            <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" sap2010:Annotation.AnnotationText="Set path in NAV to dep.HR.Employees" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="334,209" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_3" ScopeIdentifier="b30e7a6a-00ad-4834-a3a2-e3737805e506" Shortcuts="[d(hk)][d(ctrl)][k(f12)][u(ctrl)][u(hk)][d(hk)][d(ctrl)]v[u(ctrl)][u(hk)][d(hk)][k(enter)][u(hk)]" Version="V1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NKeyboardShortcuts>
-            <uix:NClick sap2010:Annotation.AnnotationText="click to get dropdown" ClickType="Single" CursorMotionType="Instant" DisplayName="Click 'Filter button'" sap:VirtualizedContainerService.HintSize="412,187" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b30e7a6a-00ad-4834-a3a2-e3737805e506" Version="V1">
+            <uix:NClick sap2010:Annotation.AnnotationText="click to get dropdown" ClickType="Single" CursorMotionType="Instant" DisplayName="Click 'Filter button'" sap:VirtualizedContainerService.HintSize="334,187" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b30e7a6a-00ad-4834-a3a2-e3737805e506" Version="V1">
               <uix:NClick.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="1513, 192, 120, 23" ElementType="Button" FriendlyName="'No.'" FullSelectorArgument="&lt;wnd cls='WindowsForms10.Window.*' title='Contacts - Microsoft Dynamics NAV' /&gt;&lt;wnd ctrlname='LayoutPlaceholder' /&gt;&lt;wnd cls='WindowsForms10.Window.*' title='Contacts' /&gt;&lt;wnd ctrlname='contentAndMessagesPlaceholder' /&gt;&lt;wnd ctrlname='contentAndFilterPlaceholder' /&gt;&lt;wnd aaname='Filter pane' cls='WindowsForms10.Window.*' /&gt;&lt;wnd cls='WindowsForms10.Window.*' /&gt;&lt;wnd ctrlname='levelOneFilterPanel' /&gt;&lt;wnd ctrlname='lookForFilter' /&gt;&lt;ctrl name='Scope selector for “Type to filter&amp;quot;' role='menu button' /&gt;" FuzzySelectorArgument="&lt;wnd cls='WindowsForms10.Window.*' title='Contacts - Microsoft Dynamics NAV' /&gt;&lt;wnd ctrlname='LayoutPlaceholder' /&gt;&lt;wnd cls='WindowsForms10.Window.*' title='Contacts' /&gt;&lt;wnd ctrlname='contentAndMessagesPlaceholder' /&gt;&lt;wnd ctrlname='contentAndFilterPlaceholder' /&gt;&lt;wnd aaname='Filter pane' cls='WindowsForms10.Window.*' /&gt;&lt;wnd cls='WindowsForms10.Window.*' /&gt;&lt;wnd ctrlname='levelOneFilterPanel' /&gt;&lt;wnd ctrlname='lookForFilter' /&gt;&lt;ctrl name='Scope selector for “Type to filter&amp;quot;' role='menu button'  /&gt;" Guid="391ae9ca-18f9-4bce-b484-c92dc3a9bb2d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHwAAAAbCAYAAAC+7+tcAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAErSURBVGhD7doxDoIwFMZxjtpjkMghSBi4AGFycWZlYXR2Y/AAji7PPuJrKjSGghrkfS/5Jdrg4r9UBhPCqJqkqioCPdwdfr3dYcdkEFwJGQRXQsYF5/M9dCHsA/flQXAlEFwZBFcmInhHuTFkii6wnlF98ddgqyKDZ5QeDOXtdB3B/0N08Lo92egnOo/XEfwvxAe3YZvCUHrsJ+vD+4vdEHz0P72eBvBJ8h2HhK5ni4K/f+1FHuJ7mwE+LiY2WxjcasvnA5y3PgQuqfE+x6cB7vLvmhubLQ9+66keHuAQfAvmxGYrglvu91rW+ZrxkS4bIPB5+Ll1wa3zMfOCW24T+BuBIfgWRASHPUBwZRBcGQRXZhI8dBHshwyCKyGD4ErI4H/pyrg7HKNhiB6Q8rmt/UgRogAAAABJRU5ErkJggg==" InformativeScreenshot="f6d7646d2b4383c4516d7e9cf75bc0e3.png" ScopeSelectorArgument="&lt;wnd app='microsoft.dynamics.nav.client.exe' cls='WindowsForms10.Window.*' title='Contacts - Microsoft Dynamics NAV' /&gt;" SearchSteps="Selector, FuzzySelector, Image" />
               </uix:NClick.Target>
@@ -145,7 +146,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NClick>
-            <uix:NClick sap2010:Annotation.AnnotationText="Choose name in sub menu" ClickType="Single" CursorMotionType="Instant" DisplayName="Click 'Search Name'" sap:VirtualizedContainerService.HintSize="412,187" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b30e7a6a-00ad-4834-a3a2-e3737805e506" Version="V1">
+            <uix:NClick sap2010:Annotation.AnnotationText="Choose name in sub menu" ClickType="Single" CursorMotionType="Instant" DisplayName="Click 'Search Name'" sap:VirtualizedContainerService.HintSize="334,187" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b30e7a6a-00ad-4834-a3a2-e3737805e506" Version="V1">
               <uix:NClick.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="0, 68, 144, 22" FriendlyName="'Search Name'" FullSelectorArgument="&lt;ctrl name='DropDown' role='popup menu' /&gt;&lt;ctrl name='Search Name' role='menu item' /&gt;" FuzzySelectorArgument="&lt;ctrl name='DropDown' role='popup menu' /&gt;&lt;ctrl name='Search Name' role='menu item' automationid='' check:fulltext='Search Name' /&gt;" Guid="8db82d1d-9d2e-4172-8dec-4a5fd5fad652" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJEAAAAaCAYAAAC3r744AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAH/SURBVGhD7ZfbjcMgEEVXq9TifqiGZvhwJf5LHS6FZXgkQAZiPEnERvdIloBgGHuOgfys62rfzfV6jSXwbZA/kAiIgERADCQCYiAREAOJgBhIBMRAIiBmXok2bZdliZe2W2x+D5vVi7Jmj9Um1M/Fo+tojt7/ncwp0W6sysVxdfNWi0YkUlapxZYeQSKxRJffSyy1GZKIViFl7OdyMiaR2ZzkRXyQSCQRCfRyiXxSFqu4rPhV6nGb23Rqy7ebkFytVdZ3t8atJKlv6JrJEdvZuVM/9xPNd+9TStSLJZ+DftoNxcbM2XjOGRmSqJblqEDE+MH6nuz71lEmi1asx2TnfaicJyeMyd/j5kqriz+PcYmrx+bKOXWfeo4slmLOajz2OedhWKIkzYhAxLhEkfhFepGKrzNeybCYlHA1kuvvfyYHUdcTj8kN8zPtz2Lp1XvPOSFDEhFJnhGBiNMSOfySTy+xJUHRTqtNI3GvliiubHqrBTgQS6/ejHNOhiUiRgUixg7W7t/Y7eXmWxC9aGY7oi8/bRM+Aa3E9bazXoITTLufL1txDsfSq1OZi3NOTkl0hjMHa3YpvyUt/y3I4etKW938+oly7DB03Y+7j+Dbw+E4tR+N5Umdfc45mVQi8J+AREAMJAJiIBEQA4mAGEgExEAiIAYSATGQCIhZ19X+AUCfg+TVUrxfAAAAAElFTkSuQmCC" InformativeScreenshot="ccdaaebe81985bed4eab9d65ea41a340.png" ScopeSelectorArgument="&lt;wnd aaname='DropDown' app='microsoft.dynamics.nav.client.exe' cls='WindowsForms10.Window.*' /&gt;" SearchSteps="Selector, FuzzySelector, Image" />
               </uix:NClick.Target>
@@ -155,78 +156,34 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NClick>
-            <ui:InterruptibleDoWhile DisplayName="Do While" sap:VirtualizedContainerService.HintSize="412,1101" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
-              <ui:InterruptibleDoWhile.Body>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,936" sap2010:WorkflowViewState.IdRef="Sequence_8">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" sap2010:Annotation.AnnotationText="Dialog asks for search name and saves it in strInName variable" DisplayName="Input Dialog 'Human input'" sap:VirtualizedContainerService.HintSize="334,280" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Name" Title="Filter by Name">
-                    <ui:InputDialog.Result>
-                      <OutArgument x:TypeArguments="x:String">
-                        <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">strInName</mca:CSharpReference>
-                      </OutArgument>
-                    </ui:InputDialog.Result>
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                  </ui:InputDialog>
-                  <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="Writes the typed search name" ClickBeforeMode="Single" DisplayName="Type Into 'Type into filter'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,247" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="b30e7a6a-00ad-4834-a3a2-e3737805e506" Version="V1">
-                    <uix:NTypeInto.Target>
-                      <uix:TargetAnchorable DesignTimeRectangle="1393, 194, 120, 16" ElementType="InputBox" FriendlyName="'Type to filter'" FullSelectorArgument="&lt;wnd cls='WindowsForms10.Window.*' title='Contacts - Microsoft Dynamics NAV' /&gt;&lt;wnd ctrlname='LayoutPlaceholder' /&gt;&lt;wnd cls='WindowsForms10.Window.*' title='Contacts' /&gt;&lt;wnd ctrlname='contentAndMessagesPlaceholder' /&gt;&lt;wnd ctrlname='contentAndFilterPlaceholder' /&gt;&lt;wnd aaname='Filter pane' cls='WindowsForms10.Window.*' /&gt;&lt;wnd cls='WindowsForms10.Window.*' /&gt;&lt;wnd ctrlname='levelOneFilterPanel' /&gt;&lt;wnd ctrlname='lookForFilter' /&gt;&lt;wnd aaname='Type to filter' cls='WindowsForms10.EDIT.*' /&gt;" FuzzySelectorArgument="&lt;wnd cls='WindowsForms10.Window.*' title='Contacts - Microsoft Dynamics NAV' /&gt;&lt;wnd ctrlname='LayoutPlaceholder' /&gt;&lt;wnd cls='WindowsForms10.Window.*' title='Contacts' /&gt;&lt;wnd ctrlname='contentAndMessagesPlaceholder' /&gt;&lt;wnd ctrlname='contentAndFilterPlaceholder' /&gt;&lt;wnd aaname='Filter pane' cls='WindowsForms10.Window.*' /&gt;&lt;wnd cls='WindowsForms10.Window.*' /&gt;&lt;wnd ctrlname='levelOneFilterPanel' /&gt;&lt;wnd ctrlname='lookForFilter' /&gt;&lt;wnd aaname='Type to filter' cls='WindowsForms10.EDIT.*' /&gt;" Guid="775028da-a55f-42be-94b6-b62ceeee8ea5" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHwAAAAUCAYAAABPuVmJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABNSURBVGhD7dFBEQAgDMAw/OuYz3EHMpp8KqBnSTE8xvAYwyNm5tXwCMNjDI8xPMbwGMNjDI8xPMbwGMNjDI8xPMbwGMNjDI8xPOYP370mSIla9gv52wAAAABJRU5ErkJggg==" InformativeScreenshot="055869ac3b4ec26653a758cb442a12ae.png" ScopeSelectorArgument="&lt;wnd app='microsoft.dynamics.nav.client.exe' cls='WindowsForms10.Window.*' title='Contacts - Microsoft Dynamics NAV' /&gt;" SearchSteps="Selector, FuzzySelector, Image" />
-                    </uix:NTypeInto.Target>
-                    <uix:NTypeInto.Text>
-                      <InArgument x:TypeArguments="x:String">
-                        <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">strInName</mca:CSharpValue>
-                      </InArgument>
-                    </uix:NTypeInto.Text>
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                  </uix:NTypeInto>
-                  <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_1">
-                    <Assign.To>
-                      <OutArgument x:TypeArguments="x:Boolean">
-                        <mca:CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">boolEleExist</mca:CSharpReference>
-                      </OutArgument>
-                    </Assign.To>
-                    <Assign.Value>
-                      <InArgument x:TypeArguments="x:Boolean">False</InArgument>
-                    </Assign.Value>
-                  </Assign>
-                  <ui:UiElementExists sap2010:Annotation.AnnotationText="Checks if the element exist to check user input" DisplayName="Element Exists 'row  Row 0'" sap:VirtualizedContainerService.HintSize="334,137" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
-                    <ui:UiElementExists.Exists>
-                      <OutArgument x:TypeArguments="x:Boolean">
-                        <mca:CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">boolEleExist</mca:CSharpReference>
-                      </OutArgument>
-                    </ui:UiElementExists.Exists>
-                    <ui:UiElementExists.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e285d69e-5c99-4aea-ac99-63187a59c41a" InformativeScreenshot="574cc5e0c1a08ec5cab9cbb75bba596c" Selector="&lt;wnd app='microsoft.dynamics.nav.client.exe' cls='WindowsForms10.Window.*' title='Employees - Microsoft Dynamics NAV' /&gt;&lt;wnd cls='WindowsForms10.Window.*' title='Employees - Microsoft Dynamics NAV' /&gt;&lt;wnd ctrlname='LayoutPlaceholder' /&gt;&lt;wnd cls='WindowsForms10.Window.*' title='Employees' /&gt;&lt;wnd ctrlname='contentAndMessagesPlaceholder' /&gt;&lt;wnd ctrlname='contentAndFilterPlaceholder' /&gt;&lt;wnd ctrlname='contentPlaceholder' /&gt;&lt;wnd cls='WindowsForms10.Window.*' /&gt;&lt;wnd ctrlname='_DataGrid' /&gt;&lt;ctrl name='DataGridView' role='table' /&gt;&lt;ctrl name='Row 0' role='row' /&gt;" TimeoutMS="3000">
-                        <ui:Target.WaitForReady>
-                          <InArgument x:TypeArguments="ui:WaitForReady" />
-                        </ui:Target.WaitForReady>
-                      </ui:Target>
-                    </ui:UiElementExists.Target>
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                  </ui:UiElementExists>
-                </Sequence>
-              </ui:InterruptibleDoWhile.Body>
-              <ui:InterruptibleDoWhile.Condition>
-                <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">!boolEleExist</mca:CSharpValue>
-              </ui:InterruptibleDoWhile.Condition>
-            </ui:InterruptibleDoWhile>
-            <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="412,22" sap2010:WorkflowViewState.IdRef="Delay_2" />
-            <ui:SetFocus DelayBefore="{x:Null}" DelayMS="{x:Null}" sap2010:Annotation.AnnotationText="set the focus of the person searched" DisplayName="Set Focus 'cell  Full Name Row 0'" sap:VirtualizedContainerService.HintSize="412,137" sap2010:WorkflowViewState.IdRef="SetFocus_1">
+            <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" sap2010:Annotation.AnnotationText="Dialog asks for search name and saves it in strInName variable" DisplayName="Input Dialog 'Human input'" sap:VirtualizedContainerService.HintSize="334,280" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Name" Title="Filter by Name">
+              <ui:InputDialog.Result>
+                <OutArgument x:TypeArguments="x:String">
+                  <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">strInName</mca:CSharpReference>
+                </OutArgument>
+              </ui:InputDialog.Result>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:InputDialog>
+            <uix:NTypeInto ActivateBefore="True" sap2010:Annotation.AnnotationText="Writes the typed search name" ClickBeforeMode="Single" DisplayName="Type Into 'Type into filter'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,247" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="b30e7a6a-00ad-4834-a3a2-e3737805e506" Version="V1">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="1393, 194, 120, 16" ElementType="InputBox" FriendlyName="'Type to filter'" FullSelectorArgument="&lt;wnd cls='WindowsForms10.Window.*' title='Contacts - Microsoft Dynamics NAV' /&gt;&lt;wnd ctrlname='LayoutPlaceholder' /&gt;&lt;wnd cls='WindowsForms10.Window.*' title='Contacts' /&gt;&lt;wnd ctrlname='contentAndMessagesPlaceholder' /&gt;&lt;wnd ctrlname='contentAndFilterPlaceholder' /&gt;&lt;wnd aaname='Filter pane' cls='WindowsForms10.Window.*' /&gt;&lt;wnd cls='WindowsForms10.Window.*' /&gt;&lt;wnd ctrlname='levelOneFilterPanel' /&gt;&lt;wnd ctrlname='lookForFilter' /&gt;&lt;wnd aaname='Type to filter' cls='WindowsForms10.EDIT.*' /&gt;" FuzzySelectorArgument="&lt;wnd cls='WindowsForms10.Window.*' title='Contacts - Microsoft Dynamics NAV' /&gt;&lt;wnd ctrlname='LayoutPlaceholder' /&gt;&lt;wnd cls='WindowsForms10.Window.*' title='Contacts' /&gt;&lt;wnd ctrlname='contentAndMessagesPlaceholder' /&gt;&lt;wnd ctrlname='contentAndFilterPlaceholder' /&gt;&lt;wnd aaname='Filter pane' cls='WindowsForms10.Window.*' /&gt;&lt;wnd cls='WindowsForms10.Window.*' /&gt;&lt;wnd ctrlname='levelOneFilterPanel' /&gt;&lt;wnd ctrlname='lookForFilter' /&gt;&lt;wnd aaname='Type to filter' cls='WindowsForms10.EDIT.*' /&gt;" Guid="775028da-a55f-42be-94b6-b62ceeee8ea5" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHwAAAAUCAYAAABPuVmJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABNSURBVGhD7dFBEQAgDMAw/OuYz3EHMpp8KqBnSTE8xvAYwyNm5tXwCMNjDI8xPMbwGMNjDI8xPMbwGMNjDI8xPMbwGMNjDI8xPOYP370mSIla9gv52wAAAABJRU5ErkJggg==" InformativeScreenshot="055869ac3b4ec26653a758cb442a12ae.png" ScopeSelectorArgument="&lt;wnd app='microsoft.dynamics.nav.client.exe' cls='WindowsForms10.Window.*' title='Contacts - Microsoft Dynamics NAV' /&gt;" SearchSteps="Selector, FuzzySelector, Image" />
+              </uix:NTypeInto.Target>
+              <uix:NTypeInto.Text>
+                <InArgument x:TypeArguments="x:String">
+                  <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">strInName</mca:CSharpValue>
+                </InArgument>
+              </uix:NTypeInto.Text>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NTypeInto>
+            <ui:SetFocus DelayBefore="{x:Null}" DelayMS="{x:Null}" sap2010:Annotation.AnnotationText="set the focus of the person searched" DisplayName="Set Focus 'cell  Full Name Row 0'" sap:VirtualizedContainerService.HintSize="334,137" sap2010:WorkflowViewState.IdRef="SetFocus_1">
               <ui:SetFocus.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="422eb65a-1d40-4f55-899e-d2b96a8a8c0f" InformativeScreenshot="5b99ec8b7a98adeed86a2e49a19942e6" Selector="&lt;wnd app='microsoft.dynamics.nav.client.exe' cls='WindowsForms10.Window.*' title='Employees - Microsoft Dynamics NAV' /&gt;&lt;wnd cls='WindowsForms10.Window.*' title='Employees - Microsoft Dynamics NAV' /&gt;&lt;wnd ctrlname='LayoutPlaceholder' /&gt;&lt;wnd cls='WindowsForms10.Window.*' title='Employees' /&gt;&lt;wnd ctrlname='contentAndMessagesPlaceholder' /&gt;&lt;wnd ctrlname='contentAndFilterPlaceholder' /&gt;&lt;wnd ctrlname='contentPlaceholder' /&gt;&lt;wnd cls='WindowsForms10.Window.*' /&gt;&lt;wnd ctrlname='_DataGrid' /&gt;&lt;ctrl name='DataGridView' role='table' /&gt;&lt;ctrl name='Row 0' role='row' rowName='Row 0' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -243,7 +200,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:SetFocus>
-            <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" sap2010:Annotation.AnnotationText="Opens a view of the searched employee" ClickBeforeMode="None" DelayBefore="2" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="412,209" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_4" Shortcuts="[d(hk)][d(ctrl)d(shift)]r[u(shift)u(ctrl)][u(hk)]" Version="V1">
+            <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" sap2010:Annotation.AnnotationText="Opens a view of the searched employee" ClickBeforeMode="None" DelayBefore="2" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="334,209" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_4" Shortcuts="[d(hk)][d(ctrl)d(shift)]r[u(shift)u(ctrl)][u(hk)]" Version="V1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
