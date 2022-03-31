@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Sequence" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="684,504" sap2010:WorkflowViewState.IdRef="Sequence_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Sequence" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="824,2105.6" sap2010:WorkflowViewState.IdRef="Sequence_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="52">
       <x:String>System.Activities</x:String>
@@ -31,6 +31,13 @@
       <x:String>System.Xml.Serialization</x:String>
       <x:String>UiPath.Excel</x:String>
       <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -55,28 +62,92 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="376,397.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="524.8,2040.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="AssetValue" />
       <Variable x:TypeArguments="scg:IEnumerable(ui:QueueItem)" Name="Employee" />
+      <Variable x:TypeArguments="x:String" Name="strEmployeeName" />
+      <Variable x:TypeArguments="x:String" Name="strTempFolder" />
+      <Variable x:TypeArguments="x:Boolean" Name="boolTempExist" />
+      <Variable x:TypeArguments="x:String" Name="strNewTempFolderPath">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">C:\Users\gr6\Desktop\temp</Literal>
+        </Variable.Default>
+      </Variable>
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="Lise Martin" DisplayName="Get Asset" sap:VirtualizedContainerService.HintSize="334,140.666666666667" sap2010:WorkflowViewState.IdRef="GetRobotAsset_2">
+    <ui:FolderExistsX DisplayName="Folder Exists" Exists="[boolTempExist]" sap:VirtualizedContainerService.HintSize="483.2,134.4" sap2010:WorkflowViewState.IdRef="FolderExistsX_1" Path="C:\Users\gr6\Desktop\temp" />
+    <If Condition="[boolTempExist = False]" sap:VirtualizedContainerService.HintSize="483.2,362.4" sap2010:WorkflowViewState.IdRef="If_2">
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="375.2,173.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="333.6,80.8" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="C:\Users\gr6\Desktop\temp" />
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </If.Else>
+    </If>
+    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="483.2,241.6" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="f.eks: Hans Hansen" Title="Indsæt Medarbejdernavn:">
+      <ui:InputDialog.Result>
+        <OutArgument x:TypeArguments="x:String">[strEmployeeName]</OutArgument>
+      </ui:InputDialog.Result>
+    </ui:InputDialog>
+    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="[strEmployeeName]" DisplayName="Get Asset" sap:VirtualizedContainerService.HintSize="483.2,139.2" sap2010:WorkflowViewState.IdRef="GetRobotAsset_2">
       <ui:GetRobotAsset.Value>
         <OutArgument x:TypeArguments="x:String">[AssetValue]</OutArgument>
       </ui:GetRobotAsset.Value>
     </ui:GetRobotAsset>
-    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[AssetValue]" />
-    <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddQueueItem_2" Priority="Normal" QueueType="Employees" Reference="Employee1">
-      <ui:AddQueueItem.ItemInformation>
-        <InArgument x:TypeArguments="x:String" x:Key="in_Queue">[AssetValue]</InArgument>
-      </ui:AddQueueItem.ItemInformation>
-    </ui:AddQueueItem>
+    <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process" FileName="[AssetValue]" sap:VirtualizedContainerService.HintSize="483.2,88" sap2010:WorkflowViewState.IdRef="StartProcess_1" />
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: View - Employees" sap:VirtualizedContainerService.HintSize="483.2,782.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="00fca342-4c72-414c-ad80-4b6dc6ee7cb5" Version="V1">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="375.2,491.2" sap2010:WorkflowViewState.IdRef="Sequence_7">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="333.6,178.4" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_2" Shortcuts="[d(hk)][d(ctrl)d(shift)]r[u(shift)u(ctrl)][u(hk)]" Version="V1" />
+            <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="333.6,178.4" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_3" Shortcuts="[d(hk)][d(alt)][u(alt)][u(hk)][d(hk)]e[u(hk)][d(hk)]e[u(hk)][d(hk)][k(right)][u(hk)][d(hk)][k(enter)][u(hk)]" Version="V1" />
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="21, 21, 906, 898" FilePath="C:\Program Files (x86)\Microsoft Dynamics NAV\100\RoleTailored Client\microsoft.dynamics.nav.client.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAIuSURBVGhD7Ze7SkNBGIR9BB/BJxAfQMFaLNIIgo1YWCtYiYWIYBvsFUsLC8HOQizVKoUIWqiIIqjghSjewsqs+eHPMrvZ3M4FzsCHyWT2OP9hN+T09Q2UTK6hZp6gZp6gZp6gZp6gZkr0D06Z8ZlVs7VzYKmcXZnr2wdzc/doBoZn6ZpMDYCSX98/xtXza5XmLdRMkaGxeVP9+KxX/9ft/RPNWqiZIthG55d39er/Oqlc0KyFmimB8tj3op/fmv2L88DyFmqmgFt+emHdjEwsmt9azYxOLtE1FmomjC7/8vZuy8tn3m8fgZoJ4pbHIWY5L9RMiFD58uZeQ9YLNRMgVB6HFtJ5L9TsMTHlIb3GCzV7SGx5SK/zQs0e0Up5SK/1Qs0e0Gp5SK/3Qs0u0055SF/DCzW7SLvlIX0dL9TsEp2Uh/S1vFCzC4TKgxjpvBdqdkiz8iBG7hoKNVsA5fBrcbm8bbfF4dGpLQ255fWPtBhJNgg1HXRJ/EZBSTyrhsT2PNbJ+xhJNgg166BwM6Eoiu3uH9s87jKGxTaS68iBTXwA3G0Idxv/HO9REgWDDxkK/W2T+ACtgocPDDa3smEHlYMsysQAKFiaXWs4D/IZXoeUygDY282KSTaTA8RIssUAjiQbhJqKGEm2GMCRZINQUxEjyRYDOJJsEGoqYiTZYgBHkg1CTUWMJFsM4EiyQaipiJFkiwEcSTYINRUxkmwmB8g81MwT1MwT1MwNJfMHTuoAdTFrJlIAAAAASUVORK5CYII=" InformativeScreenshot="3ef260428a805dfa19a80e77ddaa01bb.png" IsExactTitleEnabled="True" Selector="&lt;wnd app='microsoft.dynamics.nav.client.exe' cls='WindowsForms10.Window.*' title='View - Employees'/&gt;" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
   </Sequence>
 </Activity>
