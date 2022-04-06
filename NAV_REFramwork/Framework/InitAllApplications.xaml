@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1207,651</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1207,621</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Initialization_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -64,6 +64,6 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Opening applications...&quot;]" />
-    <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process" FileName="dynamicsnav://localhost:7046/DynamicsNAV100/CRONUS%20Danmark%20A%2FS/runpage?page=5201&amp;personalization=a41aa572-1788-42c0-aad9-f1a7aba48bf3&amp;bookmark=15%3BUBQAAAJ7%2F0sAQg%3D%3D&amp;node=a41aa572-1788-42c0-aad9-f1a7aba48bf3&amp;mode=View" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="StartProcess_1" />
+    <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process" FileName="dynamicsnav://localhost:7046/DynamicsNAV100/CRONUS%20Danmark%20A%2FS/runpage?page=5201&amp;personalization=a41aa572-1788-42c0-aad9-f1a7aba48bf3&amp;bookmark=15%3BUBQAAAJ7%2F0EASA%3D%3D&amp;node=a41aa572-1788-42c0-aad9-f1a7aba48bf3&amp;mode=View" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="StartProcess_1" />
   </Sequence>
 </Activity>
