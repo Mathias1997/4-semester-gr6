@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1202,9732</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>694,9862</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>CompileEmployeeData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="54">
@@ -70,47 +70,39 @@
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="CompileEmployeeData" sap:VirtualizedContainerService.HintSize="704,9667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="CompileEmployeeData" sap:VirtualizedContainerService.HintSize="704,9797.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="strMail">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">mail</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="mail" Name="strMail" />
       <Variable x:TypeArguments="x:Boolean" Name="boolTempExist" />
       <Variable x:TypeArguments="x:String" Name="strEmployeeName" />
       <Variable x:TypeArguments="x:String" Name="strFolderPath" />
       <Variable x:TypeArguments="x:String" Name="assetValue" />
-      <Variable x:TypeArguments="x:String" Name="strExcelOplysninger">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">Excel Oplysninger</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="Excel Oplysninger" Name="strExcelOplysninger" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Process Start" sap:VirtualizedContainerService.HintSize="662,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Anmodning om indsigt&quot;]" />
-    <ui:LogMessage DisplayName="Log Employee Name" sap:VirtualizedContainerService.HintSize="662,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Indsigt gælder følgende medarbejder: &quot; + strEmployeeName]" />
-    <ui:LogMessage DisplayName="Log Recipient Email" sap:VirtualizedContainerService.HintSize="662,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Data sendes til følgende e-mail: &quot; + strMail]" />
-    <Assign sap:VirtualizedContainerService.HintSize="662,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <ui:LogMessage DisplayName="Log Process Start" sap:VirtualizedContainerService.HintSize="662,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Anmodning om indsigt&quot;]" />
+    <ui:LogMessage DisplayName="Log Employee Name" sap:VirtualizedContainerService.HintSize="662,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Indsigt gælder følgende medarbejder: &quot; + strEmployeeName]" />
+    <ui:LogMessage DisplayName="Log Recipient Email" sap:VirtualizedContainerService.HintSize="662,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Data sendes til følgende e-mail: &quot; + strMail]" />
+    <Assign sap:VirtualizedContainerService.HintSize="662,62" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strEmployeeName]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[in_TransactionItem.Reference.ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("name").ToString]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="662,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+    <Assign sap:VirtualizedContainerService.HintSize="662,62" sap2010:WorkflowViewState.IdRef="Assign_4">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strFolderPath]</OutArgument>
       </Assign.To>
@@ -118,7 +110,7 @@
         <InArgument x:TypeArguments="x:String">[in_Config.Item("windowsPath").ToString]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="662,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+    <Assign sap:VirtualizedContainerService.HintSize="662,62" sap2010:WorkflowViewState.IdRef="Assign_5">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[assetValue]</OutArgument>
       </Assign.To>
@@ -126,8 +118,9 @@
         <InArgument x:TypeArguments="x:String">[in_Config.Item(strEmployeeName).ToString]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:FolderExistsX DisplayName="Folder Exists" Exists="[boolTempExist]" sap:VirtualizedContainerService.HintSize="662,132" sap2010:WorkflowViewState.IdRef="FolderExistsX_1" Path="[strFolderPath + strEmployeeName +&quot; Information&quot;]" />
-    <If Condition="[boolTempExist = False]" sap:VirtualizedContainerService.HintSize="662,266" sap2010:WorkflowViewState.IdRef="If_1">
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="662,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[assetValue]" />
+    <ui:FolderExistsX DisplayName="Folder Exists" Exists="[boolTempExist]" sap:VirtualizedContainerService.HintSize="662,135.333333333333" sap2010:WorkflowViewState.IdRef="FolderExistsX_1" Path="[strFolderPath + strEmployeeName +&quot; Information&quot;]" />
+    <If Condition="[boolTempExist = False]" sap:VirtualizedContainerService.HintSize="662,273.333333333333" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
         <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="334,79" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[strFolderPath + strEmployeeName + &quot; Information&quot;]" />
       </If.Then>
