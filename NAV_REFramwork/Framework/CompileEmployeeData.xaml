@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1199,10691</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>838,10288.6666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>CompileEmployeeData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="36">
@@ -77,10 +77,9 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Platform</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="CompileEmployeeData" sap:VirtualizedContainerService.HintSize="847,10626" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="CompileEmployeeData" sap:VirtualizedContainerService.HintSize="848,10224" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strMail" />
       <Variable x:TypeArguments="x:Boolean" Name="boolTempExist" />
@@ -95,7 +94,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap2010:Annotation.AnnotationText="Assign employee name from transaction item." DisplayName="Assign Employee Name" sap:VirtualizedContainerService.HintSize="805,102" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <Assign DisplayName="Assign: Sætter variablen til at være medarbejdernavn taget fra queue" sap:VirtualizedContainerService.HintSize="806,62" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strEmployeeName]</OutArgument>
       </Assign.To>
@@ -108,7 +107,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="805,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+    <Assign DisplayName="Assign: Sætter varibablen til at være lige med den indtastede mail fra queue" sap:VirtualizedContainerService.HintSize="806,62" sap2010:WorkflowViewState.IdRef="Assign_5">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strMail]</OutArgument>
       </Assign.To>
@@ -116,23 +115,10 @@
         <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("email").ToString]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:LogMessage DisplayName="Log Process Start" sap:VirtualizedContainerService.HintSize="805,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Anmodning om indsigt&quot;]" />
-    <ui:LogMessage DisplayName="Log Employee Name" sap:VirtualizedContainerService.HintSize="805,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Indsigt gælder følgende medarbejder: &quot; + strEmployeeName]" />
-    <ui:LogMessage DisplayName="Log Recipient Email" sap:VirtualizedContainerService.HintSize="805,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Data sendes til følgende e-mail: &quot; + strMail]" />
-    <Assign sap2010:Annotation.AnnotationText="Assign Folder Path, where the folder is placed localy." DisplayName="Assign Folder Path" sap:VirtualizedContainerService.HintSize="805,102" sap2010:WorkflowViewState.IdRef="Assign_4">
-      <Assign.To>
-        <OutArgument x:TypeArguments="x:String">[strFolderPath]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="x:String">C:\Employee Data\</InArgument>
-      </Assign.Value>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </Assign>
-    <ui:GetRobotAsset TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="Gets the asset from orchestrater with the given name." AssetName="[strEmployeeName]" DisplayName="Get Asset from Orchestrater" FolderPath="4th semester RPA project/Employee URL Links" sap:VirtualizedContainerService.HintSize="805,168" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
+    <ui:LogMessage DisplayName="Log Process Start: Giver besked om anmodning" sap:VirtualizedContainerService.HintSize="806,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Anmodning om indsigt&quot;]" />
+    <ui:LogMessage DisplayName="Log Employee Name: Giver besked om hvilke informationer der vil blive behandlet ud fra" sap:VirtualizedContainerService.HintSize="806,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Indsigt gælder følgende medarbejder: &quot; + strEmployeeName]" />
+    <ui:LogMessage DisplayName="Log Recipient Email: Giver besked om hvem der modtager mailen" sap:VirtualizedContainerService.HintSize="806,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Data sendes til følgende e-mail: &quot; + strMail]" />
+    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="[strEmployeeName]" DisplayName="Get Asset: Gør at vi henter NAV link ud fra navnet" FolderPath="4th semester RPA project/Employee URL Links" sap:VirtualizedContainerService.HintSize="806,140.666666666667" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
       <ui:GetRobotAsset.Value>
         <OutArgument x:TypeArguments="x:String">[EmployeeLink]</OutArgument>
       </ui:GetRobotAsset.Value>
@@ -142,92 +128,81 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:GetRobotAsset>
-    <ui:FolderExistsX sap2010:Annotation.AnnotationText="Checks if the folder exists on the local drive." DisplayName="Check Folder Exists" Exists="[boolTempExist]" sap:VirtualizedContainerService.HintSize="805,163" sap2010:WorkflowViewState.IdRef="FolderExistsX_1" Path="[strFolderPath + strEmployeeName +&quot; Information&quot;]">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </ui:FolderExistsX>
-    <If sap2010:Annotation.AnnotationText="delets the folder if it exists and create a empty one, if no folder exists it just creates one." Condition="[boolTempExist]" DisplayName="If Folder Exists" sap:VirtualizedContainerService.HintSize="805,479" sap2010:WorkflowViewState.IdRef="If_1">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
+    <ui:FolderExistsX DisplayName="Folder Exists: Sørger for at mappen til data eksistere" Exists="[boolTempExist]" sap:VirtualizedContainerService.HintSize="806,135.333333333333" sap2010:WorkflowViewState.IdRef="FolderExistsX_1" Path="[strFolderPath + strEmployeeName +&quot; Information&quot;]" />
+    <If Condition="[boolTempExist]" DisplayName="If: I dette loop sikre vi at hvis der er en mappe med samme navn som eksistere inden vi henter data, vil den blive slettet og oprettet tom, så vi ikke får dulpiketter" sap:VirtualizedContainerService.HintSize="806,457.333333333333" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="426,290" sap2010:WorkflowViewState.IdRef="Sequence_8">
+        <Sequence sap:VirtualizedContainerService.HintSize="426,293.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_8">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:DeleteFolderX DisplayName="Delete Folder" sap:VirtualizedContainerService.HintSize="384,79" sap2010:WorkflowViewState.IdRef="DeleteFolderX_1" Path="[strFolderPath + strEmployeeName + &quot; Information&quot;]" Recursive="True" />
-          <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="384,79" sap2010:WorkflowViewState.IdRef="CreateDirectory_2" Path="[strFolderPath + strEmployeeName + &quot; Information&quot;]" />
+          <ui:DeleteFolderX DisplayName="Delete Folder" sap:VirtualizedContainerService.HintSize="384,80.6666666666667" sap2010:WorkflowViewState.IdRef="DeleteFolderX_1" Path="[strFolderPath + strEmployeeName + &quot; Information&quot;]" Recursive="True" />
+          <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="384,80.6666666666667" sap2010:WorkflowViewState.IdRef="CreateDirectory_2" Path="[strFolderPath + strEmployeeName + &quot; Information&quot;]" />
         </Sequence>
       </If.Then>
       <If.Else>
-        <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="334,79" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[strFolderPath + strEmployeeName + &quot; Information&quot;]" />
+        <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="334,80.6666666666667" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[strFolderPath + strEmployeeName + &quot; Information&quot;]" />
       </If.Else>
     </If>
-    <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process for given employee" FileName="[EmployeeLink]" sap:VirtualizedContainerService.HintSize="805,87" sap2010:WorkflowViewState.IdRef="StartProcess_1" />
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: View - Employees" sap:VirtualizedContainerService.HintSize="805,8700" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" ScopeGuid="00fca342-4c72-414c-ad80-4b6dc6ee7cb5" Version="V1">
+    <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process for given employee: Bruger linket til at åbne på medarbejderen" FileName="[EmployeeLink]" sap:VirtualizedContainerService.HintSize="806,86.6666666666667" sap2010:WorkflowViewState.IdRef="StartProcess_1" />
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: View - Employees" sap:VirtualizedContainerService.HintSize="806,8544" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" ScopeGuid="00fca342-4c72-414c-ad80-4b6dc6ee7cb5" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="714,8411" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="714,8249.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="672,178" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][d(ctrl)d(shift)]r[u(shift)u(ctrl)][u(hk)]" Version="V1" />
-            <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" ContinueOnError="True" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="672,178" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_2" Shortcuts="[d(hk)][d(alt)][u(alt)][u(hk)][d(hk)]e[u(hk)][d(hk)]e[u(hk)][d(hk)][k(right)][u(hk)][d(hk)][k(enter)][u(hk)]" Version="V1" />
-            <ui:SetToClipboard DisplayName="Set To Clipboard" sap:VirtualizedContainerService.HintSize="672,59" sap2010:WorkflowViewState.IdRef="SetToClipboard_1" Text="[strFolderPath + strEmployeeName + &quot; Information&quot;]" />
-            <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="672,178" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_3" Shortcuts="[d(hk)][k(f4)][u(hk)][d(hk)][d(ctrl)]a[u(ctrl)][u(hk)][d(hk)][d(ctrl)]v[u(ctrl)][u(hk)][d(hk)][k(enter)][u(hk)]" Version="V1" />
-            <ui:SetToClipboard DisplayName="Set To Clipboard" sap:VirtualizedContainerService.HintSize="672,59" sap2010:WorkflowViewState.IdRef="SetToClipboard_2" Text="[strEmployeeName + &quot;.Pic&quot;]" />
-            <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="672,178" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_4" Shortcuts="[d(hk)][d(alt)]s[u(alt)][u(hk)]" Version="V1" />
-            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Edit - Employee Card - AH ∙ Anne Grethe ∙ Hansen" sap:VirtualizedContainerService.HintSize="672,7247" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" ScopeGuid="f62c4d15-2953-49bb-a7b1-f74b776b267c" Version="V1">
+            <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts: Navigere til området omkring medarbejderbillede" sap:VirtualizedContainerService.HintSize="672,184" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][d(ctrl)d(shift)]r[u(shift)u(ctrl)][u(hk)]" Version="V1" />
+            <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" ContinueOnError="True" DisplayName="Keyboard Shortcuts: Eksporterer billede" sap:VirtualizedContainerService.HintSize="672,184" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_2" Shortcuts="[d(hk)][d(alt)][u(alt)][u(hk)][d(hk)]e[u(hk)][d(hk)]e[u(hk)][d(hk)][k(right)][u(hk)][d(hk)][k(enter)][u(hk)]" Version="V1" />
+            <ui:SetToClipboard DisplayName="Set To Clipboard: Gør det muligt at indsætte filplacering på medarbejdermappe" sap:VirtualizedContainerService.HintSize="672,58.6666666666667" sap2010:WorkflowViewState.IdRef="SetToClipboard_1" Text="[strFolderPath + strEmployeeName + &quot; Information&quot;]" />
+            <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts: Indsætter linket til filplacering" sap:VirtualizedContainerService.HintSize="672,184" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_3" Shortcuts="[d(hk)][k(f4)][u(hk)][d(hk)][d(ctrl)]a[u(ctrl)][u(hk)][d(hk)][d(ctrl)]v[u(ctrl)][u(hk)][d(hk)][k(enter)][u(hk)]" Version="V1" />
+            <ui:SetToClipboard DisplayName="Set To Clipboard" sap:VirtualizedContainerService.HintSize="672,58.6666666666667" sap2010:WorkflowViewState.IdRef="SetToClipboard_2" Text="[strEmployeeName + &quot;.Pic&quot;]" />
+            <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts: gemmer billedet" sap:VirtualizedContainerService.HintSize="672,184" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_4" Shortcuts="[d(hk)][d(alt)]s[u(alt)][u(hk)]" Version="V1" />
+            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Edit - Employee Card - AH ∙ Anne Grethe ∙ Hansen" sap:VirtualizedContainerService.HintSize="672,7061.33333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" ScopeGuid="f62c4d15-2953-49bb-a7b1-f74b776b267c" Version="V1">
               <uix:NApplicationCard.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="638,6958" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="638,6766.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_5">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="596,178" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_5" Shortcuts="[d(hk)][d(ctrl)]e[u(ctrl)][u(hk)]" Version="V1" />
-                    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: View - Employee Card - AH ∙ Anne Grethe ∙ Hansen - Excel" sap:VirtualizedContainerService.HintSize="596,6646" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="1592abab-aedf-4076-b0cc-814a161b74c3" Version="V1">
+                    <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts: Eksporterer employee card til excel" sap:VirtualizedContainerService.HintSize="596,184" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_5" Shortcuts="[d(hk)][d(ctrl)]e[u(ctrl)][u(hk)]" Version="V1" />
+                    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: View - Employee Card - AH ∙ Anne Grethe ∙ Hansen - Excel" sap:VirtualizedContainerService.HintSize="596,6448" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="1592abab-aedf-4076-b0cc-814a161b74c3" Version="V1">
                       <uix:NApplicationCard.Body>
                         <ActivityAction x:TypeArguments="x:Object">
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                           </ActivityAction.Argument>
-                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="562,6357" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="562,6153.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_4">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="520,178" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_6" Shortcuts="[d(hk)][d(ctrl)]s[u(ctrl)][u(hk)][d(hk)][k(right)][u(hk)][d(hk)][k(enter)][u(hk)]" Version="V1" />
-                            <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="520,178" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_7" Shortcuts="[d(hk)][k(right)][u(hk)][d(hk)][k(down)][u(hk)][d(hk)][k(down)][u(hk)][d(hk)][k(enter)][u(hk)]" Version="V1" />
-                            <ui:SetToClipboard DisplayName="Set To Clipboard" sap:VirtualizedContainerService.HintSize="520,59" sap2010:WorkflowViewState.IdRef="SetToClipboard_3" Text="[strFolderPath+strEmployeeName+&quot; Information&quot;]" />
-                            <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="520,178" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_8" Shortcuts="[d(hk)][k(f4)][u(hk)][d(hk)][d(ctrl)]a[u(ctrl)][u(hk)][d(hk)][d(ctrl)]v[u(ctrl)][u(hk)][d(hk)][k(enter)][u(hk)]" Version="V1" />
-                            <ui:SetToClipboard DisplayName="Set To Clipboard" sap:VirtualizedContainerService.HintSize="520,59" sap2010:WorkflowViewState.IdRef="SetToClipboard_4" Text="[strEmployeeName+&quot; &quot;+strExcelOplysninger]" />
-                            <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="520,178" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_9" Shortcuts="[d(hk)][d(ctrl)]v[u(ctrl)][u(hk)][d(hk)][d(alt)]s[u(alt)][u(hk)][d(hk)][k(enter)][u(hk)]" Version="V1" />
-                            <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="520,132" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="Excel" />
-                            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: View - Employee Card - MR ∙ Morten ∙ Rasmussen" sap:VirtualizedContainerService.HintSize="520,5021" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="5629a3f1-3603-4b4d-9971-4fd69b3d61c4" Version="V1">
+                            <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts: Navigerer til at gemme" sap:VirtualizedContainerService.HintSize="520,184" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_6" Shortcuts="[d(hk)][d(ctrl)]s[u(ctrl)][u(hk)][d(hk)][k(right)][u(hk)][d(hk)][k(enter)][u(hk)]" Version="V1" />
+                            <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts: Navigerer til &quot;browse&quot;" sap:VirtualizedContainerService.HintSize="520,184" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_7" Shortcuts="[d(hk)][k(right)][u(hk)][d(hk)][k(down)][u(hk)][d(hk)][k(down)][u(hk)][d(hk)][k(enter)][u(hk)]" Version="V1" />
+                            <ui:SetToClipboard DisplayName="Set To Clipboard: sørger for at linket til filplacering er klar" sap:VirtualizedContainerService.HintSize="520,58.6666666666667" sap2010:WorkflowViewState.IdRef="SetToClipboard_3" Text="[strFolderPath+strEmployeeName+&quot; Information&quot;]" />
+                            <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts: Indsætter filplaceringen" sap:VirtualizedContainerService.HintSize="520,184" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_8" Shortcuts="[d(hk)][k(f4)][u(hk)][d(hk)][d(ctrl)]a[u(ctrl)][u(hk)][d(hk)][d(ctrl)]v[u(ctrl)][u(hk)][d(hk)][k(enter)][u(hk)]" Version="V1" />
+                            <ui:SetToClipboard DisplayName="Set To Clipboard: Henter navn på filen" sap:VirtualizedContainerService.HintSize="520,58.6666666666667" sap2010:WorkflowViewState.IdRef="SetToClipboard_4" Text="[strEmployeeName+&quot; &quot;+strExcelOplysninger]" />
+                            <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts: Indsætter og gemmer filen" sap:VirtualizedContainerService.HintSize="520,184" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_9" Shortcuts="[d(hk)][d(ctrl)]v[u(ctrl)][u(hk)][d(hk)][d(alt)]s[u(alt)][u(hk)][d(hk)][k(enter)][u(hk)]" Version="V1" />
+                            <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process: Sørger for at lukke excel" sap:VirtualizedContainerService.HintSize="520,135.333333333333" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="Excel" />
+                            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: View - Employee Card - MR ∙ Morten ∙ Rasmussen" sap:VirtualizedContainerService.HintSize="520,4790" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="5629a3f1-3603-4b4d-9971-4fd69b3d61c4" Version="V1">
                               <uix:NApplicationCard.Body>
                                 <ActivityAction x:TypeArguments="x:Object">
                                   <ActivityAction.Argument>
                                     <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                                   </ActivityAction.Argument>
-                                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,4732" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,4495.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
                                     <Sequence.Variables>
                                       <Variable x:TypeArguments="x:String" Default="[strEmployeeName+&quot; Folder.zip&quot;]" Name="strZippedEmployee" />
                                       <Variable x:TypeArguments="x:String" Default="[strFolderPath+strEmployeeName + &quot; Information&quot;]" Name="ZipFolderPath" />
@@ -237,40 +212,28 @@
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="444,195" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_10" Shortcuts="[d(hk)][d(alt)][u(alt)][u(hk)][d(hk)]n[u(hk)][d(hk)]c[u(hk)][d(hk)][d(alt)d(shift)][u(shift)u(alt)][u(hk)][d(hk)][d(ctrl)]e[u(ctrl)][u(hk)][d(hk)][k(right)][u(hk)][d(hk)][k(enter)][u(hk)]" Version="V1" />
-                                    <ui:SetToClipboard DisplayName="Set To Clipboard" sap:VirtualizedContainerService.HintSize="444,59" sap2010:WorkflowViewState.IdRef="SetToClipboard_5" Text="[strFolderPath+strEmployeeName+&quot; Information&quot;]" />
-                                    <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="444,178" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_11" Shortcuts="[d(hk)][k(f4)][u(hk)][d(hk)][d(ctrl)]a[u(ctrl)][u(hk)][d(hk)][d(ctrl)]v[u(ctrl)][u(hk)][d(hk)][k(enter)][u(hk)]" Version="V1" />
-                                    <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="444,178" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_12" Shortcuts="[d(hk)][d(alt)]s[u(alt)][u(hk)]" Version="V1" />
-                                    <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="444,178" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_13" Shortcuts="[d(hk)][d(alt)][k(f4)][u(alt)][u(hk)]" Version="V1" />
-                                    <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="444,195" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_14" Shortcuts="[d(hk)][d(alt)][u(alt)][u(hk)][d(hk)]n[u(hk)][d(hk)]u[u(hk)][d(hk)][d(alt)d(shift)][u(shift)u(alt)][u(hk)][d(hk)][d(ctrl)]e[u(ctrl)][u(hk)][d(hk)][k(right)][u(hk)][d(hk)][k(enter)][u(hk)]" Version="V1" />
-                                    <ui:SetToClipboard DisplayName="Set To Clipboard" sap:VirtualizedContainerService.HintSize="444,59" sap2010:WorkflowViewState.IdRef="SetToClipboard_6" Text="[strFolderPath+strEmployeeName+&quot; Information&quot;]" />
-                                    <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="444,178" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_15" Shortcuts="[d(hk)][k(f4)][u(hk)][d(hk)][d(ctrl)]a[u(ctrl)][u(hk)][d(hk)][d(ctrl)]v[u(ctrl)][u(hk)][d(hk)][k(enter)][u(hk)]" Version="V1" />
-                                    <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="444,178" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_16" Shortcuts="[d(hk)][d(alt)]s[u(alt)][u(hk)]" Version="V1" />
-                                    <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="444,178" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_17" Shortcuts="[d(hk)][d(alt)][k(f4)][u(alt)][u(hk)]" Version="V1" />
-                                    <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="444,195" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_18" Shortcuts="[d(hk)][d(alt)][u(alt)][u(hk)][d(hk)]n[u(hk)][d(hk)]b[u(hk)][d(hk)][d(alt)d(shift)][u(shift)u(alt)][u(hk)][d(hk)][d(ctrl)]e[u(ctrl)][u(hk)][d(hk)][k(right)][u(hk)][d(hk)][k(enter)][u(hk)]" Version="V1" />
-                                    <ui:SetToClipboard DisplayName="Set To Clipboard" sap:VirtualizedContainerService.HintSize="444,59" sap2010:WorkflowViewState.IdRef="SetToClipboard_7" Text="[strFolderPath+strEmployeeName+&quot; Information&quot;]" />
-                                    <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="444,178" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_19" Shortcuts="[d(hk)][k(f4)][u(hk)][d(hk)][d(ctrl)]a[u(ctrl)][u(hk)][d(hk)][d(ctrl)]v[u(ctrl)][u(hk)][d(hk)][k(enter)][u(hk)]" Version="V1" />
-                                    <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="444,178" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_20" Shortcuts="[d(hk)][d(alt)]s[u(alt)][u(hk)]" Version="V1" />
-                                    <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="444,178" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_21" Shortcuts="[d(hk)][d(alt)][k(f4)][u(alt)][u(hk)]" Version="V1" />
-                                    <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="444,195" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_22" Shortcuts="[d(hk)][d(alt)][u(alt)][u(hk)][d(hk)]n[u(hk)][d(hk)]r[u(hk)][d(hk)][d(alt)d(shift)][u(shift)u(alt)][u(hk)][d(hk)][d(ctrl)]e[u(ctrl)][u(hk)][d(hk)][k(right)][u(hk)][d(hk)][k(enter)][u(hk)]" Version="V1" />
-                                    <ui:SetToClipboard DisplayName="Set To Clipboard" sap:VirtualizedContainerService.HintSize="444,59" sap2010:WorkflowViewState.IdRef="SetToClipboard_8" Text="[strFolderPath+strEmployeeName+&quot; Information&quot;]" />
-                                    <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="444,178" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_23" Shortcuts="[d(hk)][k(f4)][u(hk)][d(hk)][d(ctrl)]a[u(ctrl)][u(hk)][d(hk)][d(ctrl)]v[u(ctrl)][u(hk)][d(hk)][k(enter)][u(hk)]" Version="V1" />
-                                    <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="444,178" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_24" Shortcuts="[d(hk)][d(alt)]s[u(alt)][u(hk)]" Version="V1" />
-                                    <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="444,178" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_25" Shortcuts="[d(hk)][d(alt)][k(f4)][u(alt)][u(hk)]" Version="V1" />
-                                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="444,302" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-                                      <ui:CommentOut.Body>
-                                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,224" sap2010:WorkflowViewState.IdRef="Sequence_9">
-                                          <sap:WorkflowViewStateService.ViewState>
-                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            </scg:Dictionary>
-                                          </sap:WorkflowViewStateService.ViewState>
-                                          <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="KillProcess_2" ProcessName="Microsoft.Dynamics.Nav.Client.exe" />
-                                        </Sequence>
-                                      </ui:CommentOut.Body>
-                                    </ui:CommentOut>
-                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="444,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Information er blev indsamlet om: &quot; + strEmployeeName]" />
-                                    <uascw:CompressFiles CompressedFileInfo="{x:Null}" Password="{x:Null}" CodePage="Default" CompressedFileName="[ZipFolderPath+&quot;\&quot;+strZippedEmployee]" CompressionLevel="Normal" DisplayName="Compress/Zip Files" sap:VirtualizedContainerService.HintSize="444,213" sap2010:WorkflowViewState.IdRef="CompressFiles_1" OverrideExistingFile="True">
+                                    <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts: Går til &quot;navigering&quot; i fanen og gemmer fil" sap:VirtualizedContainerService.HintSize="444,201.333333333333" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_10" Shortcuts="[d(hk)][d(alt)][u(alt)][u(hk)][d(hk)]n[u(hk)][d(hk)]c[u(hk)][d(hk)][d(alt)d(shift)][u(shift)u(alt)][u(hk)][d(hk)][d(ctrl)]e[u(ctrl)][u(hk)][d(hk)][k(right)][u(hk)][d(hk)][k(enter)][u(hk)]" Version="V1" />
+                                    <ui:SetToClipboard DisplayName="Set To Clipboard: Sørger for at filplacering er klar" sap:VirtualizedContainerService.HintSize="444,58.6666666666667" sap2010:WorkflowViewState.IdRef="SetToClipboard_5" Text="[strFolderPath+strEmployeeName+&quot; Information&quot;]" />
+                                    <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts: Indsætter filplaceringen" sap:VirtualizedContainerService.HintSize="444,184" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_11" Shortcuts="[d(hk)][k(f4)][u(hk)][d(hk)][d(ctrl)]a[u(ctrl)][u(hk)][d(hk)][d(ctrl)]v[u(ctrl)][u(hk)][d(hk)][k(enter)][u(hk)]" Version="V1" />
+                                    <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts: gemmer filen" sap:VirtualizedContainerService.HintSize="444,184" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_12" Shortcuts="[d(hk)][d(alt)]s[u(alt)][u(hk)]" Version="V1" />
+                                    <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts: Lukker det åbne billede" sap:VirtualizedContainerService.HintSize="444,184" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_13" Shortcuts="[d(hk)][d(alt)][k(f4)][u(alt)][u(hk)]" Version="V1" />
+                                    <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts: navigerer til næste fane der skal gemmes" sap:VirtualizedContainerService.HintSize="444,201.333333333333" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_14" Shortcuts="[d(hk)][d(alt)][u(alt)][u(hk)][d(hk)]n[u(hk)][d(hk)]u[u(hk)][d(hk)][d(alt)d(shift)][u(shift)u(alt)][u(hk)][d(hk)][d(ctrl)]e[u(ctrl)][u(hk)][d(hk)][k(right)][u(hk)][d(hk)][k(enter)][u(hk)]" Version="V1" />
+                                    <ui:SetToClipboard DisplayName="Set To Clipboard: Sørger for at filplacering er klar " sap:VirtualizedContainerService.HintSize="444,58.6666666666667" sap2010:WorkflowViewState.IdRef="SetToClipboard_6" Text="[strFolderPath+strEmployeeName+&quot; Information&quot;]" />
+                                    <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts: navigerer til filplaceringen" sap:VirtualizedContainerService.HintSize="444,184" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_15" Shortcuts="[d(hk)][k(f4)][u(hk)][d(hk)][d(ctrl)]a[u(ctrl)][u(hk)][d(hk)][d(ctrl)]v[u(ctrl)][u(hk)][d(hk)][k(enter)][u(hk)]" Version="V1" />
+                                    <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts: Gemmer dokumentet" sap:VirtualizedContainerService.HintSize="444,184" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_16" Shortcuts="[d(hk)][d(alt)]s[u(alt)][u(hk)]" Version="V1" />
+                                    <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts: Lukker vinduet" sap:VirtualizedContainerService.HintSize="444,184" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_17" Shortcuts="[d(hk)][d(alt)][k(f4)][u(alt)][u(hk)]" Version="V1" />
+                                    <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts: Navigerer til næste fane" sap:VirtualizedContainerService.HintSize="444,201.333333333333" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_18" Shortcuts="[d(hk)][d(alt)][u(alt)][u(hk)][d(hk)]n[u(hk)][d(hk)]b[u(hk)][d(hk)][d(alt)d(shift)][u(shift)u(alt)][u(hk)][d(hk)][d(ctrl)]e[u(ctrl)][u(hk)][d(hk)][k(right)][u(hk)][d(hk)][k(enter)][u(hk)]" Version="V1" />
+                                    <ui:SetToClipboard DisplayName="Set To Clipboard: Gør filplaceringen klar" sap:VirtualizedContainerService.HintSize="444,58.6666666666667" sap2010:WorkflowViewState.IdRef="SetToClipboard_7" Text="[strFolderPath+strEmployeeName+&quot; Information&quot;]" />
+                                    <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts: Navigerer til filplaceringen" sap:VirtualizedContainerService.HintSize="444,184" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_19" Shortcuts="[d(hk)][k(f4)][u(hk)][d(hk)][d(ctrl)]a[u(ctrl)][u(hk)][d(hk)][d(ctrl)]v[u(ctrl)][u(hk)][d(hk)][k(enter)][u(hk)]" Version="V1" />
+                                    <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts: gemmer dokumentet" sap:VirtualizedContainerService.HintSize="444,184" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_20" Shortcuts="[d(hk)][d(alt)]s[u(alt)][u(hk)]" Version="V1" />
+                                    <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts: Lukker billedet" sap:VirtualizedContainerService.HintSize="444,184" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_21" Shortcuts="[d(hk)][d(alt)][k(f4)][u(alt)][u(hk)]" Version="V1" />
+                                    <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts: Navigerer til næste fane" sap:VirtualizedContainerService.HintSize="444,201.333333333333" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_22" Shortcuts="[d(hk)][d(alt)][u(alt)][u(hk)][d(hk)]n[u(hk)][d(hk)]r[u(hk)][d(hk)][d(alt)d(shift)][u(shift)u(alt)][u(hk)][d(hk)][d(ctrl)]e[u(ctrl)][u(hk)][d(hk)][k(right)][u(hk)][d(hk)][k(enter)][u(hk)]" Version="V1" />
+                                    <ui:SetToClipboard DisplayName="Set To Clipboard: Klargører filplaceringen" sap:VirtualizedContainerService.HintSize="444,58.6666666666667" sap2010:WorkflowViewState.IdRef="SetToClipboard_8" Text="[strFolderPath+strEmployeeName+&quot; Information&quot;]" />
+                                    <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts: Navigerer til filplaceringen" sap:VirtualizedContainerService.HintSize="444,184" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_23" Shortcuts="[d(hk)][k(f4)][u(hk)][d(hk)][d(ctrl)]a[u(ctrl)][u(hk)][d(hk)][d(ctrl)]v[u(ctrl)][u(hk)][d(hk)][k(enter)][u(hk)]" Version="V1" />
+                                    <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts: Gemmer filen" sap:VirtualizedContainerService.HintSize="444,184" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_24" Shortcuts="[d(hk)][d(alt)]s[u(alt)][u(hk)]" Version="V1" />
+                                    <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts: Lukker billedet" sap:VirtualizedContainerService.HintSize="444,184" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_25" Shortcuts="[d(hk)][d(alt)][k(f4)][u(alt)][u(hk)]" Version="V1" />
+                                    <ui:LogMessage DisplayName="Log Message: Giver informaton om at transaktionen er færdig og at det lykkedes at hente data" sap:VirtualizedContainerService.HintSize="444,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Information er blev indsamlet om: &quot; + strEmployeeName]" />
+                                    <uascw:CompressFiles CompressedFileInfo="{x:Null}" Password="{x:Null}" CodePage="Default" CompressedFileName="[ZipFolderPath+&quot;\&quot;+strZippedEmployee]" CompressionLevel="Normal" DisplayName="Compress/Zip Files: Zipper oplysningen så de kan sendes krypteret" sap:VirtualizedContainerService.HintSize="444,218" sap2010:WorkflowViewState.IdRef="CompressFiles_1" OverrideExistingFile="True">
                                       <uascw:CompressFiles.ContentToArchive>
                                         <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
                                           <InArgument x:TypeArguments="x:String">["C:\Employee Data\"+strEmployeeName + " Information"]</InArgument>
