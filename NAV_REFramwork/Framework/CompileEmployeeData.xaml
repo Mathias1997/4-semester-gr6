@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1150,10345</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1199,10591</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>CompileEmployeeData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="36">
@@ -80,7 +80,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="CompileEmployeeData" sap:VirtualizedContainerService.HintSize="847,10450" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="CompileEmployeeData" sap:VirtualizedContainerService.HintSize="847,10526" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="mail" Name="strMail" />
       <Variable x:TypeArguments="x:Boolean" Name="boolTempExist" />
@@ -98,30 +98,55 @@
     <ui:LogMessage DisplayName="Log Process Start" sap:VirtualizedContainerService.HintSize="805,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Anmodning om indsigt&quot;]" />
     <ui:LogMessage DisplayName="Log Employee Name" sap:VirtualizedContainerService.HintSize="805,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Indsigt gælder følgende medarbejder: &quot; + strEmployeeName]" />
     <ui:LogMessage DisplayName="Log Recipient Email" sap:VirtualizedContainerService.HintSize="805,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Data sendes til følgende e-mail: &quot; + strMail]" />
-    <Assign sap:VirtualizedContainerService.HintSize="805,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <Assign sap2010:Annotation.AnnotationText="Assign employee name from transaction item." DisplayName="Assign Employee Name" sap:VirtualizedContainerService.HintSize="805,102" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strEmployeeName]</OutArgument>
       </Assign.To>
       <Assign.Value>
         <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("name").ToString]</InArgument>
       </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="805,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+    <Assign sap2010:Annotation.AnnotationText="Assign Folder Path, where the folder is placed localy." DisplayName="Assign Folder Path" sap:VirtualizedContainerService.HintSize="805,102" sap2010:WorkflowViewState.IdRef="Assign_4">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strFolderPath]</OutArgument>
       </Assign.To>
       <Assign.Value>
         <InArgument x:TypeArguments="x:String">C:\Employee Data\</InArgument>
       </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="[strEmployeeName]" DisplayName="Get Asset" FolderPath="4th semester RPA project/Employee URL Links" sap:VirtualizedContainerService.HintSize="805,137" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
+    <ui:GetRobotAsset TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="Gets the asset from orchestrater with the given name." AssetName="[strEmployeeName]" DisplayName="Get Asset from Orchestrater" FolderPath="4th semester RPA project/Employee URL Links" sap:VirtualizedContainerService.HintSize="805,168" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
       <ui:GetRobotAsset.Value>
         <OutArgument x:TypeArguments="x:String">[EmployeeLink]</OutArgument>
       </ui:GetRobotAsset.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ui:GetRobotAsset>
-    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="805,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[EmployeeLink]" />
-    <ui:FolderExistsX DisplayName="Folder Exists" Exists="[boolTempExist]" sap:VirtualizedContainerService.HintSize="805,132" sap2010:WorkflowViewState.IdRef="FolderExistsX_1" Path="[strFolderPath + strEmployeeName +&quot; Information&quot;]" />
-    <If Condition="[boolTempExist]" sap:VirtualizedContainerService.HintSize="805,448" sap2010:WorkflowViewState.IdRef="If_1">
+    <ui:FolderExistsX sap2010:Annotation.AnnotationText="Checks if the folder exists on the local drive." DisplayName="Check Folder Exists" Exists="[boolTempExist]" sap:VirtualizedContainerService.HintSize="805,163" sap2010:WorkflowViewState.IdRef="FolderExistsX_1" Path="[strFolderPath + strEmployeeName +&quot; Information&quot;]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:FolderExistsX>
+    <If sap2010:Annotation.AnnotationText="delets the folder if it exists and create a empty one, if no folder exists it just creates one." Condition="[boolTempExist]" DisplayName="If Folder Exists" sap:VirtualizedContainerService.HintSize="805,479" sap2010:WorkflowViewState.IdRef="If_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
       <If.Then>
         <Sequence sap:VirtualizedContainerService.HintSize="426,290" sap2010:WorkflowViewState.IdRef="Sequence_8">
           <sap:WorkflowViewStateService.ViewState>
@@ -137,7 +162,7 @@
         <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="334,79" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[strFolderPath + strEmployeeName + &quot; Information&quot;]" />
       </If.Else>
     </If>
-    <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process" FileName="[EmployeeLink]" sap:VirtualizedContainerService.HintSize="805,87" sap2010:WorkflowViewState.IdRef="StartProcess_1" />
+    <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process for given employee" FileName="[EmployeeLink]" sap:VirtualizedContainerService.HintSize="805,87" sap2010:WorkflowViewState.IdRef="StartProcess_1" />
     <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: View - Employees" sap:VirtualizedContainerService.HintSize="805,8700" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" ScopeGuid="00fca342-4c72-414c-ad80-4b6dc6ee7cb5" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
@@ -196,16 +221,8 @@
                                   </ActivityAction.Argument>
                                   <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,4732" sap2010:WorkflowViewState.IdRef="Sequence_3">
                                     <Sequence.Variables>
-                                      <Variable x:TypeArguments="x:String" Name="strZippedEmployee">
-                                        <Variable.Default>
-                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strEmployeeName+&quot; Folder.zip&quot;" />
-                                        </Variable.Default>
-                                      </Variable>
-                                      <Variable x:TypeArguments="x:String" Name="ZipFolderPath">
-                                        <Variable.Default>
-                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strFolderPath+strEmployeeName + &quot; Information&quot;" />
-                                        </Variable.Default>
-                                      </Variable>
+                                      <Variable x:TypeArguments="x:String" Default="[strEmployeeName+&quot; Folder.zip&quot;]" Name="strZippedEmployee" />
+                                      <Variable x:TypeArguments="x:String" Default="[strFolderPath+strEmployeeName + &quot; Information&quot;]" Name="ZipFolderPath" />
                                     </Sequence.Variables>
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
