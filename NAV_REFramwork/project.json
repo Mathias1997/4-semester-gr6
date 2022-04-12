@@ -3,8 +3,10 @@
   "description": "Robotic Enterprise Framework with Navision",
   "main": "Main.xaml",
   "dependencies": {
+    "Microsoft.Graph": "[3.32.0]",
+    "Microsoft.Graph.Core": "[1.25.1]",
     "UiPath.Excel.Activities": "[2.11.4]",
-    "UiPath.MicrosoftOffice365.Activities": "[1.14.0-preview]",
+    "UiPath.MicrosoftOffice365.Activities": "[1.11.1]",
     "UiPath.System.Activities": "[21.10.4]",
     "UiPath.Testing.Activities": "[1.4.6]",
     "UiPath.UIAutomation.Activities": "[21.10.5]"
