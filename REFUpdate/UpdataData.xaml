@@ -1,0 +1,559 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="UpdataData" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_TransactionItem" Type="InArgument(ui:QueueItem)" />
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1150,3311</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>UpdataData_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="62">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.Triggers</x:String>
+      <x:String>UiPath.Platform.Triggers.Scope</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.Core.Activities.Orchestrator</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Mail.Outlook.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="40">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="644,3246" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="strEmployeeName" />
+      <Variable x:TypeArguments="x:String" Name="strFirstName" />
+      <Variable x:TypeArguments="x:String" Name="strLastName" />
+      <Variable x:TypeArguments="x:String" Name="strEmail" />
+      <Variable x:TypeArguments="x:String" Name="strAddress" />
+      <Variable x:TypeArguments="x:String" Name="EmployeeLink" />
+      <Variable x:TypeArguments="x:String" Name="strPhoneNumber" />
+      <Variable x:TypeArguments="x:String" Name="strMobilenumber" />
+      <Variable x:TypeArguments="x:String" Name="strCity" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Assign sap2010:Annotation.AnnotationText="is used to help find link to EmployeeCard" DisplayName="Assign strEmployeeName" sap:VirtualizedContainerService.HintSize="602,91" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[strEmployeeName]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("name").ToString.Trim]</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <TryCatch sap2010:Annotation.AnnotationText="check if queueitem contains a given variable and assigns it to a variable" DisplayName="Try Catch for firstName" sap:VirtualizedContainerService.HintSize="602,108" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[strFirstName]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("firstName").ToString.Trim]</InArgument>
+          </Assign.Value>
+        </Assign>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+    <TryCatch sap2010:Annotation.AnnotationText="check if queueitem contains a given variable and assigns it to a variable" DisplayName="Try Catch for lastName" sap:VirtualizedContainerService.HintSize="602,108" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[strLastName]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("lastName").ToString.Trim]</InArgument>
+          </Assign.Value>
+        </Assign>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+    <TryCatch sap2010:Annotation.AnnotationText="check if queueitem contains a given variable and assigns it to a variable" DisplayName="Try Catch for email" sap:VirtualizedContainerService.HintSize="602,108" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[strEmail]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("email").ToString.Trim]</InArgument>
+          </Assign.Value>
+        </Assign>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+    <TryCatch sap2010:Annotation.AnnotationText="check if queueitem contains a given variable and assigns it to a variable" DisplayName="Try Catch for address" sap:VirtualizedContainerService.HintSize="602,108" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[strAddress]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("address").ToString.Trim]</InArgument>
+          </Assign.Value>
+        </Assign>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+    <TryCatch sap2010:Annotation.AnnotationText="check if queueitem contains a given variable and assigns it to a variable" DisplayName="Try Catch for postalCode" sap:VirtualizedContainerService.HintSize="602,318" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[strCity]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("city").ToString.Trim]</InArgument>
+          </Assign.Value>
+        </Assign>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_5">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+    <TryCatch sap2010:Annotation.AnnotationText="check if queueitem contains a given variable and assigns it to a variable" DisplayName="Try Catch for phonenumber" sap:VirtualizedContainerService.HintSize="602,108" sap2010:WorkflowViewState.IdRef="TryCatch_6">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[strPhoneNumber]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("phonenumber").ToString.Trim]</InArgument>
+          </Assign.Value>
+        </Assign>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,22" sap2010:WorkflowViewState.IdRef="Catch`1_6">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+    <TryCatch sap2010:Annotation.AnnotationText="check if queueitem contains a given variable and assigns it to a variable" DisplayName="Try Catch for mobilenumber" sap:VirtualizedContainerService.HintSize="602,108" sap2010:WorkflowViewState.IdRef="TryCatch_7">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[strMobilenumber]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("mobilenumber").ToString.Trim]</InArgument>
+          </Assign.Value>
+        </Assign>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,22" sap2010:WorkflowViewState.IdRef="Catch`1_7">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+    <ui:GetRobotAsset TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="finds link to EmployeeCard" AssetName="[strEmployeeName]" DisplayName="Get Asset" FolderPath="4th semester RPA project/Employee URL Links" sap:VirtualizedContainerService.HintSize="602,82" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
+      <ui:GetRobotAsset.Value>
+        <OutArgument x:TypeArguments="x:String">[EmployeeLink]</OutArgument>
+      </ui:GetRobotAsset.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:GetRobotAsset>
+    <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" sap2010:Annotation.AnnotationText="Opens EmplyeeCard" DisplayName="Start Process" FileName="[EmployeeLink]" sap:VirtualizedContainerService.HintSize="602,118" sap2010:WorkflowViewState.IdRef="StartProcess_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:StartProcess>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Salgsordrebehandler - Microsoft Dynamics NAV" sap:VirtualizedContainerService.HintSize="602,1497" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="17897365-751e-486e-bfa3-adbca5fa9c83" Version="V1">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence sap2010:Annotation.AnnotationText="Here we make the changes to the EmployeeCard" sap:VirtualizedContainerService.HintSize="568,1208" sap2010:WorkflowViewState.IdRef="Sequence_14">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="526,865" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If Condition="[NOT String.IsNullOrEmpty(strFirstName)]" DisplayName="If: Edit first name if not Null" sap:VirtualizedContainerService.HintSize="484,498" sap2010:WorkflowViewState.IdRef="If_1">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <If.Then>
+                  <Sequence sap:VirtualizedContainerService.HintSize="376,310" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'First Name'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,216" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="17897365-751e-486e-bfa3-adbca5fa9c83" Text="[strFirstName]" Version="V1">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable DesignTimeRectangle="163, 281, 134, 16" ElementType="InputBox" FriendlyName="'Mathias'" FullSelectorArgument="&lt;wnd cls='WindowsForms10.Window.*' title='Edit - Employee Card - *' /&gt;&lt;wnd ctrlname='LayoutPlaceholder' /&gt;&lt;wnd ctrlname='content' /&gt;&lt;wnd ctrlname='contentAndMessagesPlaceholder' /&gt;&lt;wnd ctrlname='ContentPlaceholder' /&gt;&lt;wnd cls='WindowsForms10.Window.*' title='General' /&gt;&lt;wnd aaname='First Name' cls='WindowsForms10.Window.*' /&gt;&lt;wnd aaname='First Name' cls='WindowsForms10.EDIT.*' /&gt;" FuzzySelectorArgument="&lt;wnd cls='WindowsForms10.Window.*' title='Edit - Employee Card - *' /&gt;&lt;wnd ctrlname='LayoutPlaceholder' /&gt;&lt;wnd ctrlname='content' /&gt;&lt;wnd ctrlname='contentAndMessagesPlaceholder' /&gt;&lt;wnd ctrlname='ContentPlaceholder' /&gt;&lt;wnd cls='WindowsForms10.Window.*' title='General' /&gt;&lt;wnd aaname='First Name' cls='WindowsForms10.Window.*' /&gt;&lt;wnd aaname='First Name' cls='WindowsForms10.EDIT.*' /&gt;" Guid="4dea5e05-070a-487f-823d-3704cecff172" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJQAAAAUCAYAAABrjBQMAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFfSURBVGhD7ZfhjcMgDEZvGvZhGpZhFlZhFBebUBwKKdX5R3r3PalqTRK3Ek+f6Q8BYAiEAqZAKGAKhAKmQChgihIqUXCOXEhHfSZHT855ivlY2IJ7Lp7JkfzH/cDdGYTy5P1skw/Z3gowCnQhFPiTvAgVQpFqNCCFklxhQw4I9d95ESpmfg+lamSKklpnOVLgxDpeMib5+mytPJN4vNX1Luu7fgx/d19fTGNwIyZC1c3te1pk8LFs7VmAjl4f7+G6yCDPc1mS7inrRj9JRlj0TUyF6hLxnja5BgFEjpYebX2U5Kre6CcHd51q4O7MhWpjjkdVSxd9XTa6JU0bifz5SiBG1zv9KvUfJkbeN7AQisuaGNMzD19rookME0mEq3qnX4elQlLdn7VQkhT6cK6vq8NyuSeoRHkeriVONoVa9TuNQf1bwF1RQgHweyAUMAVCAVMgFDAFQgFTIBQwhOgBxBrpRpVYx8UAAAAASUVORK5CYII=" InformativeScreenshot="e90e124ff6fe0554d6ae453d9ab8862b.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='microsoft.dynamics.nav.client.exe' cls='WindowsForms10.Window.*' title='Edit - Employee Card - MM ∙ Mathias ∙ Møller' /&gt;" SearchSteps="Selector">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                              <uix:Target DesignTimeRectangle="28, 278, 122, 18" ElementType="Text" FriendlyName="'First Name'" FullSelectorArgument="&lt;wnd cls='WindowsForms10.Window.*' title='Edit - Employee Card - *' /&gt;&lt;wnd ctrlname='LayoutPlaceholder' /&gt;&lt;wnd ctrlname='content' /&gt;&lt;wnd ctrlname='contentAndMessagesPlaceholder' /&gt;&lt;wnd ctrlname='ContentPlaceholder' /&gt;&lt;wnd cls='WindowsForms10.Window.*' title='General' /&gt;&lt;wnd cls='WindowsForms10.STATIC.*' title='First Name:' /&gt;" FuzzySelectorArgument="&lt;wnd cls='WindowsForms10.Window.*' title='Edit - Employee Card - *' /&gt;&lt;wnd ctrlname='LayoutPlaceholder' /&gt;&lt;wnd ctrlname='content' /&gt;&lt;wnd ctrlname='contentAndMessagesPlaceholder' /&gt;&lt;wnd ctrlname='ContentPlaceholder' /&gt;&lt;wnd cls='WindowsForms10.Window.*' title='General' /&gt;&lt;wnd cls='WindowsForms10.STATIC.*' title='First Name:' check:text='First Name:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAH4AAAAWCAYAAAAGhCi/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFySURBVGhD7ZaNjcYgCIZvGvdxGpdxFlfpKBwotoo/38+1ySXwJE1EDBpfgf6AoRITXikmvFJMeKWY8Eox4ZViwivFhFfKRvgEwTlwzefjAXBE8M4DDf8O7xES2xWav2sPY8YL4e+4/F2c4vPeQa+9Cf80/0L4mLCK+AjXEhP+ab4Qvp0v4xA8toKA1gERs7e2hpDIf9m7kp4CtxIxny30jTF4DT0a9pHriHSWYl/xkNyiahw6K5ICuO7B6eGjHl/uvBWlrDkvmC5yI+6IjDUbt8g1eK4qHO0tz1IFlvHQl9eZ8DPevfxmDWdVl2nLOMQoSHk4k3kSOX+LvXd2l+38DQ9UF/cKz9RyO1YIifSVVlFaBM9n0Wrmkn+198buYhjEI8ITJH7J/PWaqe/MTp5vy3H2rfbe2TSWlQixUj9jIkpGXmizpivJV4adP2dv9v9SMep888PoA4RvMp6Q5Z7OYsIb2jDhlWLCK8WEV4oJrxKAX4iCsowpKVaJAAAAAElFTkSuQmCC" SearchSteps="Selector, FuzzySelector, Image" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NTypeInto.Target>
+                    </uix:NTypeInto>
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_5">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Sequence>
+                </If.Else>
+              </If>
+              <If Condition="[NOT String.IsNullOrEmpty(strAddress)]" DisplayName="if: edit address if not null" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="If_2">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <If.Then>
+                  <Sequence sap:VirtualizedContainerService.HintSize="376,312" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Address'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,218" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="17897365-751e-486e-bfa3-adbca5fa9c83" Text="[strAddress]" Version="V1">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable DesignTimeRectangle="163, 385, 144, 16" ElementType="InputBox" FriendlyName="'kjellerupsgade 14'" FullSelectorArgument="&lt;wnd cls='WindowsForms10.Window.*' title='Edit - Employee Card - *' /&gt;&lt;wnd ctrlname='LayoutPlaceholder' /&gt;&lt;wnd ctrlname='content' /&gt;&lt;wnd ctrlname='contentAndMessagesPlaceholder' /&gt;&lt;wnd ctrlname='ContentPlaceholder' /&gt;&lt;wnd cls='WindowsForms10.Window.*' title='General' /&gt;&lt;wnd aaname='Address' cls='WindowsForms10.Window.*' /&gt;&lt;wnd aaname='Address' cls='WindowsForms10.EDIT.*' /&gt;" FuzzySelectorArgument="&lt;wnd cls='WindowsForms10.Window.*' title='Edit - Employee Card - *' /&gt;&lt;wnd ctrlname='LayoutPlaceholder' /&gt;&lt;wnd ctrlname='content' /&gt;&lt;wnd ctrlname='contentAndMessagesPlaceholder' /&gt;&lt;wnd ctrlname='ContentPlaceholder' /&gt;&lt;wnd cls='WindowsForms10.Window.*' title='General' /&gt;&lt;wnd aaname='Address' cls='WindowsForms10.Window.*' /&gt;&lt;wnd aaname='Address' cls='WindowsForms10.EDIT.*' /&gt;" Guid="67bdd31d-5655-4a0c-ab79-8809f365decf" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJQAAAAUCAYAAABrjBQMAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAL6SURBVGhD7ZhdcuowDIXvarIM/gkEaId0K+1MNpO1sBWeeWYBro9sE9mR06Rkbm9ufWY8EFtybOlDdvtHJSWNqARU0qhKQCWNqgRU0qhKQCWNKgbURVVZqeqrfXS61qqU+j1x38g8k9I393CpVJZV2ruta12qrKzVFMNyv9/V7XZT7+8f6vX1rDabnVqvc7F9DVQv/XagrqouM5VVlfaTgMJ8enyiQAGm8/lN5XmhiuKgDoeDOh6P9IlWFOgv1H6/T0DJ+u4e4NcGCtWpqnWlnyhQqEyA6XQ6PUDiEKHtdjtqEaDwHb84hCYILh2BeoyaC17o28++qvQxQH2Bj/dsv1+aecpmclMZbD8tl7q5be3Nfakae7M/qw4feQ+SsNZgHL54Dz4nCtTLy5kqE4eJQ5TnObXtdisBZZLUxFpIrouKvjOY5MZsuuw5GIFdaw6dSJcMSq4dw52FQ0Ey9q6b7i7e3E7td8g+3A6Pbg+SYMuBQiyt74SBwp2JH28OJgcR2mazodYCqtQw+QFjAfV+qbZRFnjQh9pDXc/hmO7RVYamsfN7620lLvCni7Nbj+3v8onuQRL8GqAA5mNtrXdMR7hsozpJMDmQ1us1tQAonRz9i/IDFgZXKvk8aUPtoa7ncCysoCZxSPQDsk443Hq6qkfM5yvBz9niewAi2gShAlCuOoUwAaLVakVtuVzKdyhUAPk4MkFql/zQZog9FEBCVSQyRyTBTTUw9m4u7/jCvC6hNI//DtEnfH+nYBuBrwXtdASgeHWKwbRYLGKXcpNgE3zejyEkgv3iKAvcZqi9FT+K6M9vfz5zgTfjPnjWhyeS9fsXbLsvjJX6Ha5CQVEfLXEPkrDW/xsoqTo5mAKgYuoI0l+RAN8QEQw/uf7pywHljrsYTPP5vAdQ/Jj4ET0HFP2bYKKV4V8RgJKOuxCmbqAeZf6J6jCKhgLFjjVqqTo9KwkoXp0cTLPZrM+Rl/TbFQIVHncJqKRBckC5C7kEFGBKQCX1Un+gZuoTBLhHsnItb8cAAAAASUVORK5CYII=" InformativeScreenshot="613a065e6c3988cba7c6834c0af6fd3a.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='microsoft.dynamics.nav.client.exe' cls='WindowsForms10.Window.*' title='Edit - Employee Card - MM ∙ Mathias ∙ Møller' /&gt;" SearchSteps="Selector">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target DesignTimeRectangle="28, 382, 122, 18" ElementType="Text" FriendlyName="'Address'" FullSelectorArgument="&lt;wnd cls='WindowsForms10.Window.*' title='Edit - Employee Card - *' /&gt;&lt;wnd ctrlname='LayoutPlaceholder' /&gt;&lt;wnd ctrlname='content' /&gt;&lt;wnd ctrlname='contentAndMessagesPlaceholder' /&gt;&lt;wnd ctrlname='ContentPlaceholder' /&gt;&lt;wnd cls='WindowsForms10.Window.*' title='General' /&gt;&lt;wnd cls='WindowsForms10.STATIC.*' title='Address:' /&gt;" FuzzySelectorArgument="&lt;wnd cls='WindowsForms10.Window.*' title='Edit - Employee Card - *' /&gt;&lt;wnd ctrlname='LayoutPlaceholder' /&gt;&lt;wnd ctrlname='content' /&gt;&lt;wnd ctrlname='contentAndMessagesPlaceholder' /&gt;&lt;wnd ctrlname='ContentPlaceholder' /&gt;&lt;wnd cls='WindowsForms10.Window.*' title='General' /&gt;&lt;wnd cls='WindowsForms10.STATIC.*' title='Address:' check:text='Address:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAH4AAAAWCAYAAAAGhCi/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFUSURBVGhD7ZeJbcMwDEU7jfbRNFxGs3gVj8KSOmxJ0VEHBYqU/wFCYFKOAz/ry/liYBKINwrEGwXijQLxRoF4o0C8USDeKD8Sf5BjR0c+mnEwOc/hzIcNqx74C/biz8DeE5PfiYP4T2Ir/gyevRgrn3Mg/pPYiD85lJUeV36QSoXWnGwDMnwIrdxpLz0ERF56JEft3KsWr11qjtNOM6gdxK7/XWDLWnwju3oIIiqwCNGpKrKWu+7d6dGlgYiMPRXav1fMahD/mKX4Pt6jwNtmlwCVwFWvF92s9jz0GrnebC+jGniLhfi0MhshcVTx/GviS7y/ktLiTg9lVAPPmIsfRmjaY9MNTw/GHQBPor4Sn+euVrGe3/evGqL+Labi9b/7SEaUWIzqTRdpOl5e7qa9XryQI7zMj99fnX+lzKwG8Y9Zv9yBfwvEGwXijQLxRoF4kzB/AzG2AjnCH/zBAAAAAElFTkSuQmCC" SearchSteps="Selector" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NTypeInto.Target>
+                    </uix:NTypeInto>
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_8">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Sequence>
+                </If.Else>
+              </If>
+              <If Condition="[Not String.IsNullOrEmpty(strPhoneNumber)]" DisplayName="If: edit phonenumber if not null" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="If_3">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <If.Then>
+                  <Sequence sap:VirtualizedContainerService.HintSize="376,312" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Phone No.'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,218" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="17897365-751e-486e-bfa3-adbca5fa9c83" Text="[strPhoneNumber]" Version="V1">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable DesignTimeRectangle="483, 307, 114, 16" ElementType="InputBox" FriendlyName="'93958200'" FullSelectorArgument="&lt;wnd cls='WindowsForms10.Window.*' title='Edit - Employee Card - *' /&gt;&lt;wnd ctrlname='LayoutPlaceholder' /&gt;&lt;wnd ctrlname='content' /&gt;&lt;wnd ctrlname='contentAndMessagesPlaceholder' /&gt;&lt;wnd ctrlname='ContentPlaceholder' /&gt;&lt;wnd cls='WindowsForms10.Window.*' title='General' /&gt;&lt;wnd aaname='Phone No.' cls='WindowsForms10.Window.*' /&gt;&lt;wnd aaname='Phone No.' cls='WindowsForms10.EDIT.*' /&gt;" FuzzySelectorArgument="&lt;wnd cls='WindowsForms10.Window.*' title='Edit - Employee Card - MM ∙ Mathias ∙ Møller' /&gt;&lt;wnd ctrlname='LayoutPlaceholder' /&gt;&lt;wnd ctrlname='content' /&gt;&lt;wnd ctrlname='contentAndMessagesPlaceholder' /&gt;&lt;wnd ctrlname='ContentPlaceholder' /&gt;&lt;wnd cls='WindowsForms10.Window.*' title='General' /&gt;&lt;wnd aaname='Phone No.' cls='WindowsForms10.Window.*' /&gt;&lt;wnd aaname='Phone No.' cls='WindowsForms10.EDIT.*' /&gt;" Guid="a1365f50-8266-4c6a-bf6b-225d1096ffe8" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHYAAAAUCAYAAABYm8lAAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF8SURBVGhD7ZfdbcUgDEY7DfswDcswC6vcNXjzxfwYG3Cq5q3IR4pUWV+Syid2cn/AuI6cM5jYCzGxl2JiL8XEXsouNgVwztXDx08vfiD6VsMjpF5GjvlyRvRUdy4AnaLkUxhZWdfyat2oSLGfCJ4kJAjOQ+tZgjTM8Iyax74vD0BFXpP+LteJlF0z5//nXDcGQixO2Tp1+zTMpj7lUzg0Gx8EH8v8N87ycTv0c3EqWYCur9UN4u9iWVP1vFzdM8Okianj6A/OuLdWNyZyFWODqNlNzmggNrOK4g18yE+WVVnXdxN+coFTzO9pYt+xfTyRwCIjlHW6iaoyp6hf8wWS9biK9wfDxL5nE8s5vwPf13UhfEUzFmF0vlY3CF0sNm9MV/kknm1UvkJ5nlNXb88vGRR+EkXUc8eqZ/fV6gaxiMUmtfef+O3J3ovy3ajkRV1OMU7XqA+ZotYPmkCU3mvCvVY3Ko+r2Pi/mNhLMbGXYmIvxcReiom9lJwzfAF2pEg55leZxAAAAABJRU5ErkJggg==" InformativeScreenshot="c56481a2462a406956dc0c2fbbe0c4dd.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='microsoft.dynamics.nav.client.exe' cls='WindowsForms10.Window.*' title='Edit - Employee Card - MM ∙ Mathias ∙ Møller' /&gt;" SearchSteps="Selector">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target DesignTimeRectangle="335, 304, 135, 18" ElementType="Text" FriendlyName="'Phone No.'" FullSelectorArgument="&lt;wnd cls='WindowsForms10.Window.*' title='Edit - Employee Card - *' /&gt;&lt;wnd ctrlname='LayoutPlaceholder' /&gt;&lt;wnd ctrlname='content' /&gt;&lt;wnd ctrlname='contentAndMessagesPlaceholder' /&gt;&lt;wnd ctrlname='ContentPlaceholder' /&gt;&lt;wnd cls='WindowsForms10.Window.*' title='General' /&gt;&lt;wnd cls='WindowsForms10.STATIC.*' title='Phone No.:' /&gt;" FuzzySelectorArgument="&lt;wnd cls='WindowsForms10.Window.*' title='Edit - Employee Card - *' /&gt;&lt;wnd ctrlname='LayoutPlaceholder' /&gt;&lt;wnd ctrlname='content' /&gt;&lt;wnd ctrlname='contentAndMessagesPlaceholder' /&gt;&lt;wnd ctrlname='ContentPlaceholder' /&gt;&lt;wnd cls='WindowsForms10.Window.*' title='General' /&gt;&lt;wnd cls='WindowsForms10.STATIC.*' title='Phone No.:' check:text='Phone No.:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIsAAAAWCAYAAADw4W9iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFYSURBVGhD7ZbRcYUgEEVTDf1QDc1QC61YymZBwAWiLDHRj3fPDDMirjDvngd+EQBKIAtQA1mAGsgC1EAWoAayADWQBaiBLEDNhSyBnDFkarPktzyUxmT/KfKaXMj9wlvr+SwmshwBbN6SsZ727puyWLLWUOsLZHkCtSxt/11ZfPAsTBE3Alme4J4sMbR8TFmZ1Hbcj+3YBXKdd3XsvM7x0z3HGoKTtd1aT+cXBF5DIxyYceMY4iBKP/7wNdx9rAaUgivvyXVlcKgTgfNYI1JCPnN1fTa/ALIss/CBK//pMpyI6Kdw2l0h7gJ7eLM6OR+3YUvo6mPg6Rnt/OAOC8eQZBb6b2Vp60b6+o18+tjVzg/u8PeypGsRThPevG48eiR9PZPeH3eixflxDC3zD7IwNUAZYmSljtuwHfy8pvQ9tTo/ZFnmQhYAWiALUANZgBrIAtRAFqCE6BvMHTwXBUkJLgAAAABJRU5ErkJggg==" SearchSteps="Selector" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NTypeInto.Target>
+                    </uix:NTypeInto>
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_10">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Sequence>
+                </If.Else>
+              </If>
+              <If Condition="[NOT String.IsNullOrEmpty(strCity)]" DisplayName="If: edit postal code/city if postalcode is not null" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="If_4">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <If.Then>
+                  <Sequence sap:VirtualizedContainerService.HintSize="200,68" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Post Code'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,218" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="17897365-751e-486e-bfa3-adbca5fa9c83" Text="[strCity]" Version="V1">
+                      <uix:NTypeInto.Target>
+                        <uix:TargetAnchorable DesignTimeRectangle="480, 229, 127, 16" ElementType="InputBox" FriendlyName="'4600'" FullSelectorArgument="&lt;wnd cls='WindowsForms10.Window.*' title='Edit - Employee Card - *' /&gt;&lt;wnd ctrlname='LayoutPlaceholder' /&gt;&lt;wnd ctrlname='content' /&gt;&lt;wnd ctrlname='contentAndMessagesPlaceholder' /&gt;&lt;wnd ctrlname='ContentPlaceholder' /&gt;&lt;wnd cls='WindowsForms10.Window.*' title='General' /&gt;&lt;wnd aaname='Post Code' cls='WindowsForms10.Window.*' /&gt;&lt;wnd aaname='Post Code' cls='WindowsForms10.EDIT.*' /&gt;" FuzzySelectorArgument="&lt;wnd cls='WindowsForms10.Window.*' title='Edit - Employee Card - MM ∙ Mathias ∙ Møller' /&gt;&lt;wnd ctrlname='LayoutPlaceholder' /&gt;&lt;wnd ctrlname='content' /&gt;&lt;wnd ctrlname='contentAndMessagesPlaceholder' /&gt;&lt;wnd ctrlname='ContentPlaceholder' /&gt;&lt;wnd cls='WindowsForms10.Window.*' title='General' /&gt;&lt;wnd aaname='Post Code' cls='WindowsForms10.Window.*' /&gt;&lt;wnd aaname='Post Code' cls='WindowsForms10.EDIT.*' /&gt;" Guid="1fb5c63a-cfc0-4c9d-9fde-5d2f146bc675" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIMAAAAUCAYAAACu/o6dAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEZSURBVGhD7ZfLEcMgDERdDf1QjZqhFrdCKQrCQgEMk5w8SmbfjPPZOKd9WccHA6BABmA8JsNxwDvvQAZgQAZgLBvKKXKIibO+F04KHIIckVP74CTNAkcLC4scMvhn0dDJJEV2MogIQ9kVOY/KY3vdJFnnkME/t4ZkFSgljiZDKXRaiYr8+umqXJDvVWE2OWTwz9hQLhJIkfLcBKjl0rUW3WJY+Q2VYJdDBv90DWVOUad+lqH7n9AuGZDh/7CGhhJvy/Ce/U+lQ4bfxRqyy0B/iBAbGWZJTIJNDhn8s26oX4bhTkEuJYFr13LO6m5ik0MG/3whQ6EWrGsxr4TmfbzKIYN/HmsIMvgHMgADMgADDQEDMgADMgCF+QXgw9vYKrvhygAAAABJRU5ErkJggg==" InformativeScreenshot="46e5aec1d33e295c208637cebbc62a52.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='microsoft.dynamics.nav.client.exe' cls='WindowsForms10.Window.*' title='Edit - Employee Card - MM ∙ Mathias ∙ Møller' /&gt;" SearchSteps="Selector">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target DesignTimeRectangle="340, 226, 127, 18" ElementType="Text" FriendlyName="'Post Code'" FullSelectorArgument="&lt;wnd cls='WindowsForms10.Window.*' title='Edit - Employee Card - *' /&gt;&lt;wnd ctrlname='LayoutPlaceholder' /&gt;&lt;wnd ctrlname='content' /&gt;&lt;wnd ctrlname='contentAndMessagesPlaceholder' /&gt;&lt;wnd ctrlname='ContentPlaceholder' /&gt;&lt;wnd cls='WindowsForms10.Window.*' title='General' /&gt;&lt;wnd cls='WindowsForms10.STATIC.*' title='Post Code:' /&gt;" FuzzySelectorArgument="&lt;wnd cls='WindowsForms10.Window.*' title='Edit - Employee Card - MM ∙ Mathias ∙ Møller' /&gt;&lt;wnd ctrlname='LayoutPlaceholder' /&gt;&lt;wnd ctrlname='content' /&gt;&lt;wnd ctrlname='contentAndMessagesPlaceholder' /&gt;&lt;wnd ctrlname='ContentPlaceholder' /&gt;&lt;wnd cls='WindowsForms10.Window.*' title='General' /&gt;&lt;wnd cls='WindowsForms10.STATIC.*' title='Post Code:' check:text='Post Code:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIMAAAAWCAYAAADjNi+WAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF2SURBVGhD7ZfREYQgDESvGvuhGpqhFluxFC6BGIIO8cS5n7t9M3wASjLsEvSVARBgBqDADECBGYACMwAFZgAKzAAUmAEojhnWHJclL9pCTptMfYUtp2DihUQjd+Gcv53n73JhhraxWwqTAjEXIm0pBzJAXKXP0Fiy/Y+AGZ7wsRmebbT3bq0InRGmgRmeMG8GOc17WW9i9uU+rvxe6y9H1cs6kVZ3GMYizFxIyclRYqzxQYX7bSaviSqwilI2XZ7lzT4d86OxDPyuK44T6zBXcuzmTEzKK3AHZhhy4wPSnN4iSH+a1yiiyGksG69cmMGrDFexOmFNHMmj5U/tZFJguXFNGDyBhHpK9zFnLZLS/WZ4ZAbHZODEnBnKnBFwsPFsiFohvLUILt12PYbWrH8TXqx+7nxNHCsUgWtiyKQZiCLKXoLNcyJsbc0gfJrLWKe4oVuPmhVsFIsx8fwPSGocG2YY4pgB/BswA1BgBqDADECBGYCQ8xtCaocWXebTSwAAAABJRU5ErkJggg==" SearchSteps="Selector" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NTypeInto.Target>
+                    </uix:NTypeInto>
+                    <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="334,179" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_4" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V1" />
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_12">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Sequence>
+                </If.Else>
+              </If>
+            </Sequence>
+            <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts: save and close employee card" sap:VirtualizedContainerService.HintSize="526,178" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_5" Shortcuts="[d(hk)][d(ctrl)][k(enter)][u(ctrl)][u(hk)]" Version="V1" />
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-9, -9, 1938, 1038" FilePath="C:\Program Files (x86)\Microsoft Dynamics NAV\100\RoleTailored Client\microsoft.dynamics.nav.client.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAIuSURBVGhD7Ze7SkNBGIR9BB/BJxAfQMFaLNIIgo1YWCtYiYWIYBvsFUsLC8HOQizVKoUIWqiIIqjghSjewsqs+eHPMrvZ3M4FzsCHyWT2OP9hN+T09Q2UTK6hZp6gZp6gZp6gZp6gZkr0D06Z8ZlVs7VzYKmcXZnr2wdzc/doBoZn6ZpMDYCSX98/xtXza5XmLdRMkaGxeVP9+KxX/9ft/RPNWqiZIthG55d39er/Oqlc0KyFmimB8tj3op/fmv2L88DyFmqmgFt+emHdjEwsmt9azYxOLtE1FmomjC7/8vZuy8tn3m8fgZoJ4pbHIWY5L9RMiFD58uZeQ9YLNRMgVB6HFtJ5L9TsMTHlIb3GCzV7SGx5SK/zQs0e0Up5SK/1Qs0e0Gp5SK/3Qs0u0055SF/DCzW7SLvlIX0dL9TsEp2Uh/S1vFCzC4TKgxjpvBdqdkiz8iBG7hoKNVsA5fBrcbm8bbfF4dGpLQ255fWPtBhJNgg1HXRJ/EZBSTyrhsT2PNbJ+xhJNgg166BwM6Eoiu3uH9s87jKGxTaS68iBTXwA3G0Idxv/HO9REgWDDxkK/W2T+ACtgocPDDa3smEHlYMsysQAKFiaXWs4D/IZXoeUygDY282KSTaTA8RIssUAjiQbhJqKGEm2GMCRZINQUxEjyRYDOJJsEGoqYiTZYgBHkg1CTUWMJFsM4EiyQaipiJFkiwEcSTYINRUxkmwmB8g81MwT1MwT1MwNJfMHTuoAdTFrJlIAAAAASUVORK5CYII=" InformativeScreenshot="0191406255ad34e90b06e550b20cbc6b.png" Selector="&lt;wnd app='microsoft.dynamics.nav.client.exe' cls='WindowsForms10.Window.*' title='Salgsordrebehandler - Microsoft Dynamics NAV'/&gt;" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
