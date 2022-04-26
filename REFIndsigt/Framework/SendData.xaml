@@ -95,6 +95,7 @@
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="SendData" sap:VirtualizedContainerService.HintSize="376,1028" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -150,14 +151,16 @@
         <InArgument x:TypeArguments="x:String">["Vedhæftet findes data omkring følgende medarbejder: " + strEmplyeeName]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Skriver mailvtil: &quot; + strEmail]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Skriver mail til: &quot; + strEmail]" />
     <ui:SendOutlookMail MailMessage="{x:Null}" Body="[&quot;info regarding &quot; + strEmplyeeName]" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="334,156.666666666667" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="[strEmne]" To="[strEmail]">
       <ui:SendOutlookMail.Files>
         <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
-          <InArgument x:TypeArguments="x:String">[strMailAtcPath]</InArgument>
+          <InArgument x:TypeArguments="x:String">
+            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strMailAtcPath+&quot;.zip&quot;" />
+          </InArgument>
         </scg:List>
       </ui:SendOutlookMail.Files>
     </ui:SendOutlookMail>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Mail sent til: &quot; + strEmplyeeName]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Mail sent til: &quot; + strEmail]" />
   </Sequence>
 </Activity>
