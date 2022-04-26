@@ -1,14 +1,14 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="DeleteData" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="DeleteData" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_TransactionItem" Type="InArgument(ui:QueueItem)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1199,1515</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1150,2086</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>DeleteData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="30">
+    <scg:List x:TypeArguments="x:String" Capacity="60">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -39,10 +39,11 @@
       <x:String>System.Activities.DynamicUpdate</x:String>
       <x:String>UiPath.Platform.ObjectLibrary</x:String>
       <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="40">
+    <sco:Collection x:TypeArguments="AssemblyReference">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -71,9 +72,10 @@
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
-    </scg:List>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+    </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="DeleteData" sap:VirtualizedContainerService.HintSize="476,1450" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="DeleteData" sap:VirtualizedContainerService.HintSize="915,2021" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strEmployeeName" />
       <Variable x:TypeArguments="x:String" Name="EmployeeLink" />
@@ -83,7 +85,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign sap:VirtualizedContainerService.HintSize="873,60" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strEmployeeName]</OutArgument>
       </Assign.To>
@@ -91,34 +93,79 @@
         <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("name").ToString]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Anmodning om sletning.&quot;]" />
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Sletning af følgende medarbejder: &quot; + strEmployeeName]" />
-    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="[strEmployeeName]" DisplayName="Get Asset" FolderPath="4th Semester RPA project/Employee URL Links" sap:VirtualizedContainerService.HintSize="434,137" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="873,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Anmodning om sletning.&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="873,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Sletning af følgende medarbejder: &quot; + strEmployeeName]" />
+    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="[strEmployeeName]" DisplayName="Get Asset" FolderPath="4th Semester RPA project/Employee URL Links" sap:VirtualizedContainerService.HintSize="873,137" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
       <ui:GetRobotAsset.Value>
         <OutArgument x:TypeArguments="x:String">[EmployeeLink]</OutArgument>
       </ui:GetRobotAsset.Value>
     </ui:GetRobotAsset>
-    <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process" FileName="[EmployeeLink]" sap:VirtualizedContainerService.HintSize="434,87" sap2010:WorkflowViewState.IdRef="StartProcess_1" />
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: View - Employees" sap:VirtualizedContainerService.HintSize="434,561" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="ced6bf2e-94c2-4f04-a198-687b63f21ea9" Version="V1">
+    <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process" FileName="[EmployeeLink]" sap:VirtualizedContainerService.HintSize="873,87" sap2010:WorkflowViewState.IdRef="StartProcess_1" />
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: View - Employee List" sap:VirtualizedContainerService.HintSize="873,1132" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="ced6bf2e-94c2-4f04-a198-687b63f21ea9" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,272" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="839,843" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:Boolean" Name="boolMsgBoxExists" />
+            </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="334,178" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_8" Shortcuts="[d(hk)][d(ctrl)d(shift)]r[u(shift)u(ctrl)][u(hk)][d(hk)][d(ctrl)][k(del)][u(ctrl)][u(hk)][d(hk)][k(enter)][u(hk)]" Version="V1" />
+            <uix:NClick ClickType="Single" DisplayName="Click 'Delete'" sap:VirtualizedContainerService.HintSize="797,156" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ced6bf2e-94c2-4f04-a198-687b63f21ea9" Version="V1">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="74, 103, 60, 22" ElementType="Button" FriendlyName="'Delete'" FullSelectorArgument="&lt;ctrl name='Delete' role='push button' text='Delete' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Delete' role='push button' text='Delete' automationid='{da202066-7108-488d-b851-aee10468c5dc}' check:text='Delete' /&gt;" Guid="f392ad53-0d98-4f5d-87f5-445e6ba082f0" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEAAAAAaCAYAAAAHfFpPAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKlSURBVFhH7ZdtaxNBEMfvO5XSr9M3hYaYVvCBKNLaoqGoURqsWpRiaTWllRoRY6EoRYn4ojSIGvVFrbal1OeHoqggY/+b273dub1ko29iLgd/QnZml53fzszeeRTzpw3A/6Wtr79iJfkYAHZ+/o6FagKQhFpVbQCuAJYertCpMzkq3F6kjY/f1fj/LicAm59/UKqvjxKJhNDA0SEqrTxRi9i0uv2Jinfu0ePVTau9WeScAZNXZxUAqenZeWWXerb+hiam87Rv/wGau3GLZUuFMp0eeZ6mzhyVtPmRKvSS11O02/5BzgCg+8uPKH3osAEhd+4CrX/4JnRl7rrIlOFjGaq83jbmVgUAXZQpB2OlbNcuiF7KG34WOQEIr19PDQGAXr3foYuXpwwICFiCmZq5VqNH2DcICB3ZijEWUrMAkEJT7O/fa4C4+2DZ6hsoYoPlHHWoUoBPUCLdBd+HAahmju8nxs15yhdryzFLpv01gIWlUgjA+MSk1TdQPQDcXqRuuWkNAM+YfI8ExeYbYHdlyaKGAeBGQJOTQR8ZGKSRk1n1H52fzwlUA4DYGALWTlHI99c2j4BNH88HwtbHHObHm25DAFDbp0fPqmCPj5wQ1x3G0QwxtieVovLzNWNeIDsABFQNQDtxLgZAlYYhCwB24lwNARgbv6SCHxwappdvvygbIIyOnVc2eyMMAxCnyerf2hC1YET9s5Osiq0v6j8MXJczgJn5myr4g+k0vdh4p2xSOgRcidwuAzRSMnRCrAxkoOw0zTIIglTNUfqyMuBwnQDgTkdqIzDc89EpHpQJ/J+ubVl9mklOAPD+j+CTyaS4/uTkKAECvhsAwmZvJjkBQKPDC079ez4QIKBntMy3QKuqDaAegDgoEkCcJB8FIK5PzAEQ/QFeQqjKhT7YSQAAAABJRU5ErkJggg==" InformativeScreenshot="d909629bfa9adc3e3981a5bc95054994.png" ScopeSelectorArgument="&lt;wnd app='microsoft.dynamics.nav.client.exe' cls='WindowsForms10.Window.*' title='View - Employee List' /&gt;" SearchSteps="Selector" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <ui:UiElementExists DisplayName="Element Exists 'microsoft.dynamics.nav....'" Exists="[boolMsgBoxExists]" sap:VirtualizedContainerService.HintSize="797,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+              <ui:UiElementExists.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="5fe6eaa7-851f-4197-abbf-9c585bbb39e1" InformativeScreenshot="cecf7c25b8ed36cce8b44dde16f7a3ae">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:UiElementExists.Target>
+            </ui:UiElementExists>
+            <If Condition="[boolMsgBoxExists]" sap:VirtualizedContainerService.HintSize="797,408" sap2010:WorkflowViewState.IdRef="If_1">
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="376,249" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ClickType="Single" DisplayName="Click 'Yes'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ced6bf2e-94c2-4f04-a198-687b63f21ea9" Version="V1">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="59, 87, 75, 25" ElementType="Button" FriendlyName="'Yes'" FullSelectorArgument="&lt;wnd cls='WindowsForms10.BUTTON.*' title='Yes' aaname='Yes' /&gt;" FuzzySelectorArgument="&lt;wnd cls='WindowsForms10.BUTTON.*' title='Yes' aaname='Yes' check:text='Yes' /&gt;" Guid="32e977b8-8d94-4446-9460-27f7399dcfce" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAE8AAAAdCAYAAADrcjF6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGXSURBVGhD7ZkxTsMwFEB9hJwnU4+QU3iBkYEJygWoJTbY4A4ZoAIJ2hMA6pAhUregUJhAINDH/8eldtxG0Ijiqv9Jf7Dr6elZkVwBzNKwvBawvBZ48vLJO3SOc4gORiB273j0JKdj8lLHkYcHUFq3X8Dz66fZ3WzQQ2/wCFF35Al05CVnY1DD0qwYm/2Lgm6kjSMPE+Xi5vP08kH12XjymMXU/bC8X8DyWhCMvFQKiFVmVoZUgpCpWYRHOOVlCmIhYaYqAxXHUPcZEuHI0zj1BV4dEpQ8qi9WujmsTsC3O6pSgKCZ1lmdqfassyskLHkarE+qqUTaASms66uLpDoDKDM4eSTFLsmpzgz+aPa9j8wKCU9evTTvQ+KSqZiv7YyaPFo3F4YC/6PANZCnqV9dzMxc72oWl/mXBChvfWB5LWB5LWiUh6/I/J43H3zPa5SHL6Xd/oNZMTaHNyX9l2HjyMsnb1Rfb1CSaaYqbu+8IC/ox8aRh+CB5OQexPYViK3LjZ9o5xo6R7eeOMSTx/wcltcClrc0AF9Gz+7K6O9HjwAAAABJRU5ErkJggg==" InformativeScreenshot="7d0022674c0763e2576128327a7f6bb5.png" ScopeSelectorArgument="&lt;wnd app='microsoft.dynamics.nav.client.exe' cls='WindowsForms10.Window.*' title='Microsoft Dynamics NAV' /&gt;" SearchSteps="Selector" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="376,184" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Error" Message="[&quot;can't delete employee&quot;]" />
+                </Sequence>
+              </If.Else>
+            </If>
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>
       <uix:NApplicationCard.TargetApp>
-        <uix:TargetApp Area="154, 146, 712, 719" FilePath="C:\Program Files (x86)\Microsoft Dynamics NAV\100\RoleTailored Client\microsoft.dynamics.nav.client.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFESURBVFhHY2BQCPg/oBirID0xVkF6YqyCVMR//v79jwww1GAIUBl7JjT9//X7D9jyF6/fY6rBEKAiFtCL/n/h2n2w5R8+f/3/5PkbTHUYAlTCyJYnlEz6L2+d+v/124+YajEEqIDRLcemBo6xClKAsVlu4FX4X8EmDUMtGGMVJBPjsvzDp6//HSJqMNSDMVZBMjA+y0GApg7AZjmyGAjQzAHEWA4CNHEAsZaDANUdgM1yEG6YsAIshg6o5gCQxSDDsPkcRFPNASANAWntYAMXrNn3/8CJK/AUDQMwy0GpfcOuk2A2xQ4AGYoOQL4FOQBkOAiDDANZClIPy2ogeRCfYgeASiyQI0AaYMGKjkGWguQLmubCQ4VqDgBhWDyjRwHM19gAVR1AyBBsYNQBow4YdcCoA6jqALpirIL0xFgF6YYD/gMAA4FvdPSBV7cAAAAASUVORK5CYII=" InformativeScreenshot="b9f622a461af74260ce3412f581aa1ad.png" IsExactTitleEnabled="True" Selector="&lt;wnd app='microsoft.dynamics.nav.client.exe' cls='WindowsForms10.Window.*' title='View - Employees'/&gt;" />
+        <uix:TargetApp Area="595, 133, 712, 717" FilePath="C:\Program Files (x86)\Microsoft Dynamics NAV\100\RoleTailored Client\microsoft.dynamics.nav.client.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFESURBVFhHY2BQCPg/oBirID0xVkF6YqyCVMR//v79jwww1GAIUBl7JjT9//X7D9jyF6/fY6rBEKAiFtCL/n/h2n2w5R8+f/3/5PkbTHUYAlTCyJYnlEz6L2+d+v/124+YajEEqIDRLcemBo6xClKAsVlu4FX4X8EmDUMtGGMVJBPjsvzDp6//HSJqMNSDMVZBMjA+y0GApg7AZjmyGAjQzAHEWA4CNHEAsZaDANUdgM1yEG6YsAIshg6o5gCQxSDDsPkcRFPNASANAWntYAMXrNn3/8CJK/AUDQMwy0GpfcOuk2A2xQ4AGYoOQL4FOQBkOAiDDANZClIPy2ogeRCfYgeASiyQI0AaYMGKjkGWguQLmubCQ4VqDgBhWDyjRwHM19gAVR1AyBBsYNQBow4YdcCoA6jqALpirIL0xFgF6YYD/gMAA4FvdPSBV7cAAAAASUVORK5CYII=" InformativeScreenshot="25c8467cda412539565eaab59a2ed098.png" IsExactTitleEnabled="True" Selector="&lt;wnd app='microsoft.dynamics.nav.client.exe' cls='WindowsForms10.Window.*' title='View - Employee List'/&gt;" />
       </uix:NApplicationCard.TargetApp>
     </uix:NApplicationCard>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[strEmployeeName + &quot; er slettet.&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="873,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[strEmployeeName + &quot; er slettet.&quot;]" />
   </Sequence>
 </Activity>
