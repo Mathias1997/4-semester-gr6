@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1208,12054.6666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1208,11720.6666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>CompileEmployeeData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="76">
@@ -87,9 +87,10 @@
       <AssemblyReference>System.Memory.Data</AssemblyReference>
       <AssemblyReference>UiPathTeam.DotNetZip.Activities.Activities</AssemblyReference>
       <AssemblyReference>ConnectivityFramework.Core</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="CompileEmployeeData" sap:VirtualizedContainerService.HintSize="1218,11990" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="CompileEmployeeData" sap:VirtualizedContainerService.HintSize="1218,11656" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strMail" />
       <Variable x:TypeArguments="x:Boolean" Name="boolTempExist" />
@@ -130,7 +131,7 @@
         <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("email").ToString]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="1176,62" sap2010:WorkflowViewState.IdRef="Assign_7">
+    <Assign sap:VirtualizedContainerService.HintSize="1176,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_7">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strFolderPath]</OutArgument>
       </Assign.To>
@@ -169,13 +170,13 @@
       </If.Else>
     </If>
     <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process for given employee: Bruger linket til at åbne på medarbejderen" FileName="[EmployeeLink]" sap:VirtualizedContainerService.HintSize="1176,86.6666666666667" sap2010:WorkflowViewState.IdRef="StartProcess_1" />
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: View - Employee List" sap:VirtualizedContainerService.HintSize="1176,9759.33333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" ScopeGuid="00fca342-4c72-414c-ad80-4b6dc6ee7cb5" Version="V1">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: View - Employee List" sap:VirtualizedContainerService.HintSize="1176,9426" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" ScopeGuid="00fca342-4c72-414c-ad80-4b6dc6ee7cb5" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence sap:VirtualizedContainerService.HintSize="1142,9466.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_16">
+          <Sequence sap:VirtualizedContainerService.HintSize="1142,9133.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_16">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -186,13 +187,13 @@
                 <uix:TargetAnchorable DesignTimeRectangle="92, 101, 64, 27" ElementType="Button" FriendlyName="'View'" FullSelectorArgument="&lt;wnd cls='WindowsForms10.Window.*' title='View - Employee List' /&gt;&lt;wnd ctrlname='MenuContentPane' /&gt;&lt;wnd cls='WindowsForms10.Window.*' /&gt;&lt;wnd cls='HwndWrapper*' /&gt;&lt;ctrl aastate='focusable' name='View' role='push button' text='View' /&gt;" FuzzySelectorArgument="&lt;wnd cls='WindowsForms10.Window.*' title='View - Employee List' /&gt;&lt;wnd ctrlname='MenuContentPane' /&gt;&lt;wnd cls='WindowsForms10.Window.*' /&gt;&lt;wnd cls='HwndWrapper*' /&gt;&lt;ctrl aastate='focusable' name='View' role='push button' text='View' automationid='{f21828f7-9aff-4c21-a6f9-8510cd9820dc}' check:text='View' /&gt;" Guid="de4ba611-1559-4ed9-89f6-44e3b88ff50b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEQAAAAfCAYAAABeWmuGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAKUSURBVGhD7ZY9qiJBEIDnHGYeQjD2BC96VxA2HMRAxUQFAxFRDAURvYKMTxQvYKooJi9V2MBQkFqrplu7y/lp4eEyu/1B4XR3zTD1Wd3qgEXDCmFYIQwrhGGFMGKFuK5rFNvtVtyRbKwQhpGQODCnVCr9E1J+TAjKkFKSLObHhCAoolwuUwRL2UEv40Bu8C3GOrteBpzcAL5Fnn/9Xn5EiARz1QjiUTQnWta7eLuQmxHIODl4qjts/s28LOR6vcJqtYJ2uw2FQoECr3EO1yShQkI6Qe+cI3j5FKTdFfymMSK2kSNC5h49yKd0kfSstAsreXNAThjGQrBYjH6/T3Oj0QhmsxkFXuMcrsm8cCG8eIRL4kKi1v1rvuao3YbdpwqKwFjIfD6nwI7YbDY0p4JzuCbzIuHb4+mFdSFHLw8pfu4o92iCsRuyn/Dr4yEJ1/VuC8dYSL1ep8BuCGM8Ht/zotG/8ecX1oVQwXKraCGkKnJQXvZ23158+h2UBdekPW78JSGiSPpWUU6avXCAEN4hGvIZ+0fxUtLe/PxAjIUUi0WK5XJJ4yBwTebFIrfNF98uSMCWecpR8fNzgy/ofcg8lCSeHylT5+UOmUwmNA4C1xqNBkU8fhHY+s/7WxfiF8fybmdFtf4YkzTcRkrxcqs9Dtx4jIVMp1MKPDh3ux3NqchDtdlsUpzPZ7ESjl8E3y4IF3KDfjoDzg+JWFeL959vvl0QYyGXy4Wi2+3SHJ4li8WCQv7sqlGr1eB0OtG9ScIKYRgLkeCfLjw8W63WvXjcIvgHrdPp3OcwKpUKHA4HcWcyeFlIFNhBw+GQQkqpVqtiNRkYCXklJJ7n0Xi9XouZZBAr5H/DCmFYIQwrhGGFMKwQDYA/Jpfg3NLjM4EAAAAASUVORK5CYII=" InformativeScreenshot="625f8f7f8db80b5f9ac193145399dac0.png" ScopeSelectorArgument="&lt;wnd app='microsoft.dynamics.nav.client.exe' cls='WindowsForms10.Window.*' title='View - Employee List' /&gt;" SearchSteps="Selector" />
               </uix:NClick.Target>
             </uix:NClick>
-            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: View - Employee Card - *" sap:VirtualizedContainerService.HintSize="1100,9174.66666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_7" ScopeGuid="e24cca78-19a3-42df-b355-11e32bd561ab" Version="V1">
+            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: View - Employee Card - *" sap:VirtualizedContainerService.HintSize="1100,8841.33333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_7" ScopeGuid="e24cca78-19a3-42df-b355-11e32bd561ab" Version="V1">
               <uix:NApplicationCard.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1066,8882" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1066,8548.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_15">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -208,24 +209,11 @@
                         <uix:TargetAnchorable DesignTimeRectangle="299, 149, 75, 30" ElementType="Button" FriendlyName="'&amp;Save'" FullSelectorArgument="&lt;wnd aaname='JPG File' cls='WindowsForms10.Window.*' /&gt;&lt;wnd ctrlname='buttonSave' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='JPG File' cls='WindowsForms10.Window.*' /&gt;&lt;wnd ctrlname='buttonSave' check:text='&amp;amp;Save' /&gt;" Guid="45faf5bb-a01a-4b73-a409-40d83a7546fc" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAE8AAAAiCAYAAAAeXoQCAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAHnSURBVGhD7ZldrsIgEEa7LhbEelhNXzVxDRpNXzT65M8GjGZuZwrKAO29VxRTnZPwgFATTr9pNVOB8DAiLwORl0Ek73w+w3q9huVyCYvFQkY7ttsteQlh8nADStvv93C5XOyn3w16OB6PsFqtIoFMHhrGjULM4XCAzWZjZx1MHkZUEpfmer1S+nwieUI/oR+R9w9EXgYiLwORl8Fb5NW6gqryhq7tyrgoLK8Bo2JZtTHtyvgoK68xoCoFZoymEhROXg26LdPBKiXBXkmreyqp3IOLG6PYHprfrn/tjSos73441XOqxmjvwEGZ15qJcutuORRJ+yvd3rLXUFwe4aWrT+INJgyT66WJvsfJCdYILvfZvEeeg5LRU4pWLo2gdJ1w2uen0r/GG58pD2Evke6ZGJVech6kiuS9rkRTvF+eFUYSWBl2RM8xV551sJfdhDKUlYcHTJaolRAKoHmQxBYqXaWi52X349uX36ZT82ufSeHk2bJkI5E0t4bSwrJFqETTKQv/vfz6QsqgsLzPoqg8PxGpMTYkeRmIvAwG5WHbURpAabABNCgPm93YsxVisCW72+3srIPJc03v0+kkCbSgBwwUehlseiO4AeM5nU5hMpl8/ZjNZjCfzyNxSCRP+DsiLwOR9zAAP5XPQWHWUcVMAAAAAElFTkSuQmCC" InformativeScreenshot="67d2293726fcb208cf59dd1e3ee9d91a.png" ScopeSelectorArgument="&lt;wnd app='microsoft.dynamics.nav.client.exe' ctrlname='LoadFileForm' /&gt;" SearchSteps="Selector" />
                       </uix:NClick.Target>
                     </uix:NClick>
-                    <uix:NClick ClickType="Single" DisplayName="Click 'Up band'" sap:VirtualizedContainerService.HintSize="1024,157.333333333333" sap2010:WorkflowViewState.IdRef="NClick_39" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e24cca78-19a3-42df-b355-11e32bd561ab" Version="V1">
-                      <uix:NClick.Target>
-                        <uix:TargetAnchorable DesignTimeRectangle="163, 58, 55, 55" ElementType="Toolbar" FriendlyName="'Up band'" FullSelectorArgument="&lt;wnd cls='UpBand' /&gt;&lt;wnd cls='ToolbarWindow32' title='Up band' /&gt;" FuzzySelectorArgument="&lt;wnd cls='UpBand' /&gt;&lt;wnd cls='ToolbarWindow32' title='Up band' check:text='Up band' /&gt;" Guid="d2310c64-ff0e-4e83-ab1f-9bf79821f3bc" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADsAAAA7CAYAAADFJfKzAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAEySURBVGhD7ZvNCYQwEIVtwxbswQ68WYRtWIDVWIkd2IMHr1meMDK4iaywh+T5Bj7Ir/g5Ez1Z1XUd3kLV9314C+/KbGyQFcmyIllWJMuKZFmRLCuSZUWyrEiWlffJNk0T1nU9QPu6iIW/yLZtG7ZtC9M0Redz4S9lPAxD2Pddsjlxyi7L8lXGVp4WEBrH8Rib5/ncdw2M2TVyIilr2fI37uVN1q8tNrPXvmFiNLKWQS9kxOYkmyFVrGxpZXGjaHhZgLb1/QYIFfuCimUWfZPCuC02KYSXvauEnLj9zno5BOa7rouK2cNB+AeUE6fsr1gWcy/ZGI9lIYls21kviaQsyjRVqrmfzRRJ2et5RZSaUeNxGZeMZFmRLCuSZUWyrEiWFcmyIllW9I8AK5JlRbKc1OEDYYTkrJsAxo8AAAAASUVORK5CYII=" InformativeScreenshot="c31aae3b9ab9d6361f8c1b15013f4cbb.png" ScopeSelectorArgument="&lt;wnd app='microsoft.dynamics.nav.client.exe' cls='#32770' title='Download image' /&gt;" SearchSteps="Selector" />
-                      </uix:NClick.Target>
-                    </uix:NClick>
-                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into: path" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="1024,218.666666666667" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="HardwareEvents" ScopeIdentifier="e24cca78-19a3-42df-b355-11e32bd561ab" Text="[strFolderPath + strEmployeeName + &quot; Information&quot;]" Version="V1">
-                      <uix:NTypeInto.Target>
-                        <uix:TargetAnchorable DesignTimeRectangle="169, 455, 752, 22" ElementType="InputBox" FriendlyName="'C:\Employee Data\AH'" FullSelectorArgument="&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd aaname='File name:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd aaname='File name:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;" Guid="e4c76327-9af5-48b3-b19b-a9698b13dd5d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAvQAAAAaCAYAAADYDcjNAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAUpSURBVHhe7Zw7ctw6EEVnXV6Q1+BlaBlagUOvQlUvUJUzJVOOFGmU8OHDHgKNxof0cDy0z6k6wRAE2GwwuKRcPl0ul+nz8xMREREREQ/oyTqIiIiIiIjH8BroNadv/yHigwkAAAAgEOgRDygAAACAQKBHPKAAAAAAAoEe8YACAAAACAR6xAMKAAAAIKwK9F9+fMxHhffpazJ++vY2fZ8+pqen9NhiOd9TP/9Wfn2ZptcfP82xR9Duyz1qbu/X4s/p6ewKOv+avhjjof6Xt+K4t9d7P16bW3Ppl37+HtNwjzeuFQAAAEAYDPRzoNOh5Pl9+v6c/Ha2Alwr+O3pIQJ90Rcfto2e93R7UgvelkO9efo1vZ4/ptdK+L9roPe13OElcLMr+79VAAAAAGEo0IfANhpSQvhb/yV3T48Z6L3zi9Sanq0NlI39EqV/tfB9/0D/wF/mCfQAAABwZwYCffxSrL/EZ2ZfTWMItc7vBfoY/t7mvwZEwjphfSEPcxIYw9qCClRWqMzO9yR1WSEznJ+sm88vvxj3xlPDubW++ICY3nPWC0dSU6g7RdZszGntVzT5ZzmVMN2q3+p9at5rqUX+IuRZepf31JFcszW2rJv/1SPWtu5529J/qwdj9dp98AIAAAAI/UCvA6VlCDkqeGUBpX1cjIHICHDX0DQHnGQNCVFLYLLPSQNVXDe9JzWn+MoqASv+DvPTcdWj3ri22Zeit+9JsCvvtay9P6d5/Wy9vA9ia74VZlPD/l3nzrUl9xvG0/sxXirC9Vv7Of9+Pad9kGdn3fO2pf+rnz/53egDAAAAgHCbQK81Qpf3GphSkpCShzuv8dcBFZjKOU4VgvNAlXxxLuZIzeqc1lgwBrBYZ2+8tBWIq/WKOkAagbJQn1PZL68ZRlWt5r4mrA302fm6tqLWkf001nVued4KB/q//vnr9wEAAABA2CfQO32IWfMl16vDoxl+VGAq53jzedk51fupz8nqDvNtwv32xq/XW2z2JQS5vAdFgO4Eyu4cp7Vf1rWr9VTqt/cnH1/mGi8++noq2I7tp/1CVdbWf968a/ufXWdrvaoPAAAAAEI/0FuhbsRaEDpIoF+uo8JVdf5sb9yw2Zfsfn2NjrSv2bjxe2RO5VgRXBPSnv87gX5L/7c8fwR6AAAAGKcf6Odw0QritmU42ivQF2uq0JStW3tB0UFRrv2sjtfmj44b1vsSA+Q12BU1znNbgXJkTlD3Ou67Fcb1/Na+lntaji9zNwT6Wr+z824U6Ed6qfvvXP/8EegBAABgnIFA7wNEDJZFCHThJYSOSkjxYScNTK3g510dsJwhEDqW8BNrTdfR68Y5aTCzw2uYdy5rNue/6Jrq41qzL6GnjvS47rOcowNleu2RObPZful5qfMa0vPWvurea0OvrnP7QTb+Tntb6Xe2n8a6zrK2kUC/sv9OfZ1N9aprAwAAAAiDgd4bQ0ZGLeiIKnyF4GcgwWV1wHLGOfl/PWgF8HzdshY9HqzdlzOGsgU9vzeeavclD4Xmub4Pqh/ZPs196M+ZTfYr1G+dE5yvka7/BwO9t72fxrrOsrb+87al/1YPVter+gAAAAAgrAj0W7SD1C3tBcbfshZ8/1r33y+8jQAAAADCzoG+/fX2Fu4X6GO43e1l4UHde7/wNgIAAAAIuwf6vd0j0Ps1AwRbfFABAAAAhMMHesR/UQAAAAChG+gBAAAAAOBxIdADAAAAAByYItAjIiIiIuLxPF0uF3MAEREREREf3c/pf3aPf78DvVQPAAAAAElFTkSuQmCC" InformativeScreenshot="e290aae623a267eb56e65260b6c4fa21.png" ScopeSelectorArgument="&lt;wnd app='microsoft.dynamics.nav.client.exe' cls='#32770' title='Download image' /&gt;" SearchSteps="Selector" />
-                      </uix:NTypeInto.Target>
-                    </uix:NTypeInto>
+                    <ui:SetToClipboard DisplayName="Set To Clipboard" sap:VirtualizedContainerService.HintSize="1024,58.6666666666667" sap2010:WorkflowViewState.IdRef="SetToClipboard_1" Text="[strFolderPath + strEmployeeName + &quot; Information&quot;]" />
+                    <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="1024,181.333333333333" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_8" Shortcuts="[d(hk)][k(f4)][u(hk)][d(hk)][d(ctrl)]a[u(ctrl)][u(hk)][d(hk)][d(ctrl)]v[u(ctrl)][u(hk)][d(hk)][k(enter)][u(hk)]" Version="V1" />
                     <uix:NClick ClickType="Single" DisplayName="Click save" sap:VirtualizedContainerService.HintSize="1024,157.333333333333" sap2010:WorkflowViewState.IdRef="NClick_14" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e24cca78-19a3-42df-b355-11e32bd561ab" Version="V1">
                       <uix:NClick.Target>
                         <uix:TargetAnchorable DesignTimeRectangle="696, 543, 110, 33" ElementType="Button" FriendlyName="'unchecked'" FullSelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Save' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Save' check:text='unchecked' /&gt;" Guid="597e2e17-84e4-447d-bec5-43d3929b2f11" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHIAAAAlCAYAAACeVr0yAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAJKSURBVHhe7Zu/TsMwEIc9d+nzROIN+hrZYGNh4N8OERsbPEQmYADKC4AqlAV1YCqFIlWwQJcjd42Lz3GBjbN7w6fI8rlDPv/OUZSa6XQKSvyoyERQkYnQEjl4fIW14wfo7ldgtu4VYfROhuTI98ZEYgEK3L0YweT9E2azmSIIdHLYf4buXtWSyUT2TodQ3IxpUafT0avQ6875iLqm646JxOiidbtIkcnL2welkrljg1pkaKEiBxsydMXcsUEjUhMpnz+JVOSiiUwMTWTkaCITI+pElrkBYxzyMliXMpEnsoIia4sriwIqZ7xKxJnIqoDMZFBUgbkVI/JElpDXrTQvQ3MNJNtpu9l3Wqkle2muiozV0HixXv6miTORNfZGZ0W1ZD53br7XisucSbPzdmP4Uqne5FAu6uUQeSIbnNQtE7qAycNEOymj37GivDmCi5ZItIlkUGKWtMtGNOG1Vyuf6ty0umscJIpMI5Eu7AFofoa22mNw7KWNRMpsoz+RRiIJ5wGItco5rXPPttDSq2UbQj5xJxJvdrCNNkJ8GTT2ElpD7TXLWufr/EWDuxHq1OZ8rTQiTWTTOhmBBNo5FOi3VoTaaDh9/lujXx+m/on0zsgVJ8pEukkJEVqTKprIxIgykco3msjE0ERGzp8SiV+Z63et8sHvWn8UiV8v7148UbGVqVd514PrMf0HxHXHRA4eJ5TKw/6YrONCRQ7oZPtsRI7QleuOiUSwoHd8B2bjCsz6pSKI7mYf1o5uWxKRlkglTlRkIqjIJJjCF7YpAPWXRpNVAAAAAElFTkSuQmCC" InformativeScreenshot="5d065dcfc1fd1b980958dc0c677b0b9a.png" ScopeSelectorArgument="&lt;wnd app='microsoft.dynamics.nav.client.exe' cls='#32770' title='Download image' /&gt;" SearchSteps="Selector" />
-                      </uix:NClick.Target>
-                    </uix:NClick>
-                    <uix:NClick ClickType="Single" DelayAfter="3" DisplayName="Click save" sap:VirtualizedContainerService.HintSize="1024,157.333333333333" sap2010:WorkflowViewState.IdRef="NClick_15" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e24cca78-19a3-42df-b355-11e32bd561ab" Version="V1">
-                      <uix:NClick.Target>
-                        <uix:TargetAnchorable DesignTimeRectangle="696, 543, 110, 33" ElementType="Button" FriendlyName="'unchecked'" FullSelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Save' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Save' check:text='unchecked' /&gt;" Guid="e0f1e26f-7534-4c5c-8ac1-c5a720245bcd" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHIAAAAlCAYAAACeVr0yAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAJKSURBVHhe7Zu/TsMwEIc9d+nzROIN+hrZYGNh4N8OERsbPEQmYADKC4AqlAV1YCqFIlWwQJcjd42Lz3GBjbN7w6fI8rlDPv/OUZSa6XQKSvyoyERQkYnQEjl4fIW14wfo7ldgtu4VYfROhuTI98ZEYgEK3L0YweT9E2azmSIIdHLYf4buXtWSyUT2TodQ3IxpUafT0avQ6875iLqm646JxOiidbtIkcnL2welkrljg1pkaKEiBxsydMXcsUEjUhMpnz+JVOSiiUwMTWTkaCITI+pElrkBYxzyMliXMpEnsoIia4sriwIqZ7xKxJnIqoDMZFBUgbkVI/JElpDXrTQvQ3MNJNtpu9l3Wqkle2muiozV0HixXv6miTORNfZGZ0W1ZD53br7XisucSbPzdmP4Uqne5FAu6uUQeSIbnNQtE7qAycNEOymj37GivDmCi5ZItIlkUGKWtMtGNOG1Vyuf6ty0umscJIpMI5Eu7AFofoa22mNw7KWNRMpsoz+RRiIJ5wGItco5rXPPttDSq2UbQj5xJxJvdrCNNkJ8GTT2ElpD7TXLWufr/EWDuxHq1OZ8rTQiTWTTOhmBBNo5FOi3VoTaaDh9/lujXx+m/on0zsgVJ8pEukkJEVqTKprIxIgykco3msjE0ERGzp8SiV+Z63et8sHvWn8UiV8v7148UbGVqVd514PrMf0HxHXHRA4eJ5TKw/6YrONCRQ7oZPtsRI7QleuOiUSwoHd8B2bjCsz6pSKI7mYf1o5uWxKRlkglTlRkIqjIJJjCF7YpAPWXRpNVAAAAAElFTkSuQmCC" InformativeScreenshot="5d065dcfc1fd1b980958dc0c677b0b9a.png" ScopeSelectorArgument="&lt;wnd app='microsoft.dynamics.nav.client.exe' cls='#32770' title='Download image' /&gt;" SearchSteps="Selector" />
                       </uix:NClick.Target>
                     </uix:NClick>
                     <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="1024,181.333333333333" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_3" ScopeIdentifier="e24cca78-19a3-42df-b355-11e32bd561ab" Shortcuts="[d(hk)][d(ctrl)]e[u(ctrl)][u(hk)]" Version="V1" />
@@ -255,7 +243,7 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: View - Employee Card - AH ∙ Anne Grethe ∙ Hansen3 - Excel" sap:VirtualizedContainerService.HintSize="560,2222.66666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_11" ScopeGuid="6257ac63-dc99-406c-9274-4780788a0eb6" Version="V1">
+                          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: View - Employee Card - AH ∙ Anne Grethe ∙ Hansen3 - Excel" sap:VirtualizedContainerService.HintSize="560,2222.66666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_11" ScopeGuid="6257ac63-dc99-406c-9274-4780788a0eb6" Version="V1" WindowResize="Maximize">
                             <uix:NApplicationCard.Body>
                               <ActivityAction x:TypeArguments="x:Object">
                                 <ActivityAction.Argument>
