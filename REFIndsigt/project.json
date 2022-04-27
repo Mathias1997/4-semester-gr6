@@ -10,7 +10,8 @@
     "UiPath.MicrosoftOffice365.Activities": "[1.11.1]",
     "UiPath.System.Activities": "[21.10.4]",
     "UiPath.Testing.Activities": "[1.4.6]",
-    "UiPath.UIAutomation.Activities": "[21.10.5]"
+    "UiPath.UIAutomation.Activities": "[21.10.5]",
+    "UiPathTeam.DotNetZip.Activities": "[1.0.7222.31886]"
   },
   "webServices": [],
   "entitiesStores": [],
@@ -48,36 +49,43 @@
         "editingStatus": "InProgress",
         "testCaseId": "aedf18d3-f48f-408e-9606-d26c4867d694",
         "dataVariationFilePath": ".variations\\Tests_Tests.json",
+        "testCaseType": "TestCase",
         "fileName": "Tests\\GeneralTestCase.xaml"
       },
       {
         "editingStatus": "InProgress",
         "testCaseId": "555b0c0f-dbb7-4cff-a7c0-b5baa6bd7045",
+        "testCaseType": "TestCase",
         "fileName": "Tests\\GetTransactionDataTestCase.xaml"
       },
       {
         "editingStatus": "InProgress",
         "testCaseId": "891fda4c-bef6-438f-9cb8-9f63f52a2d62",
+        "testCaseType": "TestCase",
         "fileName": "Tests\\InitAllApplicationsTestCase.xaml"
       },
       {
         "editingStatus": "InProgress",
         "testCaseId": "a5cc267f-f776-4d31-a8dc-c976ae6c6b5f",
+        "testCaseType": "TestCase",
         "fileName": "Tests\\InitAllSettingsTestCase.xaml"
       },
       {
         "editingStatus": "InProgress",
         "testCaseId": "95226c3d-3271-4f7d-a131-deba1994aada",
+        "testCaseType": "TestCase",
         "fileName": "Tests\\MainTestCase.xaml"
       },
       {
         "editingStatus": "InProgress",
         "testCaseId": "53788353-7473-4ac7-8c8e-5a43b4570141",
+        "testCaseType": "TestCase",
         "fileName": "Tests\\ProcessTestCase.xaml"
       },
       {
         "editingStatus": "InProgress",
         "testCaseId": "042be131-1653-43be-9165-00f6aa0a7204",
+        "testCaseType": "TestCase",
         "fileName": "Tests\\WorkflowTestCaseTemplate.xaml"
       }
     ],
