@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1208,12054</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1208,12054.6666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>CompileEmployeeData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="76">
@@ -87,10 +87,9 @@
       <AssemblyReference>System.Memory.Data</AssemblyReference>
       <AssemblyReference>UiPathTeam.DotNetZip.Activities.Activities</AssemblyReference>
       <AssemblyReference>ConnectivityFramework.Core</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="CompileEmployeeData" sap:VirtualizedContainerService.HintSize="1218,11989.3333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="CompileEmployeeData" sap:VirtualizedContainerService.HintSize="1218,11990" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strMail" />
       <Variable x:TypeArguments="x:Boolean" Name="boolTempExist" />
@@ -131,7 +130,7 @@
         <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("email").ToString]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="1176,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_7">
+    <Assign sap:VirtualizedContainerService.HintSize="1176,62" sap2010:WorkflowViewState.IdRef="Assign_7">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strFolderPath]</OutArgument>
       </Assign.To>
@@ -211,7 +210,7 @@
                     </uix:NClick>
                     <uix:NClick ClickType="Single" DisplayName="Click 'Up band'" sap:VirtualizedContainerService.HintSize="1024,157.333333333333" sap2010:WorkflowViewState.IdRef="NClick_39" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e24cca78-19a3-42df-b355-11e32bd561ab" Version="V1">
                       <uix:NClick.Target>
-                        <uix:TargetAnchorable DesignTimeRectangle="135, 50, 45, 45" ElementType="Toolbar" FriendlyName="'Up band'" FullSelectorArgument="&lt;wnd cls='ToolbarWindow32' title='Up band' /&gt;" FuzzySelectorArgument="&lt;wnd cls='ToolbarWindow32' title='Up band' check:text='Up band' /&gt;" Guid="d2310c64-ff0e-4e83-ab1f-9bf79821f3bc" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADEAAAAxCAYAAABznEEcAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAADdSURBVGhD7dWxDoMgFIXhPq+r7+CrsbLK6srsSnNIaYyVNCkXcmrOnxhg0PDFiI/0563rmoRgSAiWhGBJCJaEYEkIloSo5ZxL8zzncUTmCGx8mqb3NQJiiigAvIXj2BtihiiAZVmS9z7PMWLdG2KCOAL2fc8PxTqEkNe9Ic2IMwAdEag3pAlxBUBnBOoJaULgwz0D0BUCFQjus6wJEWP8AKAaorRt22tmUxOi1jeEdULUEuKHhKh1CwSOUPwLcASPqAtidEKwJARLQrAkBEtCsCQES0IwJQRLQnCU0hONL/GTxA9KDwAAAABJRU5ErkJggg==" InformativeScreenshot="b6550449549f2275cd367803bab6190d.png" ScopeSelectorArgument="&lt;wnd app='microsoft.dynamics.nav.client.exe' cls='#32770' title='Download image' /&gt;" SearchSteps="Selector" />
+                        <uix:TargetAnchorable DesignTimeRectangle="163, 58, 55, 55" ElementType="Toolbar" FriendlyName="'Up band'" FullSelectorArgument="&lt;wnd cls='UpBand' /&gt;&lt;wnd cls='ToolbarWindow32' title='Up band' /&gt;" FuzzySelectorArgument="&lt;wnd cls='UpBand' /&gt;&lt;wnd cls='ToolbarWindow32' title='Up band' check:text='Up band' /&gt;" Guid="d2310c64-ff0e-4e83-ab1f-9bf79821f3bc" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADsAAAA7CAYAAADFJfKzAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAEySURBVGhD7ZvNCYQwEIVtwxbswQ68WYRtWIDVWIkd2IMHr1meMDK4iaywh+T5Bj7Ir/g5Ez1Z1XUd3kLV9314C+/KbGyQFcmyIllWJMuKZFmRLCuSZUWyrEiWlffJNk0T1nU9QPu6iIW/yLZtG7ZtC9M0Redz4S9lPAxD2Pddsjlxyi7L8lXGVp4WEBrH8Rib5/ncdw2M2TVyIilr2fI37uVN1q8tNrPXvmFiNLKWQS9kxOYkmyFVrGxpZXGjaHhZgLb1/QYIFfuCimUWfZPCuC02KYSXvauEnLj9zno5BOa7rouK2cNB+AeUE6fsr1gWcy/ZGI9lIYls21kviaQsyjRVqrmfzRRJ2et5RZSaUeNxGZeMZFmRLCuSZUWyrEiWFcmyIllW9I8AK5JlRbKc1OEDYYTkrJsAxo8AAAAASUVORK5CYII=" InformativeScreenshot="c31aae3b9ab9d6361f8c1b15013f4cbb.png" ScopeSelectorArgument="&lt;wnd app='microsoft.dynamics.nav.client.exe' cls='#32770' title='Download image' /&gt;" SearchSteps="Selector" />
                       </uix:NClick.Target>
                     </uix:NClick>
                     <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into: path" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="1024,218.666666666667" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="HardwareEvents" ScopeIdentifier="e24cca78-19a3-42df-b355-11e32bd561ab" Text="[strFolderPath + strEmployeeName + &quot; Information&quot;]" Version="V1">
