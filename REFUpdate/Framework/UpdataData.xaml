@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1060.66666666667,5219.33333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1292,6662</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>UpdataData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="40">
@@ -87,7 +87,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="1070.66666666667,5154.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence sap:VirtualizedContainerService.HintSize="678,6597" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strEmployeeName" />
       <Variable x:TypeArguments="x:String" Name="strFirstName" />
@@ -105,7 +105,7 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap2010:Annotation.AnnotationText="is used to help find link to EmployeeCard" DisplayName="Assign strEmployeeName" sap:VirtualizedContainerService.HintSize="1028.66666666667,92" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign sap2010:Annotation.AnnotationText="is used to help find link to EmployeeCard" DisplayName="Assign strEmployeeName" sap:VirtualizedContainerService.HintSize="636,91" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strEmployeeName]</OutArgument>
       </Assign.To>
@@ -118,7 +118,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <TryCatch sap2010:Annotation.AnnotationText="check if queueitem contains a given variable and assigns it to a variable" DisplayName="Try Catch for firstName" sap:VirtualizedContainerService.HintSize="1028.66666666667,112" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch sap2010:Annotation.AnnotationText="check if queueitem contains a given variable and assigns it to a variable" DisplayName="Try Catch for firstName" sap:VirtualizedContainerService.HintSize="636,108" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -152,7 +152,7 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <TryCatch sap2010:Annotation.AnnotationText="check if queueitem contains a given variable and assigns it to a variable" DisplayName="Try Catch for lastName" sap:VirtualizedContainerService.HintSize="1028.66666666667,112" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+    <TryCatch sap2010:Annotation.AnnotationText="check if queueitem contains a given variable and assigns it to a variable" DisplayName="Try Catch for lastName" sap:VirtualizedContainerService.HintSize="636,108" sap2010:WorkflowViewState.IdRef="TryCatch_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -186,7 +186,7 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <TryCatch sap2010:Annotation.AnnotationText="check if queueitem contains a given variable and assigns it to a variable" DisplayName="Try Catch for email" sap:VirtualizedContainerService.HintSize="1028.66666666667,112" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+    <TryCatch sap2010:Annotation.AnnotationText="check if queueitem contains a given variable and assigns it to a variable" DisplayName="Try Catch for email" sap:VirtualizedContainerService.HintSize="636,108" sap2010:WorkflowViewState.IdRef="TryCatch_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -220,7 +220,7 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <TryCatch sap2010:Annotation.AnnotationText="check if queueitem contains a given variable and assigns it to a variable" DisplayName="Try Catch for address" sap:VirtualizedContainerService.HintSize="1028.66666666667,112" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+    <TryCatch sap2010:Annotation.AnnotationText="check if queueitem contains a given variable and assigns it to a variable" DisplayName="Try Catch for address" sap:VirtualizedContainerService.HintSize="636,108" sap2010:WorkflowViewState.IdRef="TryCatch_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -254,7 +254,7 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <TryCatch sap2010:Annotation.AnnotationText="check if queueitem contains a given variable and assigns it to a variable" DisplayName="Try Catch for postalCode" sap:VirtualizedContainerService.HintSize="1028.66666666667,112" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+    <TryCatch sap2010:Annotation.AnnotationText="check if queueitem contains a given variable and assigns it to a variable" DisplayName="Try Catch for postalCode" sap:VirtualizedContainerService.HintSize="636,108" sap2010:WorkflowViewState.IdRef="TryCatch_5">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -288,7 +288,7 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <TryCatch sap2010:Annotation.AnnotationText="check if queueitem contains a given variable and assigns it to a variable" DisplayName="Try Catch for phonenumber" sap:VirtualizedContainerService.HintSize="1028.66666666667,112" sap2010:WorkflowViewState.IdRef="TryCatch_6">
+    <TryCatch sap2010:Annotation.AnnotationText="check if queueitem contains a given variable and assigns it to a variable" DisplayName="Try Catch for phonenumber" sap:VirtualizedContainerService.HintSize="636,108" sap2010:WorkflowViewState.IdRef="TryCatch_6">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -322,7 +322,7 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <TryCatch sap2010:Annotation.AnnotationText="check if queueitem contains a given variable and assigns it to a variable" DisplayName="Try Catch for mobilenumber" sap:VirtualizedContainerService.HintSize="1028.66666666667,112" sap2010:WorkflowViewState.IdRef="TryCatch_7">
+    <TryCatch sap2010:Annotation.AnnotationText="check if queueitem contains a given variable and assigns it to a variable" DisplayName="Try Catch for mobilenumber" sap:VirtualizedContainerService.HintSize="636,108" sap2010:WorkflowViewState.IdRef="TryCatch_7">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -356,7 +356,7 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <ui:GetRobotAsset TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="finds link to EmployeeCard" AssetName="[strEmployeeName]" DisplayName="Get Asset" FolderPath="4th semester RPA project/Employee URL Links" sap:VirtualizedContainerService.HintSize="1028.66666666667,170" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
+    <ui:GetRobotAsset TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="finds link to EmployeeCard" AssetName="[strEmployeeName]" DisplayName="Get Asset" FolderPath="4th semester RPA project/Employee URL Links" sap:VirtualizedContainerService.HintSize="636,168" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
       <ui:GetRobotAsset.Value>
         <OutArgument x:TypeArguments="x:String">[EmployeeLink]</OutArgument>
       </ui:GetRobotAsset.Value>
@@ -368,8 +368,8 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:GetRobotAsset>
-    <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process" FileName="[EmployeeLink]" sap:VirtualizedContainerService.HintSize="1028.66666666667,86.6666666666667" sap2010:WorkflowViewState.IdRef="StartProcess_1" />
-    <ui:UiElementExists Exists="{x:Null}" DisplayName="Element Exists 'microsoft.dynamics.nav....'" sap:VirtualizedContainerService.HintSize="1028.66666666667,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+    <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process" FileName="[EmployeeLink]" sap:VirtualizedContainerService.HintSize="636,87" sap2010:WorkflowViewState.IdRef="StartProcess_1" />
+    <ui:UiElementExists Exists="{x:Null}" DisplayName="Element Exists 'microsoft.dynamics.nav....'" sap:VirtualizedContainerService.HintSize="636,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
       <ui:UiElementExists.Target>
         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d500c2b6-4de0-4863-8b39-0173eb6be462" InformativeScreenshot="561433e843d859bf4630237129df75f7" Selector="&lt;wnd app='microsoft.dynamics.nav.client.exe' cls='WindowsForms10.Window.*' title='View - Employee List' /&gt;">
           <ui:Target.TimeoutMS>
@@ -381,13 +381,13 @@
         </ui:Target>
       </ui:UiElementExists.Target>
     </ui:UiElementExists>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: View - Employee List" sap:VirtualizedContainerService.HintSize="1028.66666666667,3210" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="17897365-751e-486e-bfa3-adbca5fa9c83" Version="V1" WindowResize="Maximize">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: View - Employee List" sap:VirtualizedContainerService.HintSize="636,4554" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="17897365-751e-486e-bfa3-adbca5fa9c83" Version="V1" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence sap2010:Annotation.AnnotationText="Here we make the changes to the EmployeeCard" sap:VirtualizedContainerService.HintSize="602,2917.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_14">
+          <Sequence sap2010:Annotation.AnnotationText="Here we make the changes to the EmployeeCard" sap:VirtualizedContainerService.HintSize="602,4265" sap2010:WorkflowViewState.IdRef="Sequence_14">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -395,25 +395,25 @@
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NClick ClickType="Single" DisplayName="Click 'Edit'" sap:VirtualizedContainerService.HintSize="560,157.333333333333" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="17897365-751e-486e-bfa3-adbca5fa9c83" Version="V1">
+            <uix:NClick ClickType="Single" DisplayName="Click 'Edit'" sap:VirtualizedContainerService.HintSize="560,156" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="17897365-751e-486e-bfa3-adbca5fa9c83" Version="V1">
               <uix:NClick.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="92, 73, 55, 83" ElementType="Button" FriendlyName="'Edit'" FullSelectorArgument="&lt;ctrl name='Edit' role='push button' text='Edit' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Edit' role='push button' text='Edit' automationid='{f5e90673-24b7-4b19-ae80-3ab8df73dd7a}' check:text='Edit' /&gt;" Guid="060d7a26-a16a-42f1-bacd-b492c62dedc9" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADsAAABXCAYAAAC6Ez2SAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAJlSURBVHhe7di9SsNQFMDxPEihz9Glb+Ag4gu4VigizqKguCpSpIqbODqoIBHBwS9ENz+GioqDaKuiFa2fHD3Xe9Okia2tN8n1eP5whjZB+uu9SagW/KMYSzXGUo2xVGMs1RhLNWOxD0+vYnRmJBaRvVObYnSijcT2z+xA2+CSmL7pLTE6wIyNI8QUzu/EnF6WoWt01QErdOX5TZ7dWkZgEYrXZ+fIspj9sxu4Klege2LdwY4v7MmzWy92rIK6V7Fj+AuMx+Y2T8ToKDYsQoKgbvBZ8V6erSfGhh0ieyY3xARBcXRco7VFjlXQIKCaMKBYpNhGUESGBcUiwarrM+ptWxtjdaaQcUOxULGNVhMnKigWGvYn2zZKKKYdW358EWPCtq2Nsa2mkCZCMW3YRquJEycU04bFn2FBQBxExg3FtGDx18nr2zvklw4DoabE2GbD/w8NzO46YIU2CYr9Crt7VBKjVlGBcdYOLuRZ5vQrrPsx0z5kQ25x33nOmpgW7Nj8HhRvK/Jdc2Ms1RhLNcZSjbFUYyzVGEs1xjZdIQcpywLLM0nIrlzLE/wVcilIZldAnFGyIZOwqq9DSh82mYU6Nl8erK8C5FL1v6xWYmzT/QCLOGeLp/Nge7CIsyCdP/76W57LIQ34to4iwQqo+7gEBWKd1yavrGc1PkfhxM3H/8G92/ivYb9bWfFF+LciXWzAMZrYwG1cAjuTIIiVMLwDK0rJzkCi4Q3K/VpP4d2gPqf6YSVYvo/I7brbuPqFmPfo+SMxlmqMpRpjqcZYqjGWaoylGmOpxliqMZZqjKUaY6n2j7AAH2RlA220plBAAAAAAElFTkSuQmCC" InformativeScreenshot="cc5458d5ac4edc94bd03dda4511b0a0a.png" ScopeSelectorArgument="&lt;wnd app='microsoft.dynamics.nav.client.exe' cls='WindowsForms10.Window.*' title='View - Employee List' /&gt;" SearchSteps="Selector" />
               </uix:NClick.Target>
             </uix:NClick>
-            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Edit - Employee Card - AH ∙ Anne Grethe ∙ Hansen" sap:VirtualizedContainerService.HintSize="560,2596" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="bf8819d5-aeb4-45e0-b8f9-6bcfc9d3cda8" Version="V1">
+            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Edit - Employee Card - AH ∙ Anne Grethe ∙ Hansen" sap:VirtualizedContainerService.HintSize="560,3945" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="bf8819d5-aeb4-45e0-b8f9-6bcfc9d3cda8" Version="V1">
               <uix:NApplicationCard.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="526,2303.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="526,3656" sap2010:WorkflowViewState.IdRef="Sequence_15">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <If Condition="[NOT String.IsNullOrEmpty(strFirstName)]" DisplayName="If: Edit first name if not Null" sap:VirtualizedContainerService.HintSize="484,260" sap2010:WorkflowViewState.IdRef="If_1">
+                    <If Condition="[NOT String.IsNullOrEmpty(strFirstName)]" DisplayName="If: Edit first name if not Null" sap:VirtualizedContainerService.HintSize="484,628" sap2010:WorkflowViewState.IdRef="If_1">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -421,14 +421,14 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <If.Then>
-                        <Sequence sap:VirtualizedContainerService.HintSize="200,68" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                        <Sequence sap:VirtualizedContainerService.HintSize="376,440" sap2010:WorkflowViewState.IdRef="Sequence_4">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'First Name'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="333.6,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="bf8819d5-aeb4-45e0-b8f9-6bcfc9d3cda8" Text="[strFirstName]" Version="V1">
+                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'First Name'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,216" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="bf8819d5-aeb4-45e0-b8f9-6bcfc9d3cda8" Text="[strFirstName]" Version="V1">
                             <uix:NTypeInto.Target>
                               <uix:TargetAnchorable DesignTimeRectangle="182, 339, 113, 20" ElementType="InputBox" FriendlyName="'Anne Grethe'" FullSelectorArgument="&lt;wnd cls='WindowsForms10.Window.*' title='Edit - Employee Card - *' /&gt;&lt;wnd ctrlname='LayoutPlaceholder' /&gt;&lt;wnd ctrlname='content' /&gt;&lt;wnd ctrlname='contentAndMessagesPlaceholder' /&gt;&lt;wnd ctrlname='ContentPlaceholder' /&gt;&lt;wnd cls='WindowsForms10.Window.*' title='General' /&gt;&lt;wnd aaname='First Name' cls='WindowsForms10.Window.*' /&gt;&lt;wnd aaname='First Name' cls='WindowsForms10.EDIT.*' /&gt;" FuzzySelectorArgument="&lt;wnd cls='WindowsForms10.Window.*' title='Edit - Employee Card - *' /&gt;&lt;wnd ctrlname='LayoutPlaceholder' /&gt;&lt;wnd ctrlname='content' /&gt;&lt;wnd ctrlname='contentAndMessagesPlaceholder' /&gt;&lt;wnd ctrlname='ContentPlaceholder' /&gt;&lt;wnd cls='WindowsForms10.Window.*' title='General' /&gt;&lt;wnd aaname='First Name' cls='WindowsForms10.Window.*' /&gt;&lt;wnd aaname='First Name' cls='WindowsForms10.EDIT.*' /&gt;" Guid="bbbf09eb-424e-4949-ac4d-4347583236a1" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHUAAAAYCAYAAADEbrI4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAIsSURBVGhD7ZaLbYMwEIaZxhOkilIKhAYlQqkqeRqWYRZWYZSrX4DPmGcotJY/6VcUH3CPHwNBFEXg5ZaCOI7Byy15Ux1UkCQJeLklb6qDCq7XK3i5pSBNU/ByS8HtlkFfn/BxfoPTOYLUGj9I8TucTqwuXZfEfuxqyd4vsS32PxQ8n9/QU/5gX1EpxGEKWW6J764vyNhXXRhmcEfrOaTxA3K0tlD3DEJ0DZkrvWvH/DMFYKEqCNCyFr+kqNTqcdQlBUJLqNX/TakK49o1lJTAH2h7NRZTKygIBeYpnyZQUrAVnaZp+UsIlzpeMBWXCKNEzB7v4PXMGXKTVx5PtLqHcombtl1nEkm2rn9/+qaiO7dpUPxRNM0awzHOGY6rgei7g+fs3TyKsRhC5qW0QAOezDWwUzer/wB6pvIG+KO3QTSAXFXDw5PTdvRUXHsStMhzrLvRMjC8S0byzsk1YOpm9R8ANlUUbxTcW7M0gI6ZiAuTGkOw5pragoZtyTsn14Cpm9V/AMhUvAOwujt3C1MHTLKBrm0wy9SJXKtMXVD/AWimymbw40uC3yEvmjpm0gDinYYuqJgydU6upaauqH9vOlPHihWxptEXTWUIk9Ddzs4p9MGaqC9aNHyGuO6IqYzJXL2d9xv170trqijUHFqLbBR/8suIYKGpHDmYTrYnhIl5DleXx5JXMZ5L9cZjs/qTrKl/L/CHkscJvKkO4k11EG+qg3hTHcSb6hwAP5xNZxM33O1OAAAAAElFTkSuQmCC" InformativeScreenshot="320fa5c9273eebde0a00f5e9adafb6f9.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='microsoft.dynamics.nav.client.exe' cls='WindowsForms10.Window.*' title='Edit - Employee Card - AH ∙ Anne Grethe ∙ Hansen' /&gt;" SearchSteps="Selector">
                                 <uix:TargetAnchorable.Anchors>
@@ -445,6 +445,7 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                           </uix:NTypeInto>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;fornavn er blevet ændret &quot;]" />
                         </Sequence>
                       </If.Then>
                       <If.Else>
@@ -457,7 +458,7 @@
                         </Sequence>
                       </If.Else>
                     </If>
-                    <If Condition="[NOT String.IsNullOrEmpty(strAddress)]" DisplayName="if: edit address if not null" sap:VirtualizedContainerService.HintSize="484,260" sap2010:WorkflowViewState.IdRef="If_2">
+                    <If Condition="[NOT String.IsNullOrEmpty(strAddress)]" DisplayName="if: edit address if not null" sap:VirtualizedContainerService.HintSize="484,629" sap2010:WorkflowViewState.IdRef="If_2">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -465,14 +466,14 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <If.Then>
-                        <Sequence sap:VirtualizedContainerService.HintSize="200,68" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                        <Sequence sap:VirtualizedContainerService.HintSize="376,441" sap2010:WorkflowViewState.IdRef="Sequence_7">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Address'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="333.6,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="bf8819d5-aeb4-45e0-b8f9-6bcfc9d3cda8" Text="[strAddress]" Version="V1">
+                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Address'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,216" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="bf8819d5-aeb4-45e0-b8f9-6bcfc9d3cda8" Text="[strAddress]" Version="V1">
                             <uix:NTypeInto.Target>
                               <uix:TargetAnchorable DesignTimeRectangle="182, 471, 113, 20" ElementType="InputBox" FriendlyName="'Farvergade 5'" FullSelectorArgument="&lt;wnd cls='WindowsForms10.Window.*' title='Edit - Employee Card - *' /&gt;&lt;wnd ctrlname='LayoutPlaceholder' /&gt;&lt;wnd ctrlname='content' /&gt;&lt;wnd ctrlname='contentAndMessagesPlaceholder' /&gt;&lt;wnd ctrlname='ContentPlaceholder' /&gt;&lt;wnd cls='WindowsForms10.Window.*' title='General' /&gt;&lt;wnd aaname='Address' cls='WindowsForms10.Window.*' /&gt;&lt;wnd aaname='Address' cls='WindowsForms10.EDIT.*' /&gt;" FuzzySelectorArgument="&lt;wnd cls='WindowsForms10.Window.*' title='Edit - Employee Card - *' /&gt;&lt;wnd ctrlname='LayoutPlaceholder' /&gt;&lt;wnd ctrlname='content' /&gt;&lt;wnd ctrlname='contentAndMessagesPlaceholder' /&gt;&lt;wnd ctrlname='ContentPlaceholder' /&gt;&lt;wnd cls='WindowsForms10.Window.*' title='General' /&gt;&lt;wnd aaname='Address' cls='WindowsForms10.Window.*' /&gt;&lt;wnd aaname='Address' cls='WindowsForms10.EDIT.*' /&gt;" Guid="d05af5fa-7a94-4067-adc2-13c0e6344467" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHUAAAAYCAYAAADEbrI4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAH8SURBVGhD7ZbRtYMgDIbvNO7DNCzjLK7iGr5xIWIhCZD02NpK+c7xwQK/IX8I/XODrti2zQ1TO2OY2iHD1A4ZpnbIMLVDhqkdwkxd7OSmCT92iYOdss7GTWc2uViWs1N6JymaauY1vv0GLzH1iyp/mOo5a+rpongxelPX2Zm8vZjZpVmrm01o04uzMG6dDW2cbBQ2n62D94emcemzXO9QQteD11poQptx7ogannpsnNuaus6WJT1tZH83JpsTWlLR+PgWEpGPw710mFfQ84AZbE0eR9BtxanVaMXGwQWAtT6B4o9SZTPItGgCKoZwyrIKhxN0aJExIDddoReBeFtJRHFqNKTYJMJ6IaY389SdyiqSmEr3kWuhFnWcjsKzTynooaJIIN1INU6NhhibAuFkvxulqbH6aEsSTE1zyLi46YJeZQ02VYhToyHGpqBSPFehM7UQJCRCMhWS7FvZQtaDHm+DidpJFVqnFKdaoxWbglcUxgmeMDXbKLznJ6JmatQzhmlCItHGvYZt6e2/sVMY4qgZwuKM321peNqxUchY/CbvdtehvlOh4sPmjySFZChM3ZNWrvw9eelJ363pRWOPNX4Cbr9SnAFZI1CPjUL0/MPjvhZm6t2oFeEvc29ToQt87u76Vm5lKm2Jw9Ayt2+/A84wtUOGqR2ybZv7B4V1Trl76BIbAAAAAElFTkSuQmCC" InformativeScreenshot="fa4dfb1fbd5c5085a816e7bd011e9366.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='microsoft.dynamics.nav.client.exe' cls='WindowsForms10.Window.*' title='Edit - Employee Card - AH ∙ Anne Grethe ∙ Hansen' /&gt;" SearchSteps="Selector">
                                 <uix:TargetAnchorable.Anchors>
@@ -489,6 +490,7 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                           </uix:NTypeInto>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;addresse er blevet ændret&quot;]" />
                         </Sequence>
                       </If.Then>
                       <If.Else>
@@ -501,7 +503,7 @@
                         </Sequence>
                       </If.Else>
                     </If>
-                    <If Condition="[Not String.IsNullOrEmpty(strPhoneNumber)]" DisplayName="If: edit phonenumber if not null" sap:VirtualizedContainerService.HintSize="484,260" sap2010:WorkflowViewState.IdRef="If_3">
+                    <If Condition="[Not String.IsNullOrEmpty(strPhoneNumber)]" DisplayName="If: edit phonenumber if not null" sap:VirtualizedContainerService.HintSize="484,629" sap2010:WorkflowViewState.IdRef="If_3">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -509,14 +511,14 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <If.Then>
-                        <Sequence sap:VirtualizedContainerService.HintSize="200,68" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                        <Sequence sap:VirtualizedContainerService.HintSize="376,441" sap2010:WorkflowViewState.IdRef="Sequence_9">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Phone No.'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="333.6,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="bf8819d5-aeb4-45e0-b8f9-6bcfc9d3cda8" Text="[strPhoneNumber]" Version="V1">
+                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Phone No.'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,216" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="bf8819d5-aeb4-45e0-b8f9-6bcfc9d3cda8" Text="[strPhoneNumber]" Version="V1">
                             <uix:NTypeInto.Target>
                               <uix:TargetAnchorable DesignTimeRectangle="494, 372, 87, 20" ElementType="InputBox" FriendlyName="'4465-4899-...'" FullSelectorArgument="&lt;wnd cls='WindowsForms10.Window.*' title='Edit - Employee Card - *' /&gt;&lt;wnd ctrlname='LayoutPlaceholder' /&gt;&lt;wnd ctrlname='content' /&gt;&lt;wnd ctrlname='contentAndMessagesPlaceholder' /&gt;&lt;wnd ctrlname='ContentPlaceholder' /&gt;&lt;wnd cls='WindowsForms10.Window.*' title='General' /&gt;&lt;wnd aaname='Phone No.' cls='WindowsForms10.Window.*' /&gt;&lt;wnd aaname='Phone No.' cls='WindowsForms10.EDIT.*' /&gt;" FuzzySelectorArgument="&lt;wnd cls='WindowsForms10.Window.*' title='Edit - Employee Card - *' /&gt;&lt;wnd ctrlname='LayoutPlaceholder' /&gt;&lt;wnd ctrlname='content' /&gt;&lt;wnd ctrlname='contentAndMessagesPlaceholder' /&gt;&lt;wnd ctrlname='ContentPlaceholder' /&gt;&lt;wnd cls='WindowsForms10.Window.*' title='General' /&gt;&lt;wnd aaname='Phone No.' cls='WindowsForms10.Window.*' /&gt;&lt;wnd aaname='Phone No.' cls='WindowsForms10.EDIT.*' /&gt;" Guid="7673aa70-e564-49f7-a8ef-a1aa016456b5" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFsAAAAYCAYAAACV+oFbAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAHpSURBVGhD7ZXbkYUgDIa3GvuxGpqxFluxDd5YCJdJYkKOyvDEP8PskX/N5ePiX1iaIu99WLAnacGeqAV7ohbsiVqwJ2rBnqg+7NOFbdvDcZVnLtW/wrFv0StjP+JMEbyDvDTcWcwfpeQ9HYqJc4JYTbeclv9dHdg1uQZb8/P8rq1QAvWpETnvdexxzoUaGcC3POWd189jpMKG4p0LToGt+XleL9LyLcl5MxwS9jrCXuHj31VP/EGSYbdEpwxb9YWmmT7BfpIXw4Jrh4NDMSx/kATYuHApYceHBuPzmf7GYwiDvg+wm/fkqBp1MWDkGsHgm1KMEs/yB+kGm95196a6PhQdffRxynB5I1W5oV+AW3UlkYUkMfNC4TmI12Ba/hhR2Gl3kK84a8ry684mEHIj3Q9mW4wCv40yb+UVYN0XmcZ2J4/R86mnb56+CGwomARFwx2GH9O/gS0eYawCUsqZRsrLrpCsj3nNup5L/kA28dXn4n5ukB49aQ5JBGWJ5X0B2/pQW/4bDYZdikSNw3O7AiKAeELav8Pu6ew+VTxvei67vCjXodQOi9Ppy/Kr8EnWfiMNh52UG61HHe+4vNvwNfBu80h5C/A2sM/zyqdA9xWNhb00Ugv2RC3YE7VgT9SCPVEL9kR578M/a2atawGkdmwAAAAASUVORK5CYII=" InformativeScreenshot="ea850ed3fb06fb6b6dd0261d7e650a63.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='microsoft.dynamics.nav.client.exe' cls='WindowsForms10.Window.*' title='Edit - Employee Card - AH ∙ Anne Grethe ∙ Hansen' /&gt;" SearchSteps="Selector">
                                 <uix:TargetAnchorable.Anchors>
@@ -527,6 +529,7 @@
                               </uix:TargetAnchorable>
                             </uix:NTypeInto.Target>
                           </uix:NTypeInto>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;telefonnummeret er blevet ændret&quot;]" />
                         </Sequence>
                       </If.Then>
                       <If.Else>
@@ -539,7 +542,7 @@
                         </Sequence>
                       </If.Else>
                     </If>
-                    <If Condition="[NOT String.IsNullOrEmpty(strCity)]" DisplayName="If: edit postal code/city if postalcode is not null" sap:VirtualizedContainerService.HintSize="484,726.666666666667" sap2010:WorkflowViewState.IdRef="If_4">
+                    <If Condition="[NOT String.IsNullOrEmpty(strCity)]" DisplayName="If: edit postal code/city if postalcode is not null" sap:VirtualizedContainerService.HintSize="484,847" sap2010:WorkflowViewState.IdRef="If_4">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -547,7 +550,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <If.Then>
-                        <Sequence sap:VirtualizedContainerService.HintSize="376,534.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                        <Sequence sap:VirtualizedContainerService.HintSize="376,659" sap2010:WorkflowViewState.IdRef="Sequence_11">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="x:Boolean" Name="boolEmployeeCardEditExists" />
                           </Sequence.Variables>
@@ -557,7 +560,7 @@
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Post Code'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,218.666666666667" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="bf8819d5-aeb4-45e0-b8f9-6bcfc9d3cda8" Text="[strCity]" Version="V1">
+                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Post Code'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="334,216" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="bf8819d5-aeb4-45e0-b8f9-6bcfc9d3cda8" Text="[strCity]" Version="V1">
                             <uix:NTypeInto.Target>
                               <uix:TargetAnchorable DesignTimeRectangle="494, 273, 93, 20" ElementType="InputBox" FriendlyName="'2630'" FullSelectorArgument="&lt;wnd cls='WindowsForms10.Window.*' title='Edit - Employee Card - *' /&gt;&lt;wnd ctrlname='LayoutPlaceholder' /&gt;&lt;wnd ctrlname='content' /&gt;&lt;wnd ctrlname='contentAndMessagesPlaceholder' /&gt;&lt;wnd ctrlname='ContentPlaceholder' /&gt;&lt;wnd cls='WindowsForms10.Window.*' title='General' /&gt;&lt;wnd aaname='Post Code' cls='WindowsForms10.Window.*' /&gt;&lt;wnd aaname='Post Code' cls='WindowsForms10.EDIT.*' /&gt;" FuzzySelectorArgument="&lt;wnd cls='WindowsForms10.Window.*' title='Edit - Employee Card - *' /&gt;&lt;wnd ctrlname='LayoutPlaceholder' /&gt;&lt;wnd ctrlname='content' /&gt;&lt;wnd ctrlname='contentAndMessagesPlaceholder' /&gt;&lt;wnd ctrlname='ContentPlaceholder' /&gt;&lt;wnd cls='WindowsForms10.Window.*' title='General' /&gt;&lt;wnd aaname='Post Code' cls='WindowsForms10.Window.*' /&gt;&lt;wnd aaname='Post Code' cls='WindowsForms10.EDIT.*' /&gt;" Guid="757e73f3-b42a-49b1-93a0-a3a343ccc5f3" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGEAAAAYCAYAAADqK5OqAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAFeSURBVGhD7ZbREcIgDIadpvswDcswC6s4SiRAMUkDXl80J/nuep5SfPi/kPAA5+e4BAO4BAO4BAO4BAO4BAO4BANwCTnCcRzvJ+a+QHlCCuSdkMovHbE/pLEyyHGyd2OIhBJupKFkiJcgmwAtXCTHWHadtP3U4zMFEnyXqYrei2U74qH17zdCq1U/3r9KKX8I4QgwcboN65mA7UVU7p3CRQnj1NTA6UlBFDEbspTAKvms2oyfvaevqrjOBxI6E3pyX+w/MpVQWw8NsUoowcv2xKq7VbY6dBcSZjNmF1QJ7QYjWofavxchdmljzU/CFCGhhaIO37sSENqSZHuq+ExAmAR+m5FoVfuhklnwGLiQWMVKMfvxlqBWOkfOAH6FzZDY5lbl9JRUyeP9D6doI4QEnAXXh1Z6E3Gu0SrurYzs0wJu86Y/u/ehjjqYne/iEgzgEgzgEgzgEgzgEn4OwAux5jgkVUeNJAAAAABJRU5ErkJggg==" InformativeScreenshot="e4d239949bb3c68e47d098244443d085.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='microsoft.dynamics.nav.client.exe' cls='WindowsForms10.Window.*' title='Edit - Employee Card - AH ∙ Anne Grethe ∙ Hansen' /&gt;" SearchSteps="Selector">
                                 <uix:TargetAnchorable.Anchors>
@@ -568,7 +571,8 @@
                               </uix:TargetAnchorable>
                             </uix:NTypeInto.Target>
                           </uix:NTypeInto>
-                          <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="334,181.333333333333" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_4" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V1" />
+                          <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="334,178" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_4" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V1" />
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;post nummeret og by er ændret&quot;]" />
                         </Sequence>
                       </If.Then>
                       <If.Else>
@@ -581,23 +585,24 @@
                         </Sequence>
                       </If.Else>
                     </If>
-                    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Edit - Employee Card - AH ∙ Anne ∙ Hansen" sap:VirtualizedContainerService.HintSize="484,543.333333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" ScopeGuid="022984d0-5b6f-476e-91f4-fd8a8728c7a0" Version="V1">
+                    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Edit - Employee Card - AH ∙ Anne ∙ Hansen" sap:VirtualizedContainerService.HintSize="484,669" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" ScopeGuid="022984d0-5b6f-476e-91f4-fd8a8728c7a0" Version="V1">
                       <uix:NApplicationCard.Body>
                         <ActivityAction x:TypeArguments="x:Object">
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                           </ActivityAction.Argument>
-                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,250.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,380" sap2010:WorkflowViewState.IdRef="Sequence_18">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <uix:NClick ClickType="Single" DisplayName="Click 'OK'" sap:VirtualizedContainerService.HintSize="334,157.333333333333" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="17897365-751e-486e-bfa3-adbca5fa9c83" Version="V1">
+                            <uix:NClick ClickType="Single" DisplayName="Click 'OK'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="17897365-751e-486e-bfa3-adbca5fa9c83" Version="V1">
                               <uix:NClick.Target>
                                 <uix:TargetAnchorable DesignTimeRectangle="942, 782, 112, 35" ElementType="Button" FriendlyName="'OK'" FullSelectorArgument="&lt;wnd cls='WindowsForms10.Window.*' title='Edit - Employee Card - *' /&gt;&lt;wnd cls='WindowsForms10.BUTTON.*' title='OK' aaname='OK' /&gt;" FuzzySelectorArgument="&lt;wnd cls='WindowsForms10.Window.*' title='Edit - Employee Card - *' /&gt;&lt;wnd cls='WindowsForms10.BUTTON.*' title='OK' aaname='OK' check:text='OK' /&gt;" Guid="2c0f96ca-e2e0-4213-a5c2-b88b288ca4d7" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHQAAAAnCAYAAADegGx+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAHfSURBVHhe7ZtBroIwEIY5FwfiPJyGrSaeAaNho8GV4gWMZh4D04TSgho3nf/Nl3RB23Tz9W8LoRkZUJhQMEwoGIHQx+NBp9OJDocD7fd7K4mWtm0HV3M8odyBRV6vV3o+n1JrpAa76bqOjsdjINUTyta5o6GD2+1G5/NZnkY8oRxlS6YeXq/XkNIpgVBDF3NnJlQ5JhQMEwqGCQXDhIJhQsGAFFoVGWXZrBSVtM6oir69oHmrGyMvG6nRAZbQpqR8EDgX1FCZc31OgZ+Y0KEuo6U5kDJAQisq1pLYM6YuJm9SJ5NCWzIdMEKbMg9lBYzSPVmeUJkUedlnWicgQmVJ/WCNHFI6FTYRGk2wMkCERpK3QJBkEVoO9ZE9VhkYQmXf++QQExfKyfws4akDJfSXhFbKD0MODKGy5P66h46ydb6uOECEiqhp8qK8O+W6cfTupTBCnayf30PdOG8nR5oACe1xX4qC98gvvxQtjpM+WEKFMYl+WTzsxIT2uP1Um1RIof8ZEwqGCQXDhIJhQsFYFcr3WuzPeT3wn/OrQvnWGV9UMnTA95Aul4s8jXhC3e2z+/1uSU0YdsPBY1ert88Y7sAx3m63tNlsrCRYdrsd1XUdyGQCoYZuTCgYJhQKoj9E0dEJEKwdYAAAAABJRU5ErkJggg==" InformativeScreenshot="4bae7f6a675a2d0d235fa74e65d9051d.png" ScopeSelectorArgument="&lt;wnd app='microsoft.dynamics.nav.client.exe' cls='WindowsForms10.Window.*' title='Edit - Employee Card - *' /&gt;" SearchSteps="Selector" />
                               </uix:NClick.Target>
                             </uix:NClick>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;ændringer bliver gemt&quot;]" />
                           </Sequence>
                         </ActivityAction>
                       </uix:NApplicationCard.Body>
@@ -619,6 +624,7 @@
         <uix:TargetApp Area="476, 54, 906, 898" FilePath="[EmployeeLink]" IconBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAIuSURBVGhD7Ze7SkNBGIR9BB/BJxAfQMFaLNIIgo1YWCtYiYWIYBvsFUsLC8HOQizVKoUIWqiIIqjghSjewsqs+eHPMrvZ3M4FzsCHyWT2OP9hN+T09Q2UTK6hZp6gZp6gZp6gZp6gZkr0D06Z8ZlVs7VzYKmcXZnr2wdzc/doBoZn6ZpMDYCSX98/xtXza5XmLdRMkaGxeVP9+KxX/9ft/RPNWqiZIthG55d39er/Oqlc0KyFmimB8tj3op/fmv2L88DyFmqmgFt+emHdjEwsmt9azYxOLtE1FmomjC7/8vZuy8tn3m8fgZoJ4pbHIWY5L9RMiFD58uZeQ9YLNRMgVB6HFtJ5L9TsMTHlIb3GCzV7SGx5SK/zQs0e0Up5SK/1Qs0e0Gp5SK/3Qs0u0055SF/DCzW7SLvlIX0dL9TsEp2Uh/S1vFCzC4TKgxjpvBdqdkiz8iBG7hoKNVsA5fBrcbm8bbfF4dGpLQ255fWPtBhJNgg1HXRJ/EZBSTyrhsT2PNbJ+xhJNgg166BwM6Eoiu3uH9s87jKGxTaS68iBTXwA3G0Idxv/HO9REgWDDxkK/W2T+ACtgocPDDa3smEHlYMsysQAKFiaXWs4D/IZXoeUygDY282KSTaTA8RIssUAjiQbhJqKGEm2GMCRZINQUxEjyRYDOJJsEGoqYiTZYgBHkg1CTUWMJFsM4EiyQaipiJFkiwEcSTYINRUxkmwmB8g81MwT1MwT1MwNJfMHTuoAdTFrJlIAAAAASUVORK5CYII=" InformativeScreenshot="77f16d2b6bc34d6bb2a0280ee9bfc581.png" Selector="&lt;wnd app='microsoft.dynamics.nav.client.exe' cls='WindowsForms10.Window.*' title='View - Employee List'/&gt;" />
       </uix:NApplicationCard.TargetApp>
     </uix:NApplicationCard>
-    <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="1028.66666666667,134" sap2010:WorkflowViewState.IdRef="KillProcess_2" ProcessName="Microsoft.Dynamics.Nav.Client.exe" />
+    <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="636,132" sap2010:WorkflowViewState.IdRef="KillProcess_2" ProcessName="Microsoft.Dynamics.Nav.Client.exe" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="636,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;processer lukkes&quot;]" />
   </Sequence>
 </Activity>
