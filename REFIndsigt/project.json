@@ -1,6 +1,6 @@
 {
-  "name": "NAV_REFramwork",
-  "description": "Robotic Enterprise Framework with Navision",
+  "name": "REFIndsigt",
+  "description": "Robotic Enterprise Framework med sequenser af kompilering af medarbejderdata og afsendelse i zipped mappe over mail.",
   "main": "Main.xaml",
   "dependencies": {
     "Microsoft.Graph": "[3.32.0]",
